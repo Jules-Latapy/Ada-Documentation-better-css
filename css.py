@@ -9,18 +9,18 @@ import re
 ##remplacer le deuxieme HR par </div>
 
 ##remplacer 
-regex = """<A HREF="RM-SRCH.html">Search</A>"""
+regex = """</HEAD>"""
 
 
-directory = os.listdir("""C:\\Stage\\Documentation\\Ada_reference_manual_1995""")
+directory = os.listdir(""".\\Ada_reference_manual_2012""")
 
 for file in directory:
-	actualFile = open(""".\\Ada_reference_manual_1995\\"""+file, "rt")
+	actualFile = open(""".\\Ada_reference_manual_2012\\"""+file, "rt")
 	data = actualFile.read() ;
-	data = data.replace(regex,"""<A HREF="../RM-SRCH.html">Search</A>&nbsp;""")
+	data = data.replace(regex,"""<link rel="icon" href="../logo.svg"></HEAD>""")
 	
 	actualFile.close()
-	newFile = open(""".\\Ada_reference_manual_1995\\"""+file, "wt")
+	newFile = open(""".\\Ada_reference_manual_2012\\"""+file, "wt")
 	newFile.write(data)
 	newFile.close()
 

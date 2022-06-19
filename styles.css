@@ -136,7 +136,6 @@ a:visited {
     position: fixed;
     z-index: 2;
     padding: 10px;
-    overflow:auto;
 }
 
 .navig {
