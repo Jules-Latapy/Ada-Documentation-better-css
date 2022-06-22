@@ -33,22 +33,43 @@ def StringReplacementInFolder(motif,replacement,regex=False,dirList=["./Ada_refe
 
 
 #StringReplacementInFolder(r"<STYLE.*</STYLE>", """<link rel="stylesheet" href="../styles.css">\n\t<link rel="icon" href="../logo.svg">""",True)
-#StringReplacementInFolder("<HR>",'<div class="main">')
-#StringReplacementInFolder("<HR>",'</div>')
-StringReplacementInFolder(
-"""<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
-&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
-&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
-&nbsp;<A HREF="AA-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
-</div>""",
+"""StringReplacementInFolder("<HR>",'<div class="main">')
+StringReplacementInFolder("<HR>",'</div>')
 
-"""<div class="navig"><A HREF="AA-TOC.html">Contents</A>&nbsp;
-&nbsp;<A HREF="AA-0-4.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="AA-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="AA-1.html">Next</A>&nbsp;
-</div>""")
+StringReplacementInFolder('<IMG SRC="cont.gif" ALT="Contents" BORDER=0>','Contents')
+StringReplacementInFolder('<IMG SRC="index.gif" ALT="Index" BORDER=0>','Index')
+StringReplacementInFolder('<IMG SRC="lib.gif" ALT="References" BORDER=0>','References')
+StringReplacementInFolder('<IMG SRC="find.gif" ALT="Search" BORDER=0>','Search')
+StringReplacementInFolder('<IMG SRC="next.gif" ALT="Next" BORDER=0>','Next')
+StringReplacementInFolder('<IMG SRC="prev.gif" ALT="Previous" BORDER=0>','Previous')"""
+
+#StringReplacementInFolder('<div style="margin-top: 0.0em; margin-bottom: 0.6em">','<div class="navig">',dirList=["./Ada_reference_manual_2012"])
+#StringReplacementInFolder('<IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">',"")
+
+#StringReplacementInFolder("""</div>
+#<div class="main">""","""<img SRC="../logo.svg" class="adaLogo">
+#</div>
+#<div class="main">""")
+
+#StringReplacementInFolder("""</P>
+#<div class="main">""","""<img SRC="../logo.svg" class="adaLogo">
+#</div>
+#<div class="main">""")
+#StringReplacementInFolder("""<BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+#<P>""","""<BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+#<div class="navig">""")
+
+#StringReplacementInFolder("""<P><A HREF="AA-TOC.html">Contents""","""<div class="navig"><P><A HREF="AA-TOC.html">Contents""")
+##StringReplacementInFolder("""</P>
+#</BODY>
+#</HTML>""","""</div>
+#</BODY>
+#</HTML>""")
+
+
+
+
+
 
 """
 	<STYLE type="text/css">
