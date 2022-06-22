@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-E.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-E-2.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-E.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-E-2.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>E.1 Partitions</H1>
@@ -25,8 +26,8 @@ as either active or passive.]&nbsp;</div>
 
 <H4 Class="centered">Post-Compilation Rules</H4>
 <div class="paranum"><a name="p2">2</a></div>
-<div class="Normal"><A NAME="I8832"></A><A NAME="I8833"></A>An <I>active 
-partition</I> is a partition as defined in <A HREF="aa-10-2.html">10.2</A>. 
+<div class="Normal"><A NAME="I9077"></A><A NAME="I9078"></A>An <I>active 
+partition</I> is a partition as defined in <A HREF="AA-10-2.html">10.2</A>. 
 A <I>passive partition</I> is a partition that has no thread of control 
 of its own, whose library units are all preelaborated, and whose data 
 and subprograms are accessible to one or more active partitions.&nbsp;</div>
@@ -38,9 +39,9 @@ before it comes into existence in a distributed program (like most preelaborated
 entities). Likewise, there is no concrete meaning to passive partition 
 termination.&nbsp;</div>
 <div class="paranum"><a name="p3">3</a></div>
-<div class="Normal">A passive partition shall include only <SPAN Class="swiss"><A HREF="aa-10-1-1.html#S0248">library_item</A></SPAN>s 
-that either are declared pure or are shared passive (see <A HREF="aa-10-2-1.html">10.2.1</A> 
-and <A HREF="aa-E-2-1.html">E.2.1</A>).</div>
+<div class="Normal">A passive partition shall include only <SPAN Class="swiss"><A HREF="AA-10-1-1.html#S0248">library_item</A></SPAN>s 
+that either are declared pure or are shared passive (see <A HREF="AA-10-2-1.html">10.2.1</A> 
+and <A HREF="AA-E-2-1.html">E.2.1</A>).</div>
 <div class="paranum"><a name="p4">4</a></div>
 <div class="Normal">An active partition shall be configured on a processing 
 node. A passive partition shall be configured either on a storage node 
@@ -49,7 +50,7 @@ or on a processing node.</div>
 <div class="Normal">The configuration of the partitions of a program 
 onto a distributed system shall be consistent with the possibility for 
 data references or calls between the partitions implied by their semantic 
-dependences. <A NAME="I8834"></A>Any reference to data or call of a subprogram 
+dependences. <A NAME="I9079"></A>Any reference to data or call of a subprogram 
 across partitions is called a <I>remote access</I>.&nbsp;</div>
 <div class="paranum"><a name="p5.a">5.a</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>For example, an active partition 
@@ -65,16 +66,16 @@ operations (in order to support entry-less protected objects).</div>
 
 <H4 Class="centered">Dynamic Semantics</H4>
 <div class="paranum"><a name="p6">6</a></div>
-<div class="Normal"><A NAME="I8835"></A>A <SPAN Class="swiss"><A HREF="aa-10-1-1.html#S0248">library_item</A></SPAN> 
+<div class="Normal"><A NAME="I9080"></A>A <SPAN Class="swiss"><A HREF="AA-10-1-1.html#S0248">library_item</A></SPAN> 
 is elaborated as part of the elaboration of each partition that includes 
-it. If a normal library unit (see <A HREF="aa-E-2.html">E.2</A>) has 
+it. If a normal library unit (see <A HREF="AA-E-2.html">E.2</A>) has 
 state, then a separate copy of the state exists in each active partition 
 that elaborates it. [The state evolves independently in each such partition.]</div>
 <div class="paranum"><a name="p6.a">6.a</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>Normal library units cannot 
 be included in passive partitions.&nbsp;</div>
 <div class="paranum"><a name="p7">7</a></div>
-<div class="Normal"><A NAME="I8836"></A><A NAME="I8837"></A><A NAME="I8838"></A><A NAME="I8839"></A>[An 
+<div class="Normal"><A NAME="I9081"></A><A NAME="I9082"></A><A NAME="I9083"></A><A NAME="I9084"></A>[An 
 active partition <I>terminates</I> when its environment task terminates.] 
 A partition becomes <I>inaccessible</I> if it terminates or if it is 
 <I>aborted</I>. An active partition is aborted when its environment task 
@@ -85,25 +86,25 @@ events can also result in a partition becoming inaccessible.&nbsp;</div>
 <div class="Annotations"><B>Implementation defined:&nbsp;</B>Any events that 
 can result in a partition becoming inaccessible.</div>
 <div class="paranum"><a name="p8">8/1</a></div>
-<div class="Normal" style="margin-bottom: 0.4em">For a <SPAN Class="swiss"><A HREF="aa-4-1.html#S0093">prefix</A></SPAN> 
+<div class="Normal" style="margin-bottom: 0.4em">For a <span class="insert1"><SPAN Class="swiss"><A HREF="AA-4-1.html#S0093">prefix</A></SPAN></span><span class="delete1">&nbsp;prefix</span> 
 D that denotes a library-level declaration, excepting a declaration of 
 or within a declared-pure library unit, the following attribute is defined: 
 </div>
 <div class="paranum"><a name="p9">9</a></div>
 <div class="WideHanging-Term">D'Partition_Id</div><div class="WideHanging-Body"><br clear="left">
-<A NAME="I8840"></A><A NAME="I8841"></A>Denotes a value of the type <I>universal_integer</I> 
+<A NAME="I9085"></A><A NAME="I9086"></A>Denotes a value of the type <I>universal_integer</I> 
 that identifies the partition in which D was elaborated. If D denotes 
-the declaration of a remote call interface library unit (see <A HREF="aa-E-2-3.html">E.2.3</A>) 
+the declaration of a remote call interface library unit (see <A HREF="AA-E-2-3.html">E.2.3</A>) 
 the given partition is the one where the body of D was elaborated.&nbsp;</div>
 
 <H4 Class="centered">Bounded (Run-Time) Errors</H4>
 <div class="paranum"><a name="p10">10/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00226.TXT">AI95-00226-01</A></I>} 
-<A NAME="I8842"></A>It is a bounded error for there to be cyclic elaboration 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00226.TXT">AI95-00226-01</A></I>} 
+<A NAME="I9087"></A>It is a bounded error for there to be cyclic elaboration 
 dependences between the active partitions of a single distributed program. 
-<A NAME="I8843"></A>The possible effects, in each of the partitions involved, 
-are deadlock during elaboration, or the raising of Communication_Error 
-or Program_Error.&nbsp;</div>
+<A NAME="I9088"></A>The possible effects<span class="insert2">, in each 
+of the partitions involved,</span> are deadlock during elaboration, or 
+the raising of <span class="insert2">Communication_Error or&nbsp;</span>Program_Error<span class="delete2">&nbsp;in one or all of the active partitions involved</span>.&nbsp;</div>
 
 <H4 Class="centered">Implementation Permissions</H4>
 <div class="paranum"><a name="p11">11</a></div>
@@ -149,19 +150,20 @@ in order to query information about the partition.</div>
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p16.a">16.a/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00226.TXT">AI95-00226-01</A></I>} 
-Corrected wording so that a partition that has an elaboration problem 
-will either deadlock or raise an exception. While an Ada 95 implementation 
-could allow some partitions to continue to execute, they could be accessing 
-unelaborated data, which is very bad (and erroneous in a practical sense). 
-Therefore, this isn't listed as an inconsistency.&nbsp;</div>
+<span class="insert2">Corrected wording so that a partition that has 
+an elaboration problem will either deadlock or raise an exception. While 
+an Ada 95 implementation could allow some partitions to continue to execute, 
+they could be accessing unelaborated data, which is very bad (and erroneous 
+in a practical sense). Therefore, this isn't listed as an inconsistency.</span> 
+</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-E.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-E-2.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-E.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-E-2.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

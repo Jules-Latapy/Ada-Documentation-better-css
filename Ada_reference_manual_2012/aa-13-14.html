@@ -7,26 +7,28 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-13-13-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-0-4.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-13-13-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-3.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>13.14 Freezing Rules</H1>
 <div class="paranum"><a name="p1">1/3</a></div>
 <div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-[This subclause defines a place in the program text where each declared 
-entity becomes &ldquo;frozen.&rdquo; A use of an entity, such as a reference 
-to it by name, or (for a type) an expression of the type, causes freezing 
-of the entity in some contexts, as described below. The Legality Rules 
-forbid certain kinds of uses of an entity in the region of text where 
-it is frozen.]&nbsp;</div>
+[This <span class="insert3">subclause</span><span class="delete3">&nbsp;clause</span> 
+defines a place in the program text where each declared entity becomes 
+&ldquo;frozen.&rdquo; A use of an entity, such as a reference to it by 
+name, or (for a type) an expression of the type, causes freezing of the 
+entity in some contexts, as described below. The Legality Rules forbid 
+certain kinds of uses of an entity in the region of text where it is 
+frozen.]&nbsp;</div>
 <div class="paranum"><a name="p1.a">1.a</a></div>
 <div class="Annotations"><B>Reason:&nbsp;</B>This concept has two purposes: 
 a compile-time one and a run-time one.</div>
@@ -38,13 +40,13 @@ the value of a static expression. (The dependence of static evaluation
 upon overload resolution is obvious. The dependence in the other direction 
 is more subtle. There are three rules that require static expressions 
 in contexts that can appear in declarative places: The expression in 
-an <SPAN Class="swiss"><A HREF="aa-4-1-4.html#S0101">attribute_designator</A></SPAN> 
+an <SPAN Class="swiss"><A HREF="AA-4-1-4.html#S0101">attribute_designator</A></SPAN> 
 shall be static. In a record aggregate, variant-controlling discriminants 
 shall be static. In an array aggregate with more than one named association, 
 the choices shall be static. The compiler needs to know the value of 
 these expressions in order to perform overload resolution and legality 
 checking.) We wish to allow a compiler to evaluate static expressions 
-when it sees them in a single pass over the <SPAN Class="swiss"><A HREF="aa-10-1-1.html#S0247">compilation_unit</A></SPAN>. 
+when it sees them in a single pass over the <SPAN Class="swiss"><A HREF="AA-10-1-1.html#S0247">compilation_unit</A></SPAN>. 
 The freezing rules ensure that.</div>
 <div class="paranum"><a name="p1.c">1.c</a></div>
 <div class="Annotations">The run-time purpose of the freezing rules is 
@@ -87,13 +89,14 @@ such as objects and subprograms, are possible.&nbsp;</div>
 <div class="paranum"><a name="p1.j">1.j/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0005-1.TXT">AI05-0005-1</A></I>} 
 Similar issues arise for incomplete types. However, we do not use freezing 
-to prevent premature access; incomplete types have different, more severe, 
-restrictions. Similar issues also arise for subprograms, protected operations, 
-tasks and generic units. However, we do not use freezing to prevent premature 
-access for those, either; <A HREF="aa-3-11.html">3.11</A> prevents problems 
-with run-time Elaboration_Checks. Even so, freezing is used for these 
-entities to prevent giving representation items too late (that is, after 
-uses that require representation information, such as calls).&nbsp;</div>
+<span class="insert3">to prevent premature access</span><span class="delete3">&nbsp;there</span>; 
+incomplete types have different, more severe, restrictions. Similar issues 
+also arise for subprograms, protected operations, tasks and generic units. 
+However, we do not use freezing <span class="insert3">to prevent premature 
+access for those,</span><span class="delete3">&nbsp;there</span> either; <A HREF="AA-3-11.html">3.11</A> 
+prevents problems with run-time Elaboration_Checks.<span class="insert3">&nbsp;Even so, freezing is used for these entities to prevent giving representation 
+items too late (that is, after uses that require representation information, 
+such as calls).</span>&nbsp;</div>
 
 <H4 Class="centered">Language Design Principles</H4>
 <div class="paranum"><a name="p1.k">1.k</a></div>
@@ -102,11 +105,11 @@ that's needed to evaluate it.</div>
 <div class="paranum"><a name="p1.l">1.l</a></div>
 <div class="Annotations">However, if the construct is not evaluated where 
 it appears, let it cause freezing later, when it is evaluated. This is 
-the case for <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN>s 
-and <SPAN Class="swiss"><A HREF="aa-12-6.html#S0300">default_name</A></SPAN>s. 
+the case for <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN>s 
+and <SPAN Class="swiss"><A HREF="AA-12-6.html#S0299">default_name</A></SPAN>s. 
 (Formal parameters, generic formal parameters, and components can have 
-<SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN>s 
-or <SPAN Class="swiss"><A HREF="aa-12-6.html#S0300">default_name</A></SPAN>s.)</div>
+<SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN>s 
+or <SPAN Class="swiss"><A HREF="AA-12-6.html#S0299">default_name</A></SPAN>s.)</div>
 <div class="paranum"><a name="p1.m">1.m</a></div>
 <div class="Annotations">The compiler should be allowed to evaluate static 
 expressions without knowledge of their context. (I.e. there should not 
@@ -178,15 +181,15 @@ has been determined.</div>
 <div class="paranum"><a name="p1.w">1.w</a></div>
 <div class="Annotations">After an entity has been frozen, no further 
 requirements may be placed on its representation (such as by a representation 
-item or a <SPAN Class="swiss"><A HREF="aa-3-2-1.html#S0024">full_type_declaration</A></SPAN>). 
+item or a <SPAN Class="swiss"><A HREF="AA-3-2-1.html#S0024">full_type_declaration</A></SPAN>). 
 </div>
 <div class="paranum"><a name="p2">2</a></div>
-<div class="Normal"><A NAME="I5930"></A><A NAME="I5931"></A>The <I>freezing</I> 
+<div class="Normal"><A NAME="I6086"></A><A NAME="I6087"></A>The <I>freezing</I> 
 of an entity occurs at one or more places (<I>freezing points</I>) in 
 the program text where the representation for the entity has to be fully 
 determined. Each entity is frozen from its first freezing point to the 
 end of the program text (given the ordering of compilation units defined 
-in <A HREF="aa-10-1-4.html">10.1.4</A>).&nbsp;</div>
+in <A HREF="AA-10-1-4.html">10.1.4</A>).&nbsp;</div>
 <div class="paranum"><a name="p2.a">2.a</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>The &ldquo;representation&rdquo; 
 for a subprogram includes its calling convention and means for referencing 
@@ -194,145 +197,118 @@ the subprogram body, either a &ldquo;link-name&rdquo; or specified address.
 It does not include the code for the subprogram body itself, nor its 
 address if a link-name is used to reference the body.&nbsp;</div>
 <div class="paranum"><a name="p2.1">2.1/3</a></div>
-<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-<A NAME="I5932"></A>This subclause also defines a place in the program 
-text where the profile of each declared callable entity becomes <I>frozen</I>. 
-A use of a callable entity causes freezing of its profile in some contexts, 
-as described below. At the place where the profile of a callable entity 
-becomes frozen, the entity itself becomes frozen.</div>
-<div class="paranum"><a name="p3">3/4</a></div>
+<div class="Normal">&nbsp;&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
+<span class="insert3"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
+<span class="insert3"><A NAME="I6088"></A>This subclause also defines 
+a place in the program text where the profile of each declared callable 
+entity becomes <I>frozen</I>. A use of a callable entity causes freezing 
+of its profile in some contexts, as described below. At the place where 
+the profile of a callable entity becomes frozen, the entity itself becomes 
+frozen.</span></div>
+<div class="paranum"><a name="p3">3/3</a></div>
 <div class="Normal">{<I><A HREF="defect1.html#8652/0014">8652/0014</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0017-1.TXT">AI05-0017-1</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0103-1.TXT">AI12-0103-1</A></I>} 
-<A NAME="I5933"></A>The end of a <SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN>, 
-<SPAN Class="swiss"><A HREF="aa-9-4.html#S0215">protected_body</A></SPAN>, 
+<A NAME="I6089"></A>The end of a <SPAN Class="swiss"><A HREF="AA-3-11.html#S0086">declarative_part</A></SPAN>, 
+<SPAN Class="swiss"><A HREF="AA-9-4.html#S0215">protected_body</A></SPAN>, 
 or a declaration of a library package or generic library package, causes 
-<I>freezing</I> of each entity and profile declared within it, except 
-for incomplete types. <A NAME="I5934"></A>A <SPAN Class="swiss"><A HREF="aa-3-11.html#S0090">proper_body</A></SPAN>, 
-<SPAN Class="swiss"><A HREF="aa-10-1-3.html#S0258">body_stub</A></SPAN>, 
-or <SPAN Class="swiss"><A HREF="aa-9-5-2.html#S0221">entry_body</A></SPAN> 
-causes freezing of each entity and profile declared before it within 
-the same <SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN> 
-that is not an incomplete type; it only causes freezing of an incomplete 
-type if the body is within the immediate scope of the incomplete type. 
+<I>freezing</I> of each entity <span class="insert3">and profile&nbsp;</span>declared 
+within it, except for incomplete types. <A NAME="I6090"></A>A noninstance 
+body<span class="insert1">&nbsp;other than a renames-as-body</span> causes 
+freezing of each entity <span class="insert3">and profile&nbsp;</span>declared 
+before it within the same <SPAN Class="swiss"><A HREF="AA-3-11.html#S0086">declarative_part</A></SPAN><span class="insert3">&nbsp;that is not an incomplete type; it only causes freezing of an incomplete 
+type if the body is within the immediate scope of the incomplete type</span>. 
 </div>
 <div class="paranum"><a name="p3.a">3.a</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>This is worded carefully 
 to handle nested packages and private types. Entities declared in a nested 
-<SPAN Class="swiss"><A HREF="aa-7-1.html#S0191">package_specification</A></SPAN> 
+<SPAN Class="swiss"><A HREF="AA-7-1.html#S0191">package_specification</A></SPAN> 
 will be frozen by some containing construct.</div>
 <div class="paranum"><a name="p3.b">3.b/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0017-1.TXT">AI05-0017-1</A></I>} 
-An incomplete type declared in the private part of a library <SPAN Class="swiss"><A HREF="aa-7-1.html#S0191">package_specification</A></SPAN> 
-can be completed in the body. For other incomplete types (and in the 
-bodies of library packages), the completion of the type will be frozen 
-at the end of the package or <SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN>, 
-and that will freeze the incomplete view as well.</div>
+An incomplete type declared in the private part of a library <SPAN Class="swiss"><A HREF="AA-7-1.html#S0191">package_specification</A></SPAN> 
+can be completed in the body.<span class="insert3">&nbsp;For other incomplete 
+types (and in the bodies of library packages), the completion of the 
+type will be frozen at the end of the package or <SPAN Class="swiss"><A HREF="AA-3-11.html#S0086">declarative_part</A></SPAN>, 
+and that will freeze the incomplete view as well.</span></div>
 <div class="paranum"><a name="p3.b.1">3.b.1/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0017-1.TXT">AI05-0017-1</A></I>} 
-The reason we have to worry about freezing of incomplete types is to 
-prevent premature uses of the types in dispatching calls. Such uses may 
-need access to the tag of the type, and the type has to be frozen to 
-know where the tag is stored.&nbsp;</div>
+<span class="insert3">The reason we have to worry about freezing of incomplete 
+types is to prevent premature uses of the types in dispatching calls. 
+Such uses may need access to the tag of the type, and the type has to 
+be frozen to know where the tag is stored.</span>&nbsp;</div>
 <div class="paranum"><a name="p3.c">3.c/3</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
 The part about bodies does not say <I>immediately</I> within. A renaming-as-body 
-does not have this property. Nor does an imported body&nbsp;</div>
+does not have this property. Nor does <span class="insert3">an imported 
+body</span><span class="delete3">&nbsp;a <SPAN Class="swiss"><A HREF="AA-2-8.html#S0019">pragma</A></SPAN> 
+Import.</span>&nbsp;</div>
 <div class="paranum"><a name="p3.d">3.d</a></div>
 <div class="Annotations"><B>Reason:&nbsp;</B>The reason bodies cause freezing 
-is because we want <SPAN Class="swiss">proper_bodies</SPAN> and <SPAN Class="swiss"><A HREF="aa-10-1-3.html#S0258">body_stub</A></SPAN>s 
-to be interchangeable &mdash; one should be able to move a <SPAN Class="swiss"><A HREF="aa-3-11.html#S0090">proper_body</A></SPAN> 
-to a <SPAN Class="swiss"><A HREF="aa-10-1-3.html#S0263">subunit</A></SPAN>, 
+is because we want <SPAN Class="swiss">proper_bodies</SPAN> and <SPAN Class="swiss"><A HREF="AA-10-1-3.html#S0258">body_stub</A></SPAN>s 
+to be interchangeable &mdash; one should be able to move a <SPAN Class="swiss"><A HREF="AA-3-11.html#S0090">proper_body</A></SPAN> 
+to a <SPAN Class="swiss"><A HREF="AA-10-1-3.html#S0263">subunit</A></SPAN>, 
 and vice-versa, without changing the semantics. Clearly, anything that 
-should cause freezing should do so even if it's inside a <SPAN Class="swiss"><A HREF="aa-3-11.html#S0090">proper_body</A></SPAN>. 
-However, if we make it a <SPAN Class="swiss"><A HREF="aa-10-1-3.html#S0258">body_stub</A></SPAN>, 
+should cause freezing should do so even if it's inside a <SPAN Class="swiss"><A HREF="AA-3-11.html#S0090">proper_body</A></SPAN>. 
+However, if we make it a <SPAN Class="swiss"><A HREF="AA-10-1-3.html#S0258">body_stub</A></SPAN>, 
 then the compiler can't see that thing that should cause freezing. So 
-we make <SPAN Class="swiss"><A HREF="aa-10-1-3.html#S0258">body_stub</A></SPAN>s 
+we make <SPAN Class="swiss"><A HREF="AA-10-1-3.html#S0258">body_stub</A></SPAN>s 
 cause freezing, just in case they contain something that should cause 
 freezing. But that means we need to do the same for <SPAN Class="swiss">proper_bodies</SPAN>.</div>
 <div class="paranum"><a name="p3.e">3.e</a></div>
 <div class="Annotations">Another reason for bodies to cause freezing, 
 there could be an added implementation burden if an entity declared in 
-an enclosing <SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN> 
+an enclosing <SPAN Class="swiss"><A HREF="AA-3-11.html#S0086">declarative_part</A></SPAN> 
 is frozen within a nested body, since some compilers look at bodies after 
-looking at the containing <SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN>.</div>
-<div class="paranum"><a name="p3.f">3.f/4</a></div>
+looking at the containing <SPAN Class="swiss"><A HREF="AA-3-11.html#S0086">declarative_part</A></SPAN>.</div>
+<div class="paranum"><a name="p3.f">3.f/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0103-1.TXT">AI12-0103-1</A></I>} 
-Note that <SPAN Class="swiss"><A HREF="aa-6-7.html#S0188">null_procedure_declaration</A></SPAN>s 
-and <SPAN Class="swiss"><A HREF="aa-6-8.html#S0189">expression_function_declaration</A></SPAN>s 
-(even when those are used as completions), as well as <SPAN Class="swiss"><A HREF="aa-12-3.html#S0276">generic_instantiation</A></SPAN>s 
-and renames-as-bodies do not necessarily cause freezing; each have their 
-own specific rules.&nbsp;</div>
-<div class="paranum"><a name="p3.g">3.g/4</a></div>
-<div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0103-1.TXT">AI12-0103-1</A></I>} 
-Note that the rule about proper bodies being freezing only applies in 
-<SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN>s. 
-All of the kinds of bodies (see <A HREF="aa-3-11-1.html">3.11.1</A> &ndash; 
-keep in mind the difference from <SPAN Class="swiss"><A HREF="aa-3-11.html#S0089">body</A></SPAN>s) 
-that are allowed in a package specification have their own freezing rules, 
-so they don't need to be covered by the above rule.&nbsp;</div>
+<span class="insert3">Note that &ldquo;body&rdquo; includes <SPAN Class="swiss"><A HREF="AA-6-7.html#S0188">null_procedure_declaration</A></SPAN>s 
+and <SPAN Class="swiss"><A HREF="AA-6-8.html#S0189">expression_function_declaration</A></SPAN>s 
+when those are used as completions, as well as <SPAN Class="swiss"><A HREF="AA-9-5-2.html#S0221">entry_body</A></SPAN>s 
+(see <A HREF="AA-3-11-1.html">3.11.1</A>). These all cause freezing, 
+along with <SPAN Class="swiss"><A HREF="AA-3-11.html#S0090">proper_body</A></SPAN>s 
+and <SPAN Class="swiss"><A HREF="AA-10-1-3.html#S0258">body_stub</A></SPAN>s.</span></div>
 <div class="paranum"><a name="p4">4/1</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
-<A NAME="I5935"></A>A construct that (explicitly or implicitly) references 
+<A NAME="I6091"></A>A construct that (explicitly or implicitly) references 
 an entity can cause the <I>freezing</I> of the entity, as defined by 
-subsequent paragraphs. <A NAME="I5936"></A>At the place where a construct 
-causes freezing, each <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN>, 
-<SPAN Class="swiss"><A HREF="aa-4-4.html#S0117">expression</A></SPAN>, 
-<SPAN Class="swiss"><A HREF="aa-4-1.html#S0095">implicit_dereference</A></SPAN>[, 
-or <SPAN Class="swiss"><A HREF="aa-3-5.html#S0037">range</A></SPAN>] 
+subsequent paragraphs. <A NAME="I6092"></A>At the place where a construct 
+causes freezing, each <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN>, 
+<span class="insert1"><SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN>, 
+<SPAN Class="swiss"><A HREF="AA-4-1.html#S0095">implicit_dereference</A></SPAN></span><span class="delete1">&nbsp;expression</span>[, 
+or <SPAN Class="swiss"><A HREF="AA-3-5.html#S0037">range</A></SPAN>] 
 within the construct causes freezing:&nbsp;</div>
 <div class="paranum"><a name="p4.a">4.a</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>Note that in the sense 
-of this paragraph, a <SPAN Class="swiss"><A HREF="aa-3-2-2.html#S0028">subtype_mark</A></SPAN> 
+of this paragraph, a <SPAN Class="swiss"><A HREF="AA-3-2-2.html#S0028">subtype_mark</A></SPAN> 
 &ldquo;references&rdquo; the denoted subtype, but not the type.&nbsp;</div>
 <div class="paranum"><a name="p5">5/3</a></div>
 <div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0213-1.TXT">AI05-0213-1</A></I>} 
-<A NAME="I5937"></A>The occurrence of a <SPAN Class="swiss"><A HREF="aa-12-3.html#S0276">generic_instantiation</A></SPAN> 
-causes freezing, except that a <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> 
+<A NAME="I6093"></A>The occurrence of a <SPAN Class="swiss"><A HREF="AA-12-3.html#S0275">generic_instantiation</A></SPAN> 
+causes freezing<span class="insert3">, except that a <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN> 
 which is a generic actual parameter whose corresponding generic formal 
-parameter is a formal incomplete type (see <A HREF="aa-12-5-1.html">12.5.1</A>) 
-does not cause freezing. In addition, if a parameter of the instantiation 
-is defaulted, the <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN> 
-or <SPAN Class="swiss"><A HREF="aa-12-6.html#S0300">default_name</A></SPAN> 
+parameter is a formal incomplete type (see <A HREF="AA-12-5-1.html">12.5.1</A>) 
+does not cause freezing. In addition, if</span><span class="delete3">; 
+also, if</span> a parameter of the instantiation is defaulted, the <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN> 
+or <SPAN Class="swiss"><A HREF="AA-12-6.html#S0299">default_name</A></SPAN> 
 for that parameter causes freezing.</div>
 <div class="paranum"><a name="p5.a">5.a/3</a></div>
-<div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0213-1.TXT">AI05-0213-1</A></I>} 
-Thus, an actual parameter corresponding to a formal incomplete type parameter 
-may denote an incomplete or private type which is not completely defined 
-at the point of the <SPAN Class="swiss"><A HREF="aa-12-3.html#S0276">generic_instantiation</A></SPAN>. 
+<div class="Annotations"><span class="insert3"><B>Ramification:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0213-1.TXT">AI05-0213-1</A></I>} 
+<span class="insert3">Thus, an actual parameter corresponding to a formal 
+incomplete type parameter may denote an incomplete or private type which 
+is not completely defined at the point of the <SPAN Class="swiss"><A HREF="AA-12-3.html#S0275">generic_instantiation</A></SPAN>.</span> 
 </div>
-<div class="paranum"><a name="p5.1">5.1/4</a></div>
-<div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0103-1.TXT">AI12-0103-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0157-1.TXT">AI12-0157-1</A></I>} 
-At the occurrence of an <SPAN Class="swiss"><A HREF="aa-6-8.html#S0189">expression_function_declaration</A></SPAN> 
-that is a completion, the return expression of the expression function 
-causes freezing.</div>
-<div class="paranum"><a name="p5.b">5.b/4</a></div>
-<div class="Annotations"><B>Reason:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0103-1.TXT">AI12-0103-1</A></I>} 
-This rule prevents calls through access values to an expression that 
-might have unfrozen parts. Typically, elaboration checks and other freezing 
-rules prevent this, but in this case the completion is elaborated and 
-since this is not a <SPAN Class="swiss"><A HREF="aa-3-11.html#S0089">body</A></SPAN> 
-it does not by itself freeze anything that precedes it.&nbsp;</div>
-<div class="paranum"><a name="p5.2">5.2/4</a></div>
-<div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0132-1.TXT">AI12-0132-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0157-1.TXT">AI12-0157-1</A></I>} 
-At the occurrence of a renames-as-body whose <I>callable_entity_</I><SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> 
-denotes an expression function, the return expression of the expression 
-function causes freezing.</div>
 <div class="paranum"><a name="p6">6</a></div>
-<div class="Bulleted"><A NAME="I5938"></A>The occurrence of an <SPAN Class="swiss"><A HREF="aa-3-3-1.html#S0032">object_declaration</A></SPAN> 
+<div class="Bulleted"><A NAME="I6094"></A>The occurrence of an <SPAN Class="swiss"><A HREF="AA-3-3-1.html#S0032">object_declaration</A></SPAN> 
 that has no corresponding completion causes freezing.&nbsp;</div>
 <div class="paranum"><a name="p6.a">6.a</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>Note that this does not 
-include a <SPAN Class="swiss"><A HREF="aa-12-4.html#S0280">formal_object_declaration</A></SPAN>. 
+include a <SPAN Class="swiss"><A HREF="AA-12-4.html#S0279">formal_object_declaration</A></SPAN>. 
 </div>
 <div class="paranum"><a name="p7">7</a></div>
-<div class="Bulleted"><A NAME="I5939"></A>The declaration of a record 
+<div class="Bulleted"><A NAME="I6095"></A>The declaration of a record 
 extension causes freezing of the parent subtype.&nbsp;</div>
 <div class="paranum"><a name="p7.a">7.a</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>This combined with another 
@@ -343,72 +319,77 @@ of its dispatching operations.</div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00251.TXT">AI95-00251-01</A></I>} 
 The declaration of a private extension does not cause freezing. The freezing 
 is deferred until the full type declaration, which will necessarily be 
-for a record extension, task, or protected type (the latter only for 
-a limited private extension derived from an interface).&nbsp;</div>
+for a record extension<span class="insert2">, task, or protected type 
+(the latter only for a limited private extension derived from an interface)</span>. 
+</div>
 <div class="paranum"><a name="p7.1">7.1/2</a></div>
 <div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00251.TXT">AI95-00251-01</A></I>} 
-The declaration of a record extension, interface type, task unit, or 
-protected unit causes freezing of any progenitor types specified in the 
-declaration.&nbsp;</div>
+<span class="insert2">The declaration of a record extension, interface 
+type, task unit, or protected unit causes freezing of any progenitor 
+types specified in the declaration.</span>&nbsp;</div>
 <div class="paranum"><a name="p7.b.1">7.b.1/2</a></div>
-<div class="Annotations"><B>Reason:&nbsp;</B>This rule has the same purpose 
-as the one above: ensuring that all descendants of an interface tagged 
-type implement all of its dispatching operations. As with the previous 
-rule, a private extension does not freeze its progenitors; the full type 
-declaration (which must have the same progenitors) will do that.&nbsp;</div>
+<div class="Annotations"><span class="insert2"><B>Reason:&nbsp;</B>This rule 
+has the same purpose as the one above: ensuring that all descendants 
+of an interface tagged type implement all of its dispatching operations. 
+As with the previous rule, a private extension does not freeze its progenitors; 
+the full type declaration (which must have the same progenitors) will 
+do that.</span>&nbsp;</div>
 <div class="paranum"><a name="p7.b.2">7.b.2/2</a></div>
-<div class="Annotations"><B>Ramification:&nbsp;</B>An interface type can be 
-a parent as well as a progenitor; these rules are similar so that the 
-location of an interface in a record extension does not have an effect 
-on the freezing of the interface type.&nbsp;</div>
+<div class="Annotations"><span class="insert2"><B>Ramification:&nbsp;</B>An 
+interface type can be a parent as well as a progenitor; these rules are 
+similar so that the location of an interface in a record extension does 
+not have an effect on the freezing of the interface type.</span>&nbsp;</div>
 <div class="paranum"><a name="p7.2">7.2/3</a></div>
 <div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0183-1.TXT">AI05-0183-1</A></I>} 
-At the freezing point of the entity associated with an <SPAN Class="swiss"><A HREF="aa-13-1-1.html#S0307">aspect_specification</A></SPAN>, 
-any <SPAN Class="swiss"><A HREF="aa-4-4.html#S0117">expression</A></SPAN>s 
-or <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN>s within 
-the <SPAN Class="swiss"><A HREF="aa-13-1-1.html#S0307">aspect_specification</A></SPAN> 
-cause freezing. Any static expressions within an <SPAN Class="swiss"><A HREF="aa-13-1-1.html#S0307">aspect_specification</A></SPAN> 
+<span class="insert3">At the freezing point of the entity associated 
+with an <SPAN Class="swiss"><A HREF="AA-13-1-1.html#S0306">aspect_specification</A></SPAN>, 
+any <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN>s 
+or <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN>s within 
+the <SPAN Class="swiss"><A HREF="AA-13-1-1.html#S0306">aspect_specification</A></SPAN> 
+cause freezing. Any static expressions within an <SPAN Class="swiss"><A HREF="AA-13-1-1.html#S0306">aspect_specification</A></SPAN> 
 also cause freezing at the end of the immediately enclosing declaration 
-list.&nbsp;</div>
-<div class="paranum"><a name="p8">8/4</a></div>
+list.</span>&nbsp;</div>
+<div class="paranum"><a name="p8">8/3</a></div>
 <div class="Normal">{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0183-1.TXT">AI05-0183-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0157-1.TXT">AI05-0157-1</A></I>} 
-<A NAME="I5940"></A>A static expression (other than within an <SPAN Class="swiss"><A HREF="aa-13-1-1.html#S0307">aspect_specification</A></SPAN>) 
-causes freezing where it occurs. <A NAME="I5941"></A>An object name or 
-nonstatic expression causes freezing where it occurs, unless the name 
-or expression is part of a <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN>, 
-a <SPAN Class="swiss"><A HREF="aa-12-6.html#S0300">default_name</A></SPAN>, 
-the return expression of an expression function, an <SPAN Class="swiss"><A HREF="aa-13-1-1.html#S0307">aspect_specification</A></SPAN>, 
-or a per-object expression of a component's <SPAN Class="swiss"><A HREF="aa-3-2-2.html#S0029">constraint</A></SPAN>, 
-in which case, the freezing occurs later as part of another construct 
-or at the freezing point of an associated entity.</div>
+<A NAME="I6096"></A>A static expression <span class="insert3">(other 
+than within an <SPAN Class="swiss"><A HREF="AA-13-1-1.html#S0306">aspect_specification</A></SPAN>) 
+</span>causes freezing where it occurs. <span class="insert1"><A NAME="I6097"></A>An 
+object name or</span><span class="delete1">&nbsp;A</span> nonstatic expression 
+causes freezing where it occurs, unless the <span class="insert1">name 
+or&nbsp;</span>expression is part of a <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN>, 
+a <SPAN Class="swiss"><A HREF="AA-12-6.html#S0299">default_name</A></SPAN>, 
+<span class="insert3">the <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN> 
+of an expression function, an <SPAN Class="swiss"><A HREF="AA-13-1-1.html#S0306">aspect_specification</A></SPAN>, 
+</span>or a per-object expression of a component's <SPAN Class="swiss"><A HREF="AA-3-2-2.html#S0029">constraint</A></SPAN>, 
+in which case, the freezing occurs later as part of another construct<span class="insert3">&nbsp;or at the freezing point of an associated entity</span>.</div>
 <div class="paranum"><a name="p8.1">8.1/3</a></div>
-<div class="Normal">&nbsp;{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-<A NAME="I5942"></A>An implicit call freezes the same entities and profiles 
-that would be frozen by an explicit call. This is true even if the implicit 
-call is removed via implementation permissions.</div>
+<div class="Normal">&nbsp;&nbsp;{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
+<span class="insert1"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
+<span class="insert1"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
+<span class="insert1"><A NAME="I6098"></A>An implicit call freezes the 
+same entities&nbsp;</span><span class="insert3">and profiles&nbsp;</span><span class="insert1">that 
+would be frozen by an explicit call. This is true even if the implicit 
+call is removed via implementation permissions.</span></div>
 <div class="paranum"><a name="p8.2">8.2/1</a></div>
-<div class="Normal">&nbsp;{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
-<A NAME="I5943"></A>If an expression is implicitly converted to a type 
-or subtype <I>T</I>, then at the place where the expression causes freezing, 
-<I>T</I> is frozen.</div>
+<div class="Normal">&nbsp;&nbsp;{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
+<span class="insert1"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
+<span class="insert1"><A NAME="I6099"></A>If an expression is implicitly 
+converted to a type or subtype <I>T</I>, then at the place where the 
+expression causes freezing, <I>T</I> is frozen.</span></div>
 <div class="paranum"><a name="p9">9</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">The following rules 
 define which entities are frozen at the place where a construct causes 
 freezing:&nbsp;</div>
 <div class="paranum"><a name="p10">10</a></div>
-<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I5944"></A>At 
+<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I6100"></A>At 
 the place where an expression causes freezing, the type of the expression 
 is frozen, unless the expression is an enumeration literal used as a 
-<SPAN Class="swiss"><A HREF="aa-3-8-1.html#S0074">discrete_choice</A></SPAN> 
-of the <SPAN Class="swiss"><A HREF="aa-4-3-3.html#S0113">array_aggregate</A></SPAN> 
-of an <SPAN Class="swiss"><A HREF="aa-13-4.html#S0311">enumeration_representation_clause</A></SPAN>. 
+<SPAN Class="swiss"><A HREF="AA-3-8-1.html#S0074">discrete_choice</A></SPAN> 
+of the <SPAN Class="swiss"><A HREF="AA-4-3-3.html#S0113">array_aggregate</A></SPAN> 
+of an <SPAN Class="swiss"><A HREF="AA-13-4.html#S0310">enumeration_representation_clause</A></SPAN>. 
 </div>
 <div class="paranum"><a name="p10.a">10.a</a></div>
 <div class="Annotations"><B>Reason:&nbsp;</B>We considered making enumeration 
@@ -445,120 +426,121 @@ is not completely defined at that point, violating the rule that a type
 shall be completely defined before it is frozen. In Ada 83, on the other 
 hand, there is no occurrence of the name T, hence no forcing occurrence 
 of T.&nbsp;</div>
-<div class="paranum"><a name="p10.1">10.1/4</a></div>
+<div class="paranum"><a name="p10.1">10.1/3</a></div>
 <div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0157-1.TXT">AI12-0157-1</A></I>} 
-<A NAME="I5945"></A><A NAME="I5946"></A>At the place where a function 
-call causes freezing, the profile of the function is frozen. Furthermore, 
-if a parameter of the call is defaulted, the <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN> 
+<span class="insert3"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
+<span class="insert3"><A NAME="I6101"></A><A NAME="I6102"></A>At the 
+place where a function call causes freezing, the profile of the function 
+is frozen. Furthermore, if a parameter of the call is defaulted, the 
+<SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN> 
 for that parameter causes freezing. If the function call is to an expression 
-function, the return expression of the expression function causes freezing.</div>
+function, the <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN> 
+of the expression function causes freezing.</span></div>
 <div class="paranum"><a name="p10.e">10.e/3</a></div>
-<div class="Annotations"><B>Reason:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-This is the important rule for profile freezing: a call freezes the profile. 
-That's because generating the call will need to know how the parameters 
-are passed, and that will require knowing details of the types. Other 
-uses of subprograms do not need to know about the parameters, and thus 
-only freeze the subprogram, and not the profile.</div>
+<div class="Annotations"><span class="insert3"><B>Reason:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
+<span class="insert3">This is the important rule for profile freezing: 
+a call freezes the profile. That's because generating the call will need 
+to know how the parameters are passed, and that will require knowing 
+details of the types. Other uses of subprograms do not need to know about 
+the parameters, and thus only freeze the subprogram, and not the profile.</span></div>
 <div class="paranum"><a name="p10.f">10.f/3</a></div>
-<div class="Annotations">Note that we don't need to consider procedure 
-or entry calls, since a body freezes everything that precedes it, and 
-the end of a declarative part freezes everything in the declarative part. 
-</div>
-<div class="paranum"><a name="p10.g">10.g/4</a></div>
-<div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0103-1.TXT">AI12-0103-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0157-1.TXT">AI12-0157-1</A></I>} 
-Freezing of the return expression of an expression function only needs 
-to be considered when the expression function is in the same compilation 
-unit and there are no intervening <SPAN Class="swiss"><A HREF="aa-3-11.html#S0089">body</A></SPAN>s; 
-the end of a <SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN> 
-or library package freezes everything in it, and a <SPAN Class="swiss"><A HREF="aa-3-11.html#S0089">body</A></SPAN> 
-freezes everything declared before it.&nbsp;</div>
-<div class="paranum"><a name="p10.2">10.2/4</a></div>
+<div class="Annotations"><span class="insert3">Note that we don't need 
+to consider procedure or entry calls, since a body freezes everything 
+that precedes it, and the end of a declarative part freezes everything 
+in the declarative part.</span>&nbsp;</div>
+<div class="paranum"><a name="p10.g">10.g/3</a></div>
+<div class="Annotations"><span class="insert3"><B>Ramification:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
+<span class="insert3">Freezing of the <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN> 
+of an expression function only needs to be considered when the expression 
+function is in the same compilation unit and there are no intervening 
+bodies; the end of a declarative_part or library package freezes everything 
+in it, and a body freezes everything declared before it.</span>&nbsp;</div>
+<div class="paranum"><a name="p10.2">10.2/3</a></div>
 <div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0296-1.TXT">AI05-0296-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0157-1.TXT">AI12-0157-1</A></I>} 
-<A NAME="I5947"></A><A NAME="I5948"></A>At the place where a <SPAN Class="swiss"><A HREF="aa-12-3.html#S0276">generic_instantiation</A></SPAN> 
+<span class="insert3"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
+<span class="insert3"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0296-1.TXT">AI05-0296-1</A></I>} 
+<span class="insert3"><A NAME="I6103"></A><A NAME="I6104"></A>At the 
+place where a <SPAN Class="swiss"><A HREF="AA-12-3.html#S0275">generic_instantiation</A></SPAN> 
 causes freezing of a callable entity, the profile of that entity is frozen 
 unless the formal subprogram corresponding to the callable entity has 
 a parameter or result of a formal untagged incomplete type; if the callable 
-entity is an expression function, the return expression of the expression 
-function causes freezing.</div>
+entity is an expression function, the <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN> 
+of the expression function causes freezing.</span></div>
 <div class="paranum"><a name="p10.h">10.h/3</a></div>
-<div class="Annotations"><B>Reason:&nbsp;</B>Elaboration of the generic might 
-call the actual for one of its formal subprograms, so we need to know 
-the profile and (for an expression function) <SPAN Class="swiss"><A HREF="aa-4-4.html#S0117">expression</A></SPAN>. 
+<div class="Annotations"><span class="insert3"><B>Reason:&nbsp;</B>Elaboration 
+of the generic might call the actual for one of its formal subprograms, 
+so we need to know the profile and (for an expression function) <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN>.</span> 
 </div>
-<div class="paranum"><a name="p10.3">10.3/4</a></div>
+<div class="paranum"><a name="p10.3">10.3/3</a></div>
 <div class="Bulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0157-1.TXT">AI12-0157-1</A></I>} 
-<A NAME="I5949"></A>At the place where a use of the Access or Unchecked_Access 
-attribute whose <SPAN Class="swiss"><A HREF="aa-4-1.html#S0093">prefix</A></SPAN> 
-denotes an expression function causes freezing, the return expression 
-of the expression function causes freezing.</div>
+<span class="insert3"><A NAME="I6105"></A>At the place where a use of 
+the Access or Unchecked_Access attribute whose <SPAN Class="swiss"><A HREF="AA-4-1.html#S0093">prefix</A></SPAN> 
+denotes an expression function causes freezing, the <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN> 
+of the expression function causes freezing.</span></div>
 <div class="paranum"><a name="p10.i">10.i/3</a></div>
-<div class="Annotations" style="margin-bottom: 0.4em"><B>Reason:&nbsp;</B>This 
-is needed to avoid calls to unfrozen expressions. Consider:&nbsp;</div>
+<div class="Annotations" style="margin-bottom: 0.4em"><span class="insert3"><B>Reason: 
+</B>This is needed to avoid calls to unfrozen expressions. Consider:</span> 
+</div>
 <div class="paranum"><a name="p10.j">10.j/3</a></div>
-<div class="SmallExamples"><B>package</B>&nbsp;Pack&nbsp;<B>is</B></div>
+<div class="SmallExamples"><span class="insert3"><B>package</B>&nbsp;Pack&nbsp;<B>is</B></span></div>
 <div class="paranum"><a name="p10.k">10.k/3</a></div>
-<div class="SmallExamples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;Flub&nbsp;<B>is&nbsp;range</B>&nbsp;0&nbsp;..&nbsp;100;</div>
+<div class="SmallExamples"><span class="insert3">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;Flub&nbsp;<B>is&nbsp;range</B>&nbsp;0&nbsp;..&nbsp;100;</span></div>
 <div class="paranum"><a name="p10.l">10.l/3</a></div>
-<div class="SmallExamples">&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;Foo&nbsp;(A&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)&nbsp;<B>return</B>&nbsp;Natural&nbsp;<B>is</B><BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A&nbsp;+&nbsp;Flub'Size);&nbsp;--&nbsp;<SPAN Class="roman"><I>The&nbsp;expression&nbsp;is&nbsp;not&nbsp;frozen&nbsp;here.</I></SPAN></div>
-<div class="paranum"><a name="p10.m">10.m/4</a></div>
-<div class="SmallExamples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0005-1.TXT">AI12-0005-1</A></I>} 
-&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;Bar&nbsp;<B>is&nbsp;access&nbsp;function</B>&nbsp;(A&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)&nbsp;<B>return</B>&nbsp;Natural;</div>
+<div class="SmallExamples"><span class="insert3">&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;Foo&nbsp;(A&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)&nbsp;<B>return</B>&nbsp;Natural&nbsp;<B>is</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A&nbsp;+&nbsp;Flub'Size);&nbsp;--&nbsp;<SPAN Class="roman"><I>The&nbsp;expression&nbsp;is&nbsp;not&nbsp;frozen&nbsp;here.</I></SPAN></span></div>
+<div class="paranum"><a name="p10.m">10.m/3</a></div>
+<div class="SmallExamples"><span class="insert3">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;Bar&nbsp;<B>is&nbsp;access&nbsp;function</B>&nbsp;Foo&nbsp;(A&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)&nbsp;<B>return</B>&nbsp;Natural;</span></div>
 <div class="paranum"><a name="p10.n">10.n/3</a></div>
-<div class="SmallExamples">&nbsp;&nbsp;&nbsp;P&nbsp;:&nbsp;Bar&nbsp;:=&nbsp;Foo'Access;&nbsp;--&nbsp;<SPAN Class="roman"><I>(A)</I></SPAN></div>
+<div class="SmallExamples"><span class="insert3">&nbsp;&nbsp;&nbsp;P&nbsp;:&nbsp;Bar&nbsp;:=&nbsp;Foo'Access;&nbsp;--&nbsp;<SPAN Class="roman"><I>(A)</I></SPAN></span></div>
 <div class="paranum"><a name="p10.o">10.o/3</a></div>
-<div class="SmallExamples">&nbsp;&nbsp;&nbsp;Val&nbsp;:&nbsp;Natural&nbsp;:=&nbsp;P.<B>all</B>(5);&nbsp;--&nbsp;<SPAN Class="roman"><I>(B)</I></SPAN></div>
+<div class="SmallExamples"><span class="insert3">&nbsp;&nbsp;&nbsp;Val&nbsp;:&nbsp;Natural&nbsp;:=&nbsp;P.<B>all</B>(5);&nbsp;--&nbsp;<SPAN Class="roman"><I>(B)</I></SPAN></span></div>
 <div class="paranum"><a name="p10.p">10.p/3</a></div>
-<div class="SmallExamples"><B>end</B>&nbsp;Pack;</div>
+<div class="SmallExamples"><span class="insert3">end&nbsp;Pack;</span></div>
 <div class="paranum"><a name="p10.q">10.q/3</a></div>
-<div class="Annotations">If point (A) did not freeze the expression of 
-Foo (which freezes Flub), then the call at point (B) would be depending 
-on the aspects of the unfrozen type Flub. That would be bad.&nbsp;</div>
+<div class="Annotations"><span class="insert3">If point (A) did not freeze 
+the expression of Foo (which freezes Flub), then the call at point (B) 
+would be depending on the aspects of the unfrozen type Flub. That would 
+be bad.</span>&nbsp;</div>
 <div class="paranum"><a name="p11">11</a></div>
-<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I5950"></A>At 
-the place where a <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> 
-causes freezing, the entity denoted by the <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> 
-is frozen, unless the <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> 
-is a <SPAN Class="swiss"><A HREF="aa-4-1.html#S0093">prefix</A></SPAN> 
-of an expanded name; <A NAME="I5951"></A>at the place where an object 
-<SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> causes 
-freezing, the nominal subtype associated with the <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> 
+<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I6106"></A>At 
+the place where a <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN> 
+causes freezing, the entity denoted by the <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN> 
+is frozen, unless the <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN> 
+is a <SPAN Class="swiss"><A HREF="AA-4-1.html#S0093">prefix</A></SPAN> 
+of an expanded name; <A NAME="I6107"></A>at the place where an object 
+<SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN> causes 
+freezing, the nominal subtype associated with the <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN> 
 is frozen.&nbsp;</div>
 <div class="paranum"><a name="p11.a">11.a/2</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
 This only matters in the presence of deferred constants or access types; 
-an <SPAN Class="swiss"><A HREF="aa-3-3-1.html#S0032">object_declaration</A></SPAN> 
-other than a deferred constant declaration causes freezing of the nominal 
-subtype, plus all component junk.</div>
+an <SPAN Class="swiss"><A HREF="AA-3-3-1.html#S0032">object_declaration</A></SPAN> 
+other than a <span class="insert2">deferred constant declaration</span><span class="delete2"><SPAN Class="swiss">&nbsp;deferred_constant_declaration</SPAN></span> 
+causes freezing of the nominal subtype, plus all component junk.</div>
 <div class="paranum"><a name="p11.b">11.b/1</a></div>
 <div class="Annotations"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN>{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
+was deleted.</I></SPAN><span class="delete1"></span>{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
+<span class="delete1"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
+<span class="delete1"><SPAN Class="swiss"><A HREF="AA-4-1.html#S0095">Implicit_dereference</A></SPAN>s 
+are covered by <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN>.</span> 
 </div>
 <div class="paranum"><a name="p11.1">11.1/1</a></div>
 <div class="Bulleted" style="margin-bottom: 0.3em">{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
-<A NAME="I5952"></A>At the place where an <SPAN Class="swiss"><A HREF="aa-4-1.html#S0095">implicit_dereference</A></SPAN> 
-causes freezing, the nominal subtype associated with the <SPAN Class="swiss"><A HREF="aa-4-1.html#S0095">implicit_dereference</A></SPAN> 
-is frozen.</div>
+<span class="insert1"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
+<span class="insert1"><A NAME="I6108"></A>At the place where an <SPAN Class="swiss"><A HREF="AA-4-1.html#S0095">implicit_dereference</A></SPAN> 
+causes freezing, the nominal subtype associated with the <SPAN Class="swiss"><A HREF="AA-4-1.html#S0095">implicit_dereference</A></SPAN> 
+is frozen.</span></div>
 <div class="paranum"><a name="p11.c">11.c/2</a></div>
-<div class="Annotations"><B>Discussion:&nbsp;</B>This rule ensures that X.D 
-freezes the same entities that X.<B>all</B>.D does. Note that an <SPAN Class="swiss"><A HREF="aa-4-1.html#S0095">implicit_dereference</A></SPAN> 
-is neither a <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN> 
-nor <SPAN Class="swiss"><A HREF="aa-4-4.html#S0117">expression</A></SPAN> 
-by itself, so it isn't covered by other rules.&nbsp;</div>
+<div class="Annotations"><span class="insert2"><B>Discussion:&nbsp;</B>This 
+rule ensures that X.D freezes the same entities that X.<B>all</B>.D does. 
+Note that an <SPAN Class="swiss"><A HREF="AA-4-1.html#S0095">implicit_dereference</A></SPAN> 
+is neither a <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN> 
+nor <SPAN Class="swiss"><A HREF="AA-4-4.html#S0117">expression</A></SPAN> 
+by itself, so it isn't covered by other rules.</span>&nbsp;</div>
 <div class="paranum"><a name="p12">12</a></div>
-<div class="Bulleted" style="margin-bottom: 0.3em">[<A NAME="I5953"></A> 
-At the place where a <SPAN Class="swiss"><A HREF="aa-3-5.html#S0037">range</A></SPAN> 
-causes freezing, the type of the <SPAN Class="swiss"><A HREF="aa-3-5.html#S0037">range</A></SPAN> 
+<div class="Bulleted" style="margin-bottom: 0.3em">[<A NAME="I6109"></A> 
+At the place where a <SPAN Class="swiss"><A HREF="AA-3-5.html#S0037">range</A></SPAN> 
+causes freezing, the type of the <SPAN Class="swiss"><A HREF="AA-3-5.html#S0037">range</A></SPAN> 
 is frozen.]&nbsp;</div>
 <div class="paranum"><a name="p12.a">12.a</a></div>
 <div class="Annotations"><B>Proof:&nbsp;</B>This is consequence of the facts 
@@ -566,13 +548,13 @@ that expressions freeze their type, and the Range attribute is defined
 to be equivalent to a pair of expressions separated by &ldquo;..&rdquo;.} 
 </div>
 <div class="paranum"><a name="p13">13</a></div>
-<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I5954"></A>At 
-the place where an <SPAN Class="swiss"><A HREF="aa-4-8.html#S0143">allocator</A></SPAN> 
+<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I6110"></A>At 
+the place where an <SPAN Class="swiss"><A HREF="AA-4-8.html#S0143">allocator</A></SPAN> 
 causes freezing, the designated subtype of its type is frozen. If the 
-type of the <SPAN Class="swiss"><A HREF="aa-4-8.html#S0143">allocator</A></SPAN> 
+type of the <SPAN Class="swiss"><A HREF="AA-4-8.html#S0143">allocator</A></SPAN> 
 is a derived type, then all ancestor types are also frozen.&nbsp;</div>
 <div class="paranum"><a name="p13.a">13.a</a></div>
-<div class="Annotations"><B>Ramification:&nbsp;</B><SPAN Class="swiss"><A HREF="aa-4-8.html#S0143">Allocator</A></SPAN>s 
+<div class="Annotations"><B>Ramification:&nbsp;</B><SPAN Class="swiss"><A HREF="AA-4-8.html#S0143">Allocator</A></SPAN>s 
 also freeze the named subtype, as a consequence of other rules.</div>
 <div class="paranum"><a name="p13.b">13.b</a></div>
 <div class="Annotations" style="margin-bottom: 0.4em">The ancestor types 
@@ -593,19 +575,27 @@ are frozen to prevent things like this:&nbsp;</div>
 share their parent's pool.&nbsp;</div>
 <div class="paranum"><a name="p14">14/3</a></div>
 <div class="Bulleted" style="margin-bottom: 0.3em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-<A NAME="I5955"></A>At the place where a profile is frozen, each subtype 
-of the profile is frozen. If the corresponding callable entity is a member 
-of an entry family, the index subtype of the family is frozen.&nbsp;</div>
+<A NAME="I6111"></A>At the place where a <span class="insert3">profile</span><span class="delete3">&nbsp;callable 
+entity</span> is frozen, each subtype of <span class="insert3">the</span><span class="delete3">&nbsp;its</span> 
+profile is frozen. If the <span class="insert3">corresponding&nbsp;</span>callable 
+entity is a member of an entry family, the index subtype of the family 
+is frozen.<span class="delete3">&nbsp;<A NAME="I6112"></A>At the place where 
+a function call causes freezing, if a parameter of the call is defaulted, 
+the <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN> 
+for that parameter causes freezing.</span>&nbsp;</div>
 <div class="paranum"><a name="p14.a">14.a/3</a></div>
 <div class="Annotations"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN></div>
+was deleted.</I></SPAN><span class="delete3"><B>Discussion:&nbsp;</B>We don't 
+worry about freezing for procedure calls or entry calls, since a body 
+freezes everything that precedes it, and the end of a declarative part 
+freezes everything in the declarative part.</span>&nbsp;</div>
 <div class="paranum"><a name="p15">15</a></div>
-<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I5956"></A>At 
-the place where a subtype is frozen, its type is frozen. <A NAME="I5957"></A><A NAME="I5958"></A>At 
-the place where a type is frozen, any expressions or <SPAN Class="swiss"><A HREF="aa-4-1.html#S0091">name</A></SPAN>s 
+<div class="Bulleted" style="margin-bottom: 0.3em"><A NAME="I6113"></A>At 
+the place where a subtype is frozen, its type is frozen. <A NAME="I6114"></A><A NAME="I6115"></A>At 
+the place where a type is frozen, any expressions or <SPAN Class="swiss"><A HREF="AA-4-1.html#S0091">name</A></SPAN>s 
 within the full type definition cause freezing; the first subtype, and 
 any component subtypes, index subtypes, and parent subtype of the type 
-are frozen as well. <A NAME="I5959"></A><A NAME="I5960"></A>For a specific 
+are frozen as well. <A NAME="I6116"></A><A NAME="I6117"></A>For a specific 
 tagged type, the corresponding class-wide type is frozen as well. For 
 a class-wide type, the corresponding specific type is frozen as well. 
 </div>
@@ -618,33 +608,32 @@ aspects of statically matching subtypes are the same.</div>
 designated subtype.&nbsp;</div>
 <div class="paranum"><a name="p15.1">15.1/3</a></div>
 <div class="Bulleted" style="margin-bottom: 0.3em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00341.TXT">AI95-00341-01</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-At the place where a specific tagged type is frozen, the primitive subprograms 
-of the type are frozen. At the place where a type is frozen, any subprogram 
-named in an <SPAN Class="swiss"><A HREF="aa-13-3.html#S0310">attribute_definition_clause</A></SPAN> 
-for the type is frozen.&nbsp;</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
+<span class="insert2">At the place where a specific tagged type is frozen, 
+the primitive subprograms of the type are frozen.</span><span class="insert3">&nbsp;At the place where a type is frozen, any subprogram named in an <SPAN Class="swiss"><A HREF="AA-13-3.html#S0309">attribute_definition_clause</A></SPAN> 
+for the type is frozen.</span><span class="insert2"></span>&nbsp;</div>
 <div class="paranum"><a name="p15.c">15.c/2</a></div>
-<div class="Annotations"><B>Reason:&nbsp;</B>We have a language design principle 
-that all of the details of a specific tagged type are known at its freezing 
-point. But that is only true if the primitive subprograms are frozen 
-at this point as well. Late changes of Import and address clauses violate 
-the principle.&nbsp;</div>
+<div class="Annotations"><span class="insert2"><B>Reason:&nbsp;</B>We have 
+a language design principle that all of the details of a specific tagged 
+type are known at its freezing point. But that is only true if the primitive 
+subprograms are frozen at this point as well. Late changes of Import 
+and address clauses violate the principle.</span>&nbsp;</div>
 <div class="paranum"><a name="p15.d">15.d/2</a></div>
-<div class="Annotations"><B>Implementation Note:&nbsp;</B>This rule means 
-that no implicit call to Initialize or Adjust can freeze a subprogram 
-(the type and thus subprograms would have been frozen at worst at the 
-same point).&nbsp;</div>
+<div class="Annotations"><span class="insert2"><B>Implementation Note: 
+</B>This rule means that no implicit call to Initialize or Adjust can 
+freeze a subprogram (the type and thus subprograms would have been frozen 
+at worst at the same point).</span>&nbsp;</div>
 <div class="paranum"><a name="p15.e">15.e/3</a></div>
-<div class="Annotations"><B>Discussion:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-The second sentence is the rule that makes it possible to check that 
-only subprograms with convention Ada are specified in <SPAN Class="swiss"><A HREF="aa-13-3.html#S0310">attribute_definition_clause</A></SPAN>s 
-without jumping through hoops.&nbsp;</div>
+<div class="Annotations"><span class="insert3"><B>Discussion:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
+<span class="insert3">The second sentence is the rule that makes it possible 
+to check that only subprograms with convention Ada are specified in <SPAN Class="swiss"><A HREF="AA-13-3.html#S0309">attribute_definition_clause</A></SPAN>s 
+without jumping through hoops.</span>&nbsp;</div>
 
 <H4 Class="centered">Legality Rules</H4>
 <div class="paranum"><a name="p16">16</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">[The explicit declaration 
 of a primitive subprogram of a tagged type shall occur before the type 
-is frozen (see <A HREF="aa-3-9-2.html">3.9.2</A>).]&nbsp;</div>
+is frozen (see <A HREF="AA-3-9-2.html">3.9.2</A>).]&nbsp;</div>
 <div class="paranum"><a name="p16.a">16.a</a></div>
 <div class="Annotations"><B>Reason:&nbsp;</B>This rule is needed because (1) 
 we don't want people dispatching to things that haven't been declared 
@@ -664,47 +653,51 @@ types, for uniformity. However, that would be upward incompatible, so
 we rejected the idea. As in Ada 83, for an untagged type, the above call 
 upon P will call the old P (which is arguably confusing).&nbsp;</div>
 <div class="paranum"><a name="p16.d">16.d/3</a></div>
-<div class="Annotations"><B>To be honest:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0222-1.TXT">AI05-0222-1</A></I>} 
-This rule only applies to &quot;original&quot; declarations and not to 
-the completion of a primitive subprogram, even though a completion is 
-technically an explicit declaration, and it may declare a primitive subprogram. 
-</div>
+<div class="Annotations"><span class="insert3"><B>To be honest:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0222-1.TXT">AI05-0222-1</A></I>} 
+<span class="insert3">This rule only applies to &quot;original&quot; 
+declarations and not to the completion of a primitive subprogram, even 
+though a completion is technically an explicit declaration, and it may 
+declare a primitive subprogram.</span>&nbsp;</div>
 <div class="paranum"><a name="p17">17</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">[A type shall be completely 
-defined before it is frozen (see <A HREF="aa-3-11-1.html">3.11.1</A> 
-and <A HREF="aa-7-3.html">7.3</A>).]</div>
+defined before it is frozen (see <A HREF="AA-3-11-1.html">3.11.1</A> 
+and <A HREF="AA-7-3.html">7.3</A>).]</div>
 <div class="paranum"><a name="p18">18</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">[The completion of 
 a deferred constant declaration shall occur before the constant is frozen 
-(see <A HREF="aa-7-4.html">7.4</A>).]</div>
+(see <A HREF="AA-7-4.html">7.4</A>).]</div>
 <div class="paranum"><a name="p18.a">18.a/3</a></div>
-<div class="Annotations"><B>Proof:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-The above Legality Rules are stated &ldquo;officially&rdquo; in the referenced 
-subclauses.&nbsp;</div>
+<div class="Annotations"><span class="insert2"><B>Proof:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
+<span class="insert2">The above Legality Rules are stated &ldquo;officially&rdquo; 
+in the referenced&nbsp;</span><span class="insert3">subclauses</span><span class="insert2"></span><span class="insert2"><span class="delete3">&nbsp;clauses</span></span><span class="insert2">.</span> 
+</div>
 <div class="paranum"><a name="p19">19/1</a></div>
-<div class="Normal" style="margin-bottom: 0.4em">{<I><A HREF="defect1.html#8652/0009">8652/0009</A></I>} 
+<div class="Normal" style="margin-bottom: 0.4em">&nbsp;{<I><A HREF="defect1.html#8652/0009">8652/0009</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00137.TXT">AI95-00137-01</A></I>} 
-An operational or representation item that directly specifies an aspect 
-of an entity shall appear before the entity is frozen (see <A HREF="aa-13-1.html">13.1</A>). 
+<span class="insert1">An operational or</span><span class="delete1">&nbsp;A</span> 
+representation item that directly specifies an aspect of an entity shall 
+appear before the entity is frozen (see <A HREF="AA-13-1.html">13.1</A>). 
 </div>
 <div class="paranum"><a name="p19.a">19.a/1</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>{<I><A HREF="defect1.html#8652/0009">8652/0009</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00137.TXT">AI95-00137-01</A></I>} 
-From RM83-13.1(7). The wording here forbids freezing within the <SPAN Class="swiss"><A HREF="aa-13-1.html#S0304">aspect_clause</A></SPAN> 
+From RM83-13.1(7). The wording here forbids freezing within the <span class="insert1"><SPAN Class="swiss"><A HREF="AA-13-1.html#S0303">aspect_clause</A></SPAN></span><span class="delete1"><SPAN Class="swiss"><A HREF="AA-13-1.html#S0304">&nbsp;representation_clause</A></SPAN></span> 
 itself, which was not true of the Ada 83 wording. The wording of this 
 rule is carefully written to work properly for type-related representation 
-items. For example, an <SPAN Class="swiss"><A HREF="aa-13-4.html#S0311">enumeration_representation_clause</A></SPAN> 
+items. For example, an <SPAN Class="swiss"><A HREF="AA-13-4.html#S0310">enumeration_representation_clause</A></SPAN> 
 is illegal after the type is frozen, even though the <SPAN Class="swiss">_clause</SPAN> 
 refers to the first subtype.</div>
 <div class="paranum"><a name="p19.a.1">19.a.1/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
-The above Legality Rule is stated for types and subtypes in <A HREF="aa-13-1.html">13.1</A>, 
-but the rule here covers all other entities as well.&nbsp;</div>
+<span class="insert2">The above Legality Rule is stated for types and 
+subtypes in <A HREF="AA-13-1.html">13.1</A>, but the rule here covers 
+all other entities as well.</span>&nbsp;</div>
 <div class="paranum"><a name="p19.b">19.b/2</a></div>
 <div class="Annotations"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
-</div>
+was deleted.</I></SPAN><span class="delete2"><B>Proof:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
+<span class="delete2">The above Legality Rules are stated &ldquo;officially&rdquo; 
+in the referenced clauses.</span>&nbsp;</div>
 <div class="paranum"><a name="p19.c">19.c</a></div>
 <div class="Annotations" style="margin-bottom: 0.4em"><B>Discussion: 
 </B>Here's an example that illustrates when freezing occurs in the presence 
@@ -721,38 +714,39 @@ X&nbsp;:&nbsp;R;</div>
 <div class="paranum"><a name="p19.e">19.e</a></div>
 <div class="Annotations">Since the elaboration of R's declaration does 
 not allocate component C, there is no need to freeze C's subtype at that 
-place. Similarly, since the elaboration of R does not evaluate the <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN> 
+place. Similarly, since the elaboration of R does not evaluate the <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN> 
 &ldquo;F = F&rdquo;, there is no need to freeze the types involved at 
 that point. However, the declaration of X <I>does</I> need to freeze 
 these things. Note that even if component C did not exist, the elaboration 
 of the declaration of X would still need information about T &mdash; 
-even though D is not of type T, its <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN> 
+even though D is not of type T, its <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN> 
 requires that information.&nbsp;</div>
 <div class="paranum"><a name="p19.f">19.f/3</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
 Although we define freezing in terms of the program text as a whole (i.e. 
-after applying the rules of Clause <A HREF="aa-10.html">10</A>), the 
-freezing rules actually have no effect beyond compilation unit boundaries. 
-</div>
+after applying the rules of <span class="insert3">Clause</span><span class="delete3">&nbsp;Section</span> 
+<A HREF="AA-10.html">10</A>), the freezing rules actually have no effect 
+beyond compilation unit boundaries.&nbsp;</div>
 <div class="paranum"><a name="p19.g">19.g/3</a></div>
 <div class="Annotations"><B>Reason:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-That is important, because Clause <A HREF="aa-10.html">10</A> allows 
-some implementation definedness in the order of things, and we don't 
-want the freezing rules to be implementation defined.&nbsp;</div>
+That is important, because <span class="insert3">Clause</span><span class="delete3">&nbsp;Section</span> 
+<A HREF="AA-10.html">10</A> allows some implementation definedness in 
+the order of things, and we don't want the freezing rules to be implementation 
+defined.&nbsp;</div>
 <div class="paranum"><a name="p19.h">19.h</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>These rules also have no 
-effect in <SPAN Class="swiss"><A HREF="aa-5-1.html#S0146">statement</A></SPAN>s 
-&mdash; they only apply within a single <SPAN Class="swiss"><A HREF="aa-3-11.html#S0086">declarative_part</A></SPAN>, 
-<SPAN Class="swiss"><A HREF="aa-7-1.html#S0191">package_specification</A></SPAN>, 
-<SPAN Class="swiss"><A HREF="aa-9-1.html#S0207">task_definition</A></SPAN>, 
-<SPAN Class="swiss"><A HREF="aa-9-4.html#S0212">protected_definition</A></SPAN>, 
-or <SPAN Class="swiss"><A HREF="aa-9-4.html#S0215">protected_body</A></SPAN>. 
+effect in <SPAN Class="swiss"><A HREF="AA-5-1.html#S0146">statement</A></SPAN>s 
+&mdash; they only apply within a single <SPAN Class="swiss"><A HREF="AA-3-11.html#S0086">declarative_part</A></SPAN>, 
+<SPAN Class="swiss"><A HREF="AA-7-1.html#S0191">package_specification</A></SPAN>, 
+<SPAN Class="swiss"><A HREF="AA-9-1.html#S0207">task_definition</A></SPAN>, 
+<SPAN Class="swiss"><A HREF="AA-9-4.html#S0212">protected_definition</A></SPAN>, 
+or <SPAN Class="swiss"><A HREF="AA-9-4.html#S0215">protected_body</A></SPAN>. 
 </div>
 <div class="paranum"><a name="p19.i">19.i</a></div>
 <div class="Annotations"><B>Implementation Note:&nbsp;</B>An implementation 
-may choose to generate code for <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN>s 
-and <SPAN Class="swiss"><A HREF="aa-12-6.html#S0300">default_name</A></SPAN>s 
-in line at the place of use. <A NAME="I5961"></A>Alternatively, an implementation 
+may choose to generate code for <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN>s 
+and <SPAN Class="swiss"><A HREF="AA-12-6.html#S0299">default_name</A></SPAN>s 
+in line at the place of use. <A NAME="I6118"></A>Alternatively, an implementation 
 may choose to generate thunks (subprograms implicitly generated by the 
 compiler) for evaluation of defaults. Thunk generation cannot, in general, 
 be done at the place of the declaration that includes the default. Instead, 
@@ -770,29 +764,31 @@ defined. It cannot be initialized earlier, because of the order-of-elaboration
 rules. The freezing rules prevent elaboration of earlier declarations 
 from accessing the size dope for a private type before it is initialized.</div>
 <div class="paranum"><a name="p19.k">19.k</a></div>
-<div class="Annotations"><A HREF="aa-2-8.html">2.8</A> overrides the 
-freezing rules in the case of unrecognized <SPAN Class="swiss"><A HREF="aa-2-8.html#S0019">pragma</A></SPAN>s.</div>
+<div class="Annotations"><A HREF="AA-2-8.html">2.8</A> overrides the 
+freezing rules in the case of unrecognized <SPAN Class="swiss"><A HREF="AA-2-8.html#S0019">pragma</A></SPAN>s.</div>
 <div class="paranum"><a name="p19.l">19.l/1</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0009">8652/0009</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00137.TXT">AI95-00137-01</A></I>} 
-An <SPAN Class="swiss"><A HREF="aa-13-1.html#S0304">aspect_clause</A></SPAN> 
+<span class="insert1">An <SPAN Class="swiss"><A HREF="AA-13-1.html#S0303">aspect_clause</A></SPAN></span><span class="delete1">&nbsp;A 
+<SPAN Class="swiss"><A HREF="AA-13-1.html#S0304">representation_clause</A></SPAN></span> 
 for an entity should most certainly <I>not</I> be a freezing point for 
 the entity.&nbsp;</div>
 
 <H4 Class="centered">Dynamic Semantics</H4>
 <div class="paranum"><a name="p20">20/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00279.TXT">AI95-00279-01</A></I>} 
-The tag (see <A HREF="aa-3-9.html">3.9</A>) of a tagged type T is created 
-at the point where T is frozen.<A NAME="I5962"></A>&nbsp;</div>
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00279.TXT">AI95-00279-01</A></I>} 
+<span class="insert2">The tag (see <A HREF="AA-3-9.html">3.9</A>) of 
+a tagged type T is created at the point where T is frozen.<A NAME="I6119"></A></span> 
+</div>
 
 <H4 Class="centered">Incompatibilities With Ada 83</H4>
 <div class="paranum"><a name="p20.a">20.a</a></div>
-<div class="Annotations"><A NAME="I5963"></A>RM83 defines a forcing occurrence 
+<div class="Annotations"><A NAME="I6120"></A>RM83 defines a forcing occurrence 
 of a type as follows: &ldquo;A forcing occurrence is any occurrence [of 
 the name of the type, subtypes of the type, or types or subtypes with 
 subcomponents of the type] other than in a type or subtype declaration, 
 a subprogram specification, an entry declaration, a deferred constant 
-declaration, a <SPAN Class="swiss"><A HREF="aa-2-8.html#S0019">pragma</A></SPAN>, 
+declaration, a <SPAN Class="swiss"><A HREF="AA-2-8.html#S0019">pragma</A></SPAN>, 
 or a <SPAN Class="swiss">representation_clause</SPAN> for the type itself. 
 In any case, an occurrence within an expression is always forcing.&rdquo;</div>
 <div class="paranum"><a name="p20.b">20.b</a></div>
@@ -803,15 +799,15 @@ the wording allows things like this:&nbsp;</div>
 <B>subtype</B>&nbsp;S&nbsp;<B>is</B>&nbsp;Integer&nbsp;<B>range</B>&nbsp;A'Range;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>&nbsp;not&nbsp;forcing&nbsp;for&nbsp;A</I></SPAN></div>
 <div class="paranum"><a name="p20.d">20.d</a></div>
-<div class="Annotations">Occurrences within <SPAN Class="swiss"><A HREF="aa-2-8.html#S0019">pragma</A></SPAN>s 
-can cause freezing in Ada 95. (Since such <SPAN Class="swiss"><A HREF="aa-2-8.html#S0019">pragma</A></SPAN>s 
+<div class="Annotations">Occurrences within <SPAN Class="swiss"><A HREF="AA-2-8.html#S0019">pragma</A></SPAN>s 
+can cause freezing in Ada 95. (Since such <SPAN Class="swiss"><A HREF="AA-2-8.html#S0019">pragma</A></SPAN>s 
 are ignored in Ada 83, this will probably fix more bugs than it causes.) 
 </div>
 
 <H4 Class="centered">Extensions to Ada 83</H4>
 <div class="paranum"><a name="p20.e">20.e</a></div>
-<div class="Annotations" style="margin-bottom: 0.4em"><A NAME="I5964"></A>In 
-Ada 95, <SPAN Class="swiss"><A HREF="aa-12-1.html#S0275">generic_formal_parameter_declaration</A></SPAN>s 
+<div class="Annotations" style="margin-bottom: 0.4em"><A NAME="I6121"></A>In 
+Ada 95, <SPAN Class="swiss"><A HREF="AA-12-1.html#S0274">generic_formal_parameter_declaration</A></SPAN>s 
 do not normally freeze the entities from which they are defined. For 
 example:&nbsp;</div>
 <div class="paranum"><a name="p20.f">20.f</a></div>
@@ -834,7 +830,7 @@ using the kinds of formal parameters already allowed in Ada 83 are well
 known. See, for example, comments 83-00627 and 83-00688. The extensive 
 use expected for formal derived types makes this issue even more compelling 
 than described by those comments. Unfortunately, we are unable to solve 
-the problem that <SPAN Class="swiss"><A HREF="aa-12-3.html#S0279">explicit_generic_actual_parameter</A></SPAN>s 
+the problem that <SPAN Class="swiss"><A HREF="AA-12-3.html#S0278">explicit_generic_actual_parameter</A></SPAN>s 
 cause freezing, even though a package equivalent to the instance would 
 not cause freezing. This is primarily because such an equivalent package 
 would have its body in the body of the containing program unit, whereas 
@@ -877,91 +873,85 @@ was not achieved.</div>
 <div class="paranum"><a name="p20.n">20.n</a></div>
 <div class="SmallBulleted">The Ada 83 rules are not only too weak &mdash; 
 they are also too strong. They allow loopholes (as described above), 
-but they also prevent certain kinds of <SPAN Class="swiss"><A HREF="aa-3-7.html#S0063">default_expression</A></SPAN>s 
-that are harmless, and certain kinds of <SPAN Class="swiss"><A HREF="aa-12-1.html#S0271">generic_declaration</A></SPAN>s 
+but they also prevent certain kinds of <SPAN Class="swiss"><A HREF="AA-3-7.html#S0063">default_expression</A></SPAN>s 
+that are harmless, and certain kinds of <SPAN Class="swiss"><A HREF="AA-12-1.html#S0270">generic_declaration</A></SPAN>s 
 that are both harmless and very useful.</div>
 <div class="paranum"><a name="p20.o">20.o/2</a></div>
 <div class="SmallBulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
-Ada 83 had a case where an <SPAN Class="swiss"><A HREF="aa-13-1.html#S0304">aspect_clause</A></SPAN> 
+Ada 83 had a case where <span class="insert2">an <SPAN Class="swiss"><A HREF="AA-13-1.html#S0303">aspect_clause</A></SPAN></span><span class="delete2">&nbsp;a 
+<SPAN Class="swiss"><A HREF="AA-13-1.html#S0304">representation_clause</A></SPAN></span> 
 had a strong effect on the semantics of the program &mdash; 'Small. This 
 caused certain semantic anomalies. There are more cases in Ada 95, because 
-the <SPAN Class="swiss"><A HREF="aa-13-3.html#S0310">attribute_definition_clause</A></SPAN> 
+the <span class="insert2"><SPAN Class="swiss"><A HREF="AA-13-3.html#S0309">attribute_definition_clause</A></SPAN></span><span class="delete2"><SPAN Class="swiss">&nbsp;attribute_representation_clause</SPAN></span> 
 has been generalized.&nbsp;</div>
 
 <H4 Class="centered">Incompatibilities With Ada 95</H4>
 <div class="paranum"><a name="p20.p">20.p/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0046">8652/0046</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00341.TXT">AI95-00341-01</A></I>} 
-<A NAME="I5965"></A><B>Corrigendum:</B> Various freezing rules were added 
-to fix holes in the rules. Most importantly, implicit calls are now freezing, 
-which make some representation clauses illegal in Ada 2005 that were 
-legal (but dubious) in Ada 95. <B>Amendment Correction:</B> Similarly, 
-the primitive subprograms of a specific tagged type are frozen when the 
-type is frozen, preventing dubious convention changes (and address clauses) 
-after the freezing point. In both cases, the code is dubious and the 
-workaround is easy.&nbsp;</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00106.TXT">AI95-00106-01</A></I>} 
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00341.TXT">AI95-00341-01</A></I>} 
+<span class="insert2"><A NAME="I6122"></A><B>Corrigendum:</B> Various 
+freezing rules were added to fix holes in the rules. Most importantly, 
+implicit calls are now freezing, which make some representation clauses 
+illegal in Ada 2005 that were legal (but dubious) in Ada 95. <B>Amendment 
+Correction:</B> Similarly, the primitive subprograms of a specific tagged 
+type are frozen when the type is frozen, preventing dubious convention 
+changes (and address clauses) after the freezing point. In both cases, 
+the code is dubious and the workaround is easy.</span>&nbsp;</div>
 
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p20.q">20.q/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0009">8652/0009</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00137.TXT">AI95-00137-01</A></I>} 
-<B>Corrigendum:</B> Added wording to specify that both operational and 
-representation attributes must be specified before the type is frozen.</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00137.TXT">AI95-00137-01</A></I>} 
+<span class="insert2"><B>Corrigendum:</B> Added wording to specify that 
+both operational and representation attributes must be specified before 
+the type is frozen.</span></div>
 <div class="paranum"><a name="p20.r">20.r/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00251.TXT">AI95-00251-01</A></I>} 
-Added wording that declaring a specific descendant of an interface type 
-freezes the interface type.</div>
+<span class="insert2">Added wording that declaring a specific descendant 
+of an interface type freezes the interface type.</span></div>
 <div class="paranum"><a name="p20.s">20.s/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00279.TXT">AI95-00279-01</A></I>} 
-Added wording that defines when a tag is created for a type (at the freezing 
-point of the type). This is used to specify checking for uncreated tags 
-(see <A HREF="aa-3-9.html">3.9</A>).&nbsp;</div>
+<span class="insert2">Added wording that defines when a tag is created 
+for a type (at the freezing point of the type). This is used to specify 
+checking for uncreated tags (see <A HREF="AA-3-9.html">3.9</A>).</span> 
+</div>
 
 <H4 Class="centered">Incompatibilities With Ada 2005</H4>
 <div class="paranum"><a name="p20.t">20.t/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0019-1.TXT">AI05-0019-1</A></I>} 
-<A NAME="I5966"></A><B>Correction:</B> Separated the freezing of the 
-profile from the rest of a subprogram, in order to reduce the impact 
-of the Ada 95 incompatibility noted above. (The effects were much more 
-limiting than expected.)&nbsp;</div>
+<span class="insert3"><A NAME="I6123"></A><B>Correction:</B> Separated 
+the freezing of the profile from the rest of a subprogram, in order to 
+reduce the impact of the Ada 95 incompatibility noted above. (The effects 
+were much more limiting than expected.)</span>&nbsp;</div>
 
 <H4 Class="centered">Wording Changes from Ada 2005</H4>
 <div class="paranum"><a name="p20.u">20.u/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0017-1.TXT">AI05-0017-1</A></I>} 
-<B>Correction:</B> Reworded so that incomplete types with a deferred 
-completion aren't prematurely frozen.</div>
+<span class="insert3"><B>Correction:</B> Reworded so that incomplete 
+types with a deferred completion aren't prematurely frozen.</span></div>
 <div class="paranum"><a name="p20.v">20.v/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0177-1.TXT">AI05-0177-1</A></I>} 
-Added freezing rules for expression functions; these are frozen at the 
-point of call, not the point of declaration, like default expressions.</div>
+<span class="insert3">Added freezing rules for expression functions; 
+these are frozen at the point of call, not the point of declaration, 
+like default expressions.</span></div>
 <div class="paranum"><a name="p20.w">20.w/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0183-1.TXT">AI05-0183-1</A></I>} 
-Added freezing rules for <SPAN Class="swiss"><A HREF="aa-13-1-1.html#S0307">aspect_specification</A></SPAN>s; 
+<span class="insert3">Added freezing rules for <SPAN Class="swiss"><A HREF="AA-13-1-1.html#S0306">aspect_specification</A></SPAN>s; 
 these are frozen at the freezing point of the associated entity, not 
-the point of declaration.</div>
+the point of declaration.</span></div>
 <div class="paranum"><a name="p20.x">20.x/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0213-1.TXT">AI05-0213-1</A></I>} 
-Added freezing rules for formal incomplete types; the corresponding actual 
-is not frozen.&nbsp;</div>
-
-<H4 Class="centered">Wording Changes from Ada 2012</H4>
-<div class="paranum"><a name="p20.y">20.y/4</a></div>
-<div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0103-1.TXT">AI12-0103-1</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0132-1.TXT">AI12-0132-1</A></I>} 
-<B>Corrigendum:</B> Clarified when and what an <SPAN Class="swiss"><A HREF="aa-6-8.html#S0189">expression_function_declaration</A></SPAN> 
-that is a completion or that is the target of a renames-as-body freezes. 
-This is formally an incompatibility, but as all known implementations 
-freeze expression functions more aggressively than allowed by either 
-the old or new wording, practically this will be an extension.&nbsp;</div>
+<span class="insert3">Added freezing rules for formal incomplete types; 
+the corresponding actual is not frozen.</span>&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-13-13-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-0-4.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-13-13-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-3.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

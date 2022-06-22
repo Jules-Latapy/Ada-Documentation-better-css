@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-13-7-1.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-13-8.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-13-7-1.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-13-8.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>13.7.2 The Package System.Address_To_Access_Conversions</H1>
@@ -25,36 +26,40 @@
 <div class="Normal" style="margin-bottom: 0.4em">The following language-defined 
 generic library package exists:&nbsp;</div>
 <div class="paranum"><a name="p2">2</a></div>
-<div class="Examples"><A NAME="I5645"></A><B>generic</B><BR>
+<div class="Examples"><A NAME="I5811"></A><B>generic</B><BR>
 &nbsp;&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;Object(&lt;&gt;)&nbsp;<B>is</B>&nbsp;<B>limited</B>&nbsp;<B>private</B>;<BR>
 <B>package</B>&nbsp;System.Address_To_Access_Conversions&nbsp;<B>is</B><BR>
 &nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Preelaborate(Address_To_Access_Conversions);</div>
 <div class="paranum"><a name="p3">3/3</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
 &nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;Object_Pointer&nbsp;<B>is</B>&nbsp;<B>access</B>&nbsp;<B>all</B>&nbsp;Object;<BR>
-&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I5646"></A>To_Pointer(Value&nbsp;:&nbsp;Address)&nbsp;<B>return</B>&nbsp;Object_Pointer<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Convention&nbsp;=&gt;&nbsp;Intrinsic;<BR>
-&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I5647"></A>To_Address(Value&nbsp;:&nbsp;Object_Pointer)&nbsp;<B>return</B>&nbsp;Address<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Convention&nbsp;=&gt;&nbsp;Intrinsic;</div>
+&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I5812"></A>To_Pointer(Value&nbsp;:&nbsp;Address)&nbsp;<B>return</B>&nbsp;Object_Pointer<span class="insert3"><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Convention&nbsp;=&gt;&nbsp;Intrinsic</span>;<BR>
+&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I5813"></A>To_Address(Value&nbsp;:&nbsp;Object_Pointer)&nbsp;<B>return</B>&nbsp;Address<span class="insert3"><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Convention&nbsp;=&gt;&nbsp;Intrinsic</span>;</div>
 <div class="paranum"><a name="p4">4/3</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
-<B>end</B>&nbsp;System.Address_To_Access_Conversions;</div>
+<span class="delete3">&nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Convention(Intrinsic,&nbsp;To_Pointer);<BR>
+&nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Convention(Intrinsic,&nbsp;To_Address);<BR>
+</span><B>end</B>&nbsp;System.Address_To_Access_Conversions;</div>
 <div class="paranum"><a name="p5">5/2</a></div>
 <div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00230.TXT">AI95-00230-01</A></I>} 
 The To_Pointer and To_Address subprograms convert back and forth between 
 values of types Object_Pointer and Address. To_Pointer(X'Address) is 
 equal to X'Unchecked_Access for any X that allows Unchecked_Access. To_Pointer(Null_Address) 
-returns <B>null</B>. <A NAME="I5648"></A>For other addresses, the behavior 
-is unspecified. To_Address(<B>null</B>) returns Null_Address. To_Address(Y), 
-where Y /= <B>null</B>, returns Y.<B>all</B>'Address.&nbsp;</div>
+returns <B>null</B>. <A NAME="I5814"></A>For other addresses, the behavior 
+is unspecified. To_Address(<B>null</B>) returns Null_Address<span class="delete2">&nbsp;(for <B>null</B> of the appropriate type)</span>. To_Address(Y), where 
+Y /= <B>null</B>, returns Y.<B>all</B>'Address.&nbsp;</div>
 <div class="paranum"><a name="p5.a">5.a/3</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0005-1.TXT">AI05-0005-1</A></I>} 
 The programmer should ensure that the address passed to To_Pointer is 
-either Null_Address, or the address of an object of type Object. (If 
-Object is not a by-reference type, the object ought to be aliased; recall 
-that the Address attribute is not required to provide a useful result 
-for other objects.) Otherwise, the behavior of the program is unspecified; 
+either Null_Address, or the address of an object of type Object. <span class="insert2">(If 
+Object is not a&nbsp;</span><span class="insert2"><span class="delete3">not 
+</span></span><span class="insert2">by-reference type, the object ought 
+to be aliased; recall that the Address attribute is not required to provide 
+a useful result&nbsp;</span><span class="insert3">for&nbsp;</span><span class="insert2">other 
+objects.)</span> Otherwise, the behavior of the program is unspecified; 
 it might raise an exception or crash, for example.&nbsp;</div>
 <div class="paranum"><a name="p5.b">5.b</a></div>
 <div class="Annotations"><B>Reason:&nbsp;</B>Unspecified is almost the same 
@@ -96,12 +101,12 @@ violations, the restriction might have to be detected at run time in
 some cases.&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-13-7-1.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-13-8.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-13-7-1.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-13-8.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

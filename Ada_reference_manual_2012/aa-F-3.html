@@ -7,22 +7,23 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-F-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-F-3-1.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-3-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>F.3 Edited Output for Decimal Types</H1>
 <div class="paranum"><a name="p1">1/2</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00285.TXT">AI95-00285-01</A></I>} 
-The child packages Text_IO.Editing, Wide_Text_IO.Editing, and Wide_Wide_Text_IO.Editing 
-provide localizable formatted text output, known as <I>edited output</I><A NAME="I8978"></A>, 
+The child packages Text_IO.Editing<span class="insert2">,</span><span class="delete2">&nbsp;and</span> Wide_Text_IO.Editing<span class="insert2">, and Wide_Wide_Text_IO.Editing</span> 
+provide localizable formatted text output, known as <I>edited output</I><A NAME="I9226"></A>, 
 for decimal types. An edited output string is a function of a numeric 
 value, program-specifiable locale elements, and a format control value. 
 The numeric value is of some decimal type. The locale elements are:&nbsp;</div>
@@ -39,8 +40,8 @@ of the numeric value.&nbsp;</div>
 <div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00285.TXT">AI95-00285-01</A></I>} 
 For Text_IO.Editing the edited output and currency strings are of type 
 String, and the locale characters are of type Character. For Wide_Text_IO.Editing 
-their types are Wide_String and Wide_Character, respectively. For Wide_Wide_Text_IO.Editing 
-their types are Wide_Wide_String and Wide_Wide_Character, respectively.</div>
+their types are Wide_String and Wide_Character, respectively.<span class="insert2">&nbsp;For Wide_Wide_Text_IO.Editing their types are Wide_Wide_String and Wide_Wide_Character, 
+respectively.</span></div>
 <div class="paranum"><a name="p7">7</a></div>
 <div class="Normal">Each of the locale elements has a default value that 
 can be replaced or explicitly overridden.</div>
@@ -106,38 +107,40 @@ represents, in general, either itself (if '/' or '0'), the space character
 it is treated as part of a floating sign, floating currency, or zero 
 suppression string.</div>
 <div class="paranum"><a name="p18">18/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
 An example of a picture String is &quot;&lt;###Z_ZZ9.99&gt;&quot;. If 
-the currency string is &quot;kr&quot;, the separator character is ',', 
-and the radix mark is '.' then the edited output string values for the 
-decimal values 32.10 and &ndash;5432.10 are &quot;bbkrbbb32.10b&quot; 
-and &quot;(bkr5,432.10)&quot;, respectively, where 'b' indicates the 
-space character.</div>
+the currency string is &quot;<span class="insert2">kr</span><span class="delete2">&nbsp;FF</span>&quot;, 
+the separator character is ',', and the radix mark is '.' then the edited 
+output string values for the decimal values 32.10 and &ndash;5432.10 
+are &quot;bb<span class="insert2">kr</span><span class="delete2">&nbsp;FF</span>bbb32.10b&quot; 
+and &quot;(b<span class="insert2">kr</span><span class="delete2">&nbsp;FF</span>5,432.10)&quot;, 
+respectively, where 'b' indicates the space character.</div>
 <div class="paranum"><a name="p19">19/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00285.TXT">AI95-00285-01</A></I>} 
-The generic packages Text_IO.Decimal_IO, Wide_Text_IO.Decimal_IO, and 
-Wide_Wide_Text_IO.Decimal_IO (see <A HREF="aa-A-10-9.html">A.10.9</A>, 
-&ldquo;<A HREF="aa-A-10-9.html">Input-Output for Real Types</A>&rdquo;) 
-provide text input and nonedited text output for decimal types.&nbsp;</div>
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00285.TXT">AI95-00285-01</A></I>} 
+The generic packages Text_IO.Decimal_IO<span class="insert2">,</span><span class="delete2">&nbsp;and</span> Wide_Text_IO.Decimal_IO<span class="insert2">, and Wide_Wide_Text_IO.Decimal_IO</span> 
+(see <A HREF="AA-A-10-9.html">A.10.9</A>, &ldquo;<A HREF="AA-A-10-9.html">Input-Output 
+for Real Types</A>&rdquo;) provide text input and nonedited text output 
+for decimal types.&nbsp;</div>
 <div class="NotesHeader">NOTES</div>
 <div class="paranum"><a name="p20">20/2</a></div>
 <div class="Notes">2&nbsp;&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00285.TXT">AI95-00285-01</A></I>} 
-A picture String is of type Standard.String, for all of Text_IO.Editing, 
-Wide_Text_IO.Editing, and Wide_Wide_Text_IO.Editing.&nbsp;</div>
+A picture String is of type Standard.String, <span class="insert2">for 
+all of</span><span class="delete2">&nbsp;both for</span> Text_IO.Editing<span class="insert2">,</span><span class="delete2">&nbsp;and</span> Wide_Text_IO.Editing<span class="insert2">, and Wide_Wide_Text_IO.Editing</span>. 
+</div>
 
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p20.a">20.a/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00285.TXT">AI95-00285-01</A></I>} 
-Added descriptions of Wide_Wide_Text_IO.Editing; see <A HREF="aa-F-3-5.html">F.3.5</A>. 
-</div>
+<span class="insert2">Added descriptions of Wide_Wide_Text_IO.Editing; 
+see <A HREF="AA-F-3-5.html">F.3.5</A>.</span>&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-F-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-F-3-1.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-3-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

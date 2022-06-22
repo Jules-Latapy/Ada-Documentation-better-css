@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-F-3-1.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-F-3-3.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-3-1.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-3-3.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>F.3.2 Edited Output Generation</H1>
@@ -43,9 +44,9 @@ edited output string are based on:&nbsp;</div>
 and a '*' character in Pic_String is inconsistent; no edited output string 
 is defined.&nbsp;</div>
 <div class="paranum"><a name="p9.a">9.a/2</a></div>
-<div class="Annotations"><B>Reason:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
-Such a Pic_String is invalid, and any attempt to use such a string will 
-raise Picture_Error.&nbsp;</div>
+<div class="Annotations"><span class="insert2"><B>Reason:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
+<span class="insert2">Such a Pic_String is invalid, and any attempt to 
+use such a string will raise Picture_Error.</span>&nbsp;</div>
 <div class="paranum"><a name="p10">10</a></div>
 <div class="Normal">A layout error is identified in the rules below if 
 leading nonzero digits of Item, character values of the Currency string, 
@@ -62,7 +63,7 @@ Radix_Adjustment, and&nbsp;</div>
 <div class="Bulleted">Radix_Adjustment = 1 if there is an occurrence 
 of 'V' or 'v' in Pic_Str, and 0 otherwise.&nbsp;</div>
 <div class="paranum"><a name="p14">14</a></div>
-<div class="Normal" style="margin-bottom: 0.4em"><A NAME="I8981"></A>Let 
+<div class="Normal" style="margin-bottom: 0.4em"><A NAME="I9229"></A>Let 
 the magnitude of Item be expressed as a base-10 number I<SUB><SPAN STYLE="font-size: 140%"><SPAN STYLE="font-size: 64%">p</SPAN></SPAN></SUB>&middot;&middot;&middot;I<SUB><SPAN STYLE="font-size: 140%"><SPAN STYLE="font-size: 64%">1</SPAN></SPAN></SUB>.F<SUB><SPAN STYLE="font-size: 140%"><SPAN STYLE="font-size: 64%">1</SPAN></SPAN></SUB>&middot;&middot;&middot;F<SUB><SPAN STYLE="font-size: 140%"><SPAN STYLE="font-size: 64%">q</SPAN></SPAN></SUB>, 
 called the <I>displayed</I> <I>magnitude</I> of Item, where:&nbsp;</div>
 <div class="paranum"><a name="p15">15</a></div>
@@ -83,7 +84,7 @@ result of rounding (away from 0 if exactly midway between values).</div>
 <div class="Normal">If Blank_When_Zero = True and the displayed magnitude 
 of Item is zero, then the edited output string comprises all space character 
 values. Otherwise, the picture String is treated as a sequence of instances 
-of syntactic categories based on the rules in <A HREF="aa-F-3-1.html">F.3.1</A>, 
+of syntactic categories based on the rules in <A HREF="AA-F-3-1.html">F.3.1</A>, 
 and the edited output string is the concatenation of string values derived 
 from these categories according to the following mapping rules.</div>
 <div class="paranum"><a name="p19">19</a></div>
@@ -353,18 +354,18 @@ the space character.&nbsp;</div>
 <div class="paranum"><a name="p73">73/3</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0248-1.TXT">AI05-0248-1</A></I>} 
 123456.78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picture:&nbsp;&nbsp;&quot;-###**_***_**9.99&quot;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result:&nbsp;&nbsp;&nbsp;&quot;bbb$***123,456.78&quot;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="insert1">Result:</span><span class="delete1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&quot;bbb$***123,456.78&quot;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;bbFF***123.456,78&quot;&nbsp;(currency&nbsp;=&nbsp;&quot;FF&quot;,<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator&nbsp;=&nbsp;'.',<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radix&nbsp;mark&nbsp;=&nbsp;',')</div>
 <div class="paranum"><a name="p74">74/1</a></div>
 <div class="Examples">{<I><A HREF="defect1.html#8652/0089">8652/0089</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00070.TXT">AI95-00070</A></I>} 
-123456.78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picture:&nbsp;&nbsp;&quot;-$**_***_**9.99&quot;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result:&nbsp;&nbsp;&nbsp;&quot;b$***123,456.78&quot;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;bFF***123.456,78&quot;&nbsp;(currency&nbsp;=&nbsp;&quot;FF&quot;,<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator&nbsp;=&nbsp;'.',<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radix&nbsp;mark&nbsp;=&nbsp;',')</div>
+123456.78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picture:&nbsp;&nbsp;&quot;-<span class="delete1">$$</span>$**_***_**9.99&quot;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result:&nbsp;&nbsp;&nbsp;&quot;<span class="delete1">bb</span>b$***123,456.78&quot;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;b<span class="delete1">bb</span>FF***123.456,78&quot;&nbsp;(currency&nbsp;=&nbsp;&quot;FF&quot;,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="delete1">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator&nbsp;=&nbsp;'.',<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="delete1">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radix&nbsp;mark&nbsp;=&nbsp;',')</div>
 <div class="paranum"><a name="p75">75</a></div>
 <div class="Examples">0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picture:&nbsp;&quot;-$$$$$$.$$&quot;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result:&nbsp;&nbsp;&quot;bbbbbbbbbb&quot;</div>
@@ -381,16 +382,17 @@ the space character.&nbsp;</div>
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p78.a">78.a/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0089">8652/0089</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00070.TXT">AI95-00070-01</A></I>} 
-<B>Corrigendum:</B> Corrected the picture string example.&nbsp;</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00070.TXT">AI95-00070-01</A></I>} 
+<span class="insert2"><B>Corrigendum:</B> Corrected the picture string 
+example.</span>&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-F-3-1.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-F-3-3.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-3-1.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-F-3-3.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

@@ -7,52 +7,55 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-C-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-C-3-1.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-C-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-C-3-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>C.3 Interrupt Support</H1>
 <div class="paranum"><a name="p1">1/3</a></div>
 <div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-[This subclause specifies the language-defined model for hardware interrupts 
-in addition to mechanisms for handling interrupts.] <A NAME="I8314"></A></div>
+[This <span class="insert3">subclause</span><span class="delete3">&nbsp;clause</span> 
+specifies the language-defined model for hardware interrupts in addition 
+to mechanisms for handling interrupts.] <A NAME="I8509"></A></div>
 
 <H4 Class="centered">Dynamic Semantics</H4>
 <div class="paranum"><a name="p2">2</a></div>
-<div class="Normal"><A NAME="I8315"></A>[An <I>interrupt</I> represents 
+<div class="Normal"><A NAME="I8510"></A>[An <I>interrupt</I> represents 
 a class of events that are detected by the hardware or the system software.] 
-<A NAME="I8316"></A>Interrupts are said to occur. An <I>occurrence</I> 
-of an interrupt is separable into generation and delivery. <A NAME="I8317"></A><I>Generation</I> 
+<A NAME="I8511"></A>Interrupts are said to occur. An <I>occurrence</I> 
+of an interrupt is separable into generation and delivery. <A NAME="I8512"></A><I>Generation</I> 
 of an interrupt is the event in the underlying hardware or system that 
-makes the interrupt available to the program. <A NAME="I8318"></A><I>Delivery</I> 
+makes the interrupt available to the program. <A NAME="I8513"></A><I>Delivery</I> 
 is the action that invokes part of the program as response to the interrupt 
-occurrence. <A NAME="I8319"></A>Between generation and delivery, the 
-interrupt occurrence [(or interrupt)] is <I>pending</I>. <A NAME="I8320"></A>Some 
+occurrence. <A NAME="I8514"></A>Between generation and delivery, the 
+interrupt occurrence [(or interrupt)] is <I>pending</I>. <A NAME="I8515"></A>Some 
 or all interrupts may be <I>blocked</I>. When an interrupt is blocked, 
 all occurrences of that interrupt are prevented from being delivered. 
-<A NAME="I8321"></A><A NAME="I8322"></A>Certain interrupts are <I>reserved</I>. 
+<A NAME="I8516"></A><A NAME="I8517"></A>Certain interrupts are <I>reserved</I>. 
 The set of reserved interrupts is implementation defined. A reserved 
 interrupt is either an interrupt for which user-defined handlers are 
 not supported, or one which already has an attached handler by some other 
-implementation-defined means. <A NAME="I8323"></A><A NAME="I8324"></A>Program 
+implementation-defined means. <A NAME="I8518"></A><A NAME="I8519"></A>Program 
 units can be connected to nonreserved interrupts. While connected, the 
 program unit is said to be <I>attached</I> to that interrupt. The execution 
 of that program unit, the <I>interrupt handler</I>, is invoked upon delivery 
 of the interrupt occurrence.&nbsp;</div>
 <div class="paranum"><a name="p2.a">2.a/2</a></div>
 <div class="Annotations"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN></div>
+was deleted.</I></SPAN><span class="delete2"><B>Implementation defined: 
+</B></span><span class="delete2">Implementation-defined aspects of interrupts.</span></div>
 <div class="paranum"><a name="p2.b">2.b</a></div>
 <div class="Annotations"><B>To be honest:&nbsp;</B>As an obsolescent feature, 
 interrupts may be attached to task entries by an address clause. See 
-<A HREF="aa-J-7-1.html">J.7.1</A>.&nbsp;</div>
+<A HREF="AA-J-7-1.html">J.7.1</A>.&nbsp;</div>
 <div class="paranum"><a name="p3">3</a></div>
 <div class="Normal">While a handler is attached to an interrupt, it is 
 called once for each delivered occurrence of that interrupt. While the 
@@ -62,7 +65,7 @@ handler executes, the corresponding interrupt is blocked.</div>
 that interrupt are prevented from being delivered. Whether such occurrences 
 remain pending or are lost is implementation defined.</div>
 <div class="paranum"><a name="p5">5</a></div>
-<div class="Normal"><A NAME="I8325"></A>Each interrupt has a <I>default 
+<div class="Normal"><A NAME="I8520"></A>Each interrupt has a <I>default 
 treatment</I> which determines the system's response to an occurrence 
 of that interrupt when no user-defined handler is attached. The set of 
 possible default treatments is implementation defined, as is the method 
@@ -74,7 +77,7 @@ treatment) that is in effect for that interrupt at the time of delivery.</div>
 <div class="Normal">An exception propagated from a handler that is invoked 
 by an interrupt has no effect.</div>
 <div class="paranum"><a name="p8">8</a></div>
-<div class="Normal">[If the Ceiling_Locking policy (see <A HREF="aa-D-3.html">D.3</A>) 
+<div class="Normal">[If the Ceiling_Locking policy (see <A HREF="AA-D-3.html">D.3</A>) 
 is in effect, the interrupt handler executes with the active priority 
 that is the ceiling priority of the corresponding protected object.]</div>
 
@@ -151,20 +154,20 @@ the machine interrupts (or traps) and the predefined exceptions.</div>
 On a multi-processor, the rules governing the delivery of an interrupt 
 to a particular processor.&nbsp;</div>
 <div class="paranum"><a name="p22.a">22.a/2</a></div>
-<div class="Annotations"><B>Documentation Requirement:&nbsp;</B>The treatment 
-of interrupts.</div>
+<div class="Annotations"><span class="insert2"><B>Documentation Requirement: 
+</B></span><span class="insert2">The treatment of interrupts.</span></div>
 
 <H4 Class="centered">Implementation Permissions</H4>
 <div class="paranum"><a name="p23">23/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
 If the underlying system or hardware does not allow interrupts to be 
 blocked, then no blocking is required [as part of the execution of subprograms 
-of a protected object for which one of its subprograms is an interrupt 
-handler].</div>
+of a protected object <span class="insert2">for which</span><span class="delete2">&nbsp;whose</span> 
+one of its subprograms is an interrupt handler].</div>
 <div class="paranum"><a name="p24">24</a></div>
 <div class="Normal">In a multi-processor with more than one interrupt 
 subsystem, it is implementation defined whether (and how) interrupt sources 
-from separate subsystems share the same Interrupt_Id type (see <A HREF="aa-C-3-2.html">C.3.2</A>). 
+from separate subsystems share the same Interrupt_Id type (see <A HREF="AA-C-3-2.html">C.3.2</A>). 
 In particular, the meaning of a blocked or pending interrupt may then 
 be applicable to one processor only.&nbsp;</div>
 <div class="paranum"><a name="p24.a">24.a</a></div>
@@ -184,10 +187,11 @@ limitations on the execution of interrupt handlers.&nbsp;</div>
 <div class="Annotations"><B>Reason:&nbsp;</B>These limitations are often necessary 
 to ensure proper behavior of the implementation.&nbsp;</div>
 <div class="paranum"><a name="p26">26/3</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-Other forms of handlers are allowed to be supported, in which case the 
-rules of this subclause should be adhered to.</div>
+Other forms of handlers are allowed to be supported, in which case<span class="delete2">,</span> 
+the rules of this <span class="insert3">subclause</span><span class="delete3"></span><span class="insert2"><span class="delete3">&nbsp;clause</span></span><span class="delete3"></span><span class="delete2">&nbsp;subclause</span><span class="delete3"></span> 
+should be adhered to.</div>
 <div class="paranum"><a name="p27">27</a></div>
 <div class="Normal">The active priority of the execution of an interrupt 
 handler is allowed to vary from one occurrence of the same interrupt 
@@ -195,17 +199,18 @@ to another.</div>
 
 <H4 Class="centered">Implementation Advice</H4>
 <div class="paranum"><a name="p28">28/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00434.TXT">AI95-00434-01</A></I>} 
 If the Ceiling_Locking policy is not in effect, the implementation should 
 provide means for the application to specify which interrupts are to 
 be blocked during protected actions, if the underlying system allows 
-for finer-grained control of interrupt blocking.&nbsp;</div>
+for <span class="insert2">finer-grained</span><span class="delete2">&nbsp;a 
+finer-grain</span> control of interrupt blocking.&nbsp;</div>
 <div class="paranum"><a name="p28.a">28.a/2</a></div>
-<div class="Annotations"><B>Implementation Advice:&nbsp;</B>If the Ceiling_Locking 
-policy is not in effect and the target system allows for finer-grained 
-control of interrupt blocking, a means for the application to specify 
-which interrupts are to be blocked during protected actions should be 
-provided.</div>
+<div class="Annotations"><span class="insert2"><B>Implementation Advice: 
+</B></span><span class="insert2">If the Ceiling_Locking policy is not 
+in effect and the target system allows for finer-grained control of interrupt 
+blocking, a means for the application to specify which interrupts are 
+to be blocked during protected actions should be provided.</span></div>
 <div class="NotesHeader">NOTES</div>
 <div class="paranum"><a name="p29">29</a></div>
 <div class="Notes">1&nbsp;&nbsp;The default treatment for an interrupt 
@@ -217,19 +222,19 @@ the interrupt for possible later delivery when a user-defined handler
 is attached to that interrupt.</div>
 <div class="paranum"><a name="p30">30</a></div>
 <div class="Notes">2&nbsp;&nbsp;It is a bounded error to call Task_Identification.Current_Task 
-(see <A HREF="aa-C-7-1.html">C.7.1</A>) from an interrupt handler.</div>
+(see <A HREF="AA-C-7-1.html">C.7.1</A>) from an interrupt handler.</div>
 <div class="paranum"><a name="p31">31</a></div>
 <div class="Notes">3&nbsp;&nbsp;The rule that an exception propagated 
 from an interrupt handler has no effect is modeled after the rule about 
 exceptions propagated out of task bodies.</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-C-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-C-3-1.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-C-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-C-3-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

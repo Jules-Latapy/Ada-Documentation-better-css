@@ -7,23 +7,26 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-B-4.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-C.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-B-4.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-C.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>B.5 Interfacing with Fortran</H1>
 <div class="paranum"><a name="p1">1/3</a></div>
 <div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
-<A NAME="I8281"></A><A NAME="I8282"></A>The facilities relevant to interfacing 
+<A NAME="I8476"></A><A NAME="I8477"></A>The facilities relevant to interfacing 
 with the Fortran language are the package Interfaces.Fortran and support 
-for specifying the Convention aspect with <I>convention_</I><SPAN Class="swiss"><A HREF="aa-2-3.html#S0002">identifier</A></SPAN> 
+for <span class="insert3">specifying&nbsp;</span>the <span class="delete3">Import, 
+Export and&nbsp;</span>Convention <span class="insert3">aspect</span><span class="delete3">&nbsp;pragmas</span> 
+with <I>convention_</I><SPAN Class="swiss"><A HREF="AA-2-3.html#S0002">identifier</A></SPAN> 
 Fortran.</div>
 <div class="paranum"><a name="p2">2</a></div>
 <div class="Normal">The package Interfaces.Fortran defines Ada types 
@@ -38,55 +41,57 @@ types can therefore be used to pass objects between Ada and Fortran programs.
 <div class="Normal" style="margin-bottom: 0.4em">The library package 
 Interfaces.Fortran has the following declaration:&nbsp;</div>
 <div class="paranum"><a name="p4">4</a></div>
-<div class="Examples"><B>with</B>&nbsp;Ada.Numerics.Generic_Complex_Types;&nbsp;&nbsp;<SPAN Class="roman"><I>--&nbsp;see&nbsp;<A HREF="aa-G-1-1.html">G.1.1</A></I></SPAN><BR>
+<div class="Examples"><B>with</B>&nbsp;Ada.Numerics.Generic_Complex_Types;&nbsp;&nbsp;<SPAN Class="roman"><I>--&nbsp;see&nbsp;<A HREF="AA-G-1-1.html">G.1.1</A></I></SPAN><BR>
 <B>pragma</B>&nbsp;Elaborate_All(Ada.Numerics.Generic_Complex_Types);<BR>
-<B>package</B>&nbsp;Interfaces.Fortran&nbsp;<B>is</B><A NAME="I8283"></A><BR>
+<B>package</B>&nbsp;Interfaces.Fortran&nbsp;<B>is</B><A NAME="I8478"></A><BR>
 &nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Pure(Fortran);</div>
 <div class="paranum"><a name="p5">5</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8284"></A>Fortran_Integer&nbsp;<B>is</B>&nbsp;<B>range</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8479"></A>Fortran_Integer&nbsp;<B>is</B>&nbsp;<B>range</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;</div>
 <div class="paranum"><a name="p6">6</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8285"></A>Real&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>is</B>&nbsp;<B>digits</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;<BR>
-&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8286"></A>Double_Precision&nbsp;<B>is</B>&nbsp;<B>digits</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8480"></A>Real&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>is</B>&nbsp;<B>digits</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;<BR>
+&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8481"></A>Double_Precision&nbsp;<B>is</B>&nbsp;<B>digits</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;</div>
 <div class="paranum"><a name="p7">7</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8287"></A>Logical&nbsp;<B>is</B>&nbsp;<B>new</B>&nbsp;Boolean;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8482"></A>Logical&nbsp;<B>is</B>&nbsp;<B>new</B>&nbsp;Boolean;</div>
 <div class="paranum"><a name="p8">8</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>package</B>&nbsp;<A NAME="I8288"></A>Single_Precision_Complex_Types&nbsp;<B>is</B><BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>package</B>&nbsp;<A NAME="I8483"></A>Single_Precision_Complex_Types&nbsp;<B>is</B><BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>new</B>&nbsp;Ada.Numerics.Generic_Complex_Types&nbsp;(Real);</div>
 <div class="paranum"><a name="p9">9</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8289"></A>Complex&nbsp;<B>is</B>&nbsp;<B>new</B>&nbsp;Single_Precision_Complex_Types.Complex;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8484"></A>Complex&nbsp;<B>is</B>&nbsp;<B>new</B>&nbsp;Single_Precision_Complex_Types.Complex;</div>
 <div class="paranum"><a name="p10">10</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>subtype</B>&nbsp;<A NAME="I8290"></A>Imaginary&nbsp;<B>is</B>&nbsp;Single_Precision_Complex_Types.Imaginary;<BR>
-&nbsp;&nbsp;&nbsp;<A NAME="I8291"></A>i&nbsp;:&nbsp;Imaginary&nbsp;<B>renames</B>&nbsp;Single_Precision_Complex_Types.i;<BR>
-&nbsp;&nbsp;&nbsp;<A NAME="I8292"></A>j&nbsp;:&nbsp;Imaginary&nbsp;<B>renames</B>&nbsp;Single_Precision_Complex_Types.j;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>subtype</B>&nbsp;<A NAME="I8485"></A>Imaginary&nbsp;<B>is</B>&nbsp;Single_Precision_Complex_Types.Imaginary;<BR>
+&nbsp;&nbsp;&nbsp;<A NAME="I8486"></A>i&nbsp;:&nbsp;Imaginary&nbsp;<B>renames</B>&nbsp;Single_Precision_Complex_Types.i;<BR>
+&nbsp;&nbsp;&nbsp;<A NAME="I8487"></A>j&nbsp;:&nbsp;Imaginary&nbsp;<B>renames</B>&nbsp;Single_Precision_Complex_Types.j;</div>
 <div class="paranum"><a name="p11">11</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8293"></A>Character_Set&nbsp;<B>is</B>&nbsp;<SPAN Class="roman"><I>implementation-defined&nbsp;character&nbsp;type</I></SPAN>;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8488"></A>Character_Set&nbsp;<B>is</B>&nbsp;<SPAN Class="roman"><I>implementation-defined&nbsp;character&nbsp;type</I></SPAN>;</div>
 <div class="paranum"><a name="p12">12/3</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
-&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8294"></A>Fortran_Character&nbsp;<B>is</B>&nbsp;<B>array</B>&nbsp;(Positive&nbsp;<B>range</B>&nbsp;&lt;&gt;)&nbsp;<B>of</B>&nbsp;Character_Set<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Pack;</div>
+&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8489"></A>Fortran_Character&nbsp;<B>is</B>&nbsp;<B>array</B>&nbsp;(Positive&nbsp;<B>range</B>&nbsp;&lt;&gt;)&nbsp;<B>of</B>&nbsp;Character_Set<span class="insert3"><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Pack</span><span class="delete3">;<BR>
+&nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Pack&nbsp;(Fortran_Character)</span>;</div>
 <div class="paranum"><a name="p13">13</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8295"></A>To_Fortran&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;Character)&nbsp;<B>return</B>&nbsp;Character_Set;<BR>
-&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8296"></A>To_Ada&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;Character_Set)&nbsp;<B>return</B>&nbsp;Character;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8490"></A>To_Fortran&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;Character)&nbsp;<B>return</B>&nbsp;Character_Set;<BR>
+&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8491"></A>To_Ada&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;Character_Set)&nbsp;<B>return</B>&nbsp;Character;</div>
 <div class="paranum"><a name="p14">14</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8297"></A>To_Fortran&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;String)&nbsp;<B>return</B>&nbsp;Fortran_Character;<BR>
-&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8298"></A>To_Ada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;Fortran_Character)&nbsp;<B>return</B>&nbsp;String;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8492"></A>To_Fortran&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;String)&nbsp;<B>return</B>&nbsp;Fortran_Character;<BR>
+&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8493"></A>To_Ada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Item&nbsp;:&nbsp;<B>in</B>&nbsp;Fortran_Character)&nbsp;<B>return</B>&nbsp;String;</div>
 <div class="paranum"><a name="p15">15</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I8299"></A>To_Fortran&nbsp;(Item&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I8494"></A>To_Fortran&nbsp;(Item&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Target&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;Fortran_Character;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;Natural);</div>
 <div class="paranum"><a name="p16">16</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I8300"></A>To_Ada&nbsp;(Item&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Fortran_Character;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I8495"></A>To_Ada&nbsp;(Item&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Fortran_Character;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Target&nbsp;&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;Natural);</div>
 <div class="paranum"><a name="p17">17</a></div>
 <div class="Examples"><B>end</B>&nbsp;Interfaces.Fortran;</div>
 <div class="paranum"><a name="p17.a.1">17.a.1/1</a></div>
-<div class="Annotations"><B>Implementation defined:&nbsp;</B>The types Fortran_Integer, 
-Real, Double_Precision, and Character_Set in Interfaces.Fortran.</div>
+<div class="Annotations"><span class="insert1"><B>Implementation defined: 
+</B></span><span class="insert1">The types Fortran_Integer, Real, Double_Precision, 
+and Character_Set in Interfaces.Fortran.</span></div>
 <div class="paranum"><a name="p17.a">17.a</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>The means by which the 
 Complex type is provided in Interfaces.Fortran creates a dependence of 
-Interfaces.Fortran on Numerics.Generic_Complex_Types (see <A HREF="aa-G-1-1.html">G.1.1</A>). 
+Interfaces.Fortran on Numerics.Generic_Complex_Types (see <A HREF="AA-G-1-1.html">G.1.1</A>). 
 This dependence is intentional and unavoidable, if the Fortran-compatible 
 Complex type is to be useful in Ada code without duplicating facilities 
 defined elsewhere.&nbsp;</div>
@@ -102,10 +107,10 @@ subprograms found in Interfaces.COBOL.&nbsp;</div>
 
 <H4 Class="centered">Implementation Requirements</H4>
 <div class="paranum"><a name="p20">20/3</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
-An implementation shall support specifying aspect Convention with a Fortran 
-<I>convention</I>_<SPAN Class="swiss"><A HREF="aa-2-3.html#S0002">identifier</A></SPAN> 
-for a Fortran-eligible type (see <A HREF="aa-B-1.html">B.1</A>).&nbsp;</div>
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
+An implementation shall support <span class="insert3">specifying aspect</span><span class="delete3"><SPAN Class="swiss"><A HREF="AA-2-8.html#S0019">&nbsp;pragma</A></SPAN></span> 
+Convention with a Fortran <I>convention</I>_<SPAN Class="swiss"><A HREF="AA-2-3.html#S0002">identifier</A></SPAN> 
+for a Fortran-eligible type (see <A HREF="AA-B-1.html">B.1</A>).&nbsp;</div>
 
 <H4 Class="centered">Implementation Permissions</H4>
 <div class="paranum"><a name="p21">21</a></div>
@@ -156,12 +161,12 @@ ensure by-copy semantics.</div>
 is passed as a reference to a Fortran procedure whose interface corresponds 
 to the designated subprogram's specification.&nbsp;</div>
 <div class="paranum"><a name="p26.a">26.a/2</a></div>
-<div class="Annotations"><B>Implementation Advice:&nbsp;</B>If Fortran interfacing 
-is supported, the interface correspondences between Ada and Fortran should 
-be supported.</div>
+<div class="Annotations"><span class="insert2"><B>Implementation Advice: 
+</B></span><span class="insert2">If Fortran interfacing is supported, 
+the interface correspondences between Ada and Fortran should be supported.</span></div>
 <div class="NotesHeader">NOTES</div>
 <div class="paranum"><a name="p27">27</a></div>
-<div class="Notes">14&nbsp;&nbsp;An object of a Fortran-compatible record 
+<div class="Notes">18&nbsp;&nbsp;An object of a Fortran-compatible record 
 type, declared in a library package or subprogram, can correspond to 
 a Fortran common block; the type also corresponds to a Fortran &ldquo;derived 
 type&rdquo;.&nbsp;</div>
@@ -177,11 +182,13 @@ type&rdquo;.&nbsp;</div>
 <div class="paranum"><a name="p30">30/3</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0229-1.TXT">AI05-0229-1</A></I>} 
 &nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;Fortran_Matrix&nbsp;<B>is</B>&nbsp;<B>array</B>&nbsp;(Integer&nbsp;<B>range</B>&nbsp;&lt;&gt;,<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integer&nbsp;<B>range</B>&nbsp;&lt;&gt;)&nbsp;<B>of</B>&nbsp;Double_Precision<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Convention&nbsp;=&gt;&nbsp;Fortran;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN Class="roman"><I>--&nbsp;stored&nbsp;in&nbsp;Fortran's</I></SPAN><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integer&nbsp;<B>range</B>&nbsp;&lt;&gt;)&nbsp;<B>of</B>&nbsp;Double_Precision<span class="insert3"><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Convention&nbsp;=&gt;&nbsp;Fortran;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="delete3">;<BR>
+&nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Convention&nbsp;(Fortran,&nbsp;Fortran_Matrix);</span>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN Class="roman"><I>--&nbsp;stored&nbsp;in&nbsp;Fortran's</I></SPAN><BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN Class="roman"><I>--&nbsp;column-major&nbsp;order</I></SPAN><BR>
-&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;Invert&nbsp;(Rank&nbsp;:&nbsp;<B>in</B>&nbsp;Fortran_Integer;&nbsp;X&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Fortran_Matrix)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Import&nbsp;=&gt;&nbsp;True,&nbsp;Convention&nbsp;=&gt;&nbsp;Fortran;&nbsp;<SPAN Class="roman"><I>--&nbsp;a&nbsp;Fortran&nbsp;subroutine</I></SPAN></div>
+&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;Invert&nbsp;(Rank&nbsp;:&nbsp;<B>in</B>&nbsp;Fortran_Integer;&nbsp;X&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Fortran_Matrix)<span class="insert3"><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>with</B>&nbsp;Import&nbsp;=&gt;&nbsp;True,&nbsp;Convention&nbsp;=&gt;&nbsp;Fortran;</span><span class="delete3">;<BR>
+&nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Import&nbsp;(Fortran,&nbsp;Invert);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<SPAN Class="roman"><I>--&nbsp;a&nbsp;Fortran&nbsp;subroutine</I></SPAN></div>
 <div class="paranum"><a name="p31">31</a></div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;Rank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>constant</B>&nbsp;Fortran_Integer&nbsp;:=&nbsp;100;<BR>
 &nbsp;&nbsp;&nbsp;My_Matrix&nbsp;:&nbsp;Fortran_Matrix&nbsp;(1&nbsp;..&nbsp;Rank,&nbsp;1&nbsp;..&nbsp;Rank);</div>
@@ -197,12 +204,12 @@ type&rdquo;.&nbsp;</div>
 <div class="Examples"><B>end</B>&nbsp;Ada_Application;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-B-4.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-C.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-B-4.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-C.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

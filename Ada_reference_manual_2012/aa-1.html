@@ -7,50 +7,76 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-0-3.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-1-1.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-1-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>1 &nbsp; General</H1>
-<div class="paranum"><a name="p2.a">2.a/4</a></div>
+<div class="paranum"><a name="p1">1/3</a></div>
+<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
+<span class="delete3">Ada is a programming language designed to support 
+the construction of long-lived, highly reliable software systems. The 
+language includes facilities to define packages of related types, objects, 
+and operations. The packages may be parameterized and the types may be 
+extended to support the construction of libraries of reusable, adaptable 
+software components. The operations may be implemented as subprograms 
+using conventional sequential control structures, or as entries that 
+include synchronization of concurrent threads of control as part of their 
+invocation. The language treats modularity in the physical sense as well, 
+with a facility to support separate compilation.</span></div>
+<div class="paranum"><a name="p2">2/3</a></div>
+<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0269-1.TXT">AI05-0269-1</A></I>} 
+<span class="delete3"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
+<span class="delete3">The language includes a complete facility for the 
+support of real-time, concurrent programming. Errors can be signaled 
+as exceptions and handled explicitly. The language also covers systems 
+programming; this requires precise control over the representation of 
+data and access to system-dependent properties. Finally, a predefined 
+environment of standard packages is provided, including facilities for, 
+among others, input-output, string manipulation, numeric elementary functions, 
+and random number generation.</span>&nbsp;</div>
+<div class="paranum"><a name="p2.a">2.a/3</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>This Annotated Ada Reference 
-Manual (AARM) contains the entire text of the third edition of the Ada 
-Reference Manual as updated by Technical Corrigendum 1 (the Ada 2012 
-RM), plus certain annotations. The annotations give a more in-depth analysis 
+Manual (AARM) contains the entire text of the <span class="insert3">third 
+edition of the&nbsp;</span>Ada Reference Manual <span class="insert3">&nbsp;(the 
+Ada 2012 RM</span><span class="delete3"></span><span class="insert2"><span class="delete3">&nbsp;with Amendment 1 (the Ada 2005 RM</span></span><span class="delete3"></span><span class="delete2">(RM95</span><span class="delete3"></span>), 
+plus certain annotations. The annotations give a more in-depth analysis 
 of the language. They describe the reason for each nonobvious rule, and 
 point out interesting ramifications of the rules and interactions among 
 the rules (interesting to language lawyers, that is). Differences between 
-Ada 83, Ada 95, Ada 2005, and Ada 2012 are listed. (The text you are 
-reading now is an annotation.)</div>
+Ada 83<span class="insert2">, Ada 95,&nbsp;</span><span class="insert2"><span class="delete3">and 
+</span></span><span class="insert2">Ada 2005</span><span class="insert3">, 
+and Ada 2012</span><span class="insert2"></span><span class="delete2">&nbsp;and Ada 95</span> are listed. (The text you are reading now is an annotation.)</div>
 <div class="paranum"><a name="p2.b">2.b/3</a></div>
 <div class="Annotations">The AARM stresses detailed correctness and uniformity 
 over readability and understandability. We're not trying to make the 
 language &ldquo;appear&rdquo; simple here; on the contrary, we're trying 
 to expose hidden complexities, so we can more easily detect language 
-bugs. The Ada 2012 RM, on the other hand, is intended to be a more readable 
-document for programmers.</div>
+bugs. The <span class="insert2">Ada&nbsp;</span><span class="insert3">2012</span><span class="insert2"></span><span class="insert2"><span class="delete3">&nbsp;2005</span></span><span class="insert2">&nbsp;RM</span><span class="delete2">&nbsp;RM95</span>, on the other hand, is intended 
+to be a more readable document for programmers.</div>
 <div class="paranum"><a name="p2.c">2.c</a></div>
 <div class="Annotations" style="margin-bottom: 0.4em">The annotations 
 in the AARM are as follows:&nbsp;</div>
 <div class="paranum"><a name="p2.d">2.d/3</a></div>
 <div class="SmallBulleted">Text that is logically redundant is shown 
 [in square brackets, like this]. Technically, such text could be written 
-as a Note in the Ada 2012 RM (and the Ada 95 and 2005 RMs before it), 
-since it is really a theorem that can be proven from the nonredundant 
-rules of the language. We use the square brackets instead when it seems 
-to make the Ada 2012 RM more readable.</div>
+as a Note in the <span class="insert2">Ada&nbsp;</span><span class="insert3">2012</span><span class="insert2"></span><span class="insert2"><span class="delete3">&nbsp;2005</span></span><span class="insert2">&nbsp;RM (and the Ada 95&nbsp;</span><span class="insert3">and 2005 RMs</span><span class="insert2"></span><span class="insert2"><span class="delete3">&nbsp;RM</span></span><span class="insert2">&nbsp;before it)</span><span class="delete2">&nbsp;RM95</span>, since it is really 
+a theorem that can be proven from the nonredundant rules of the language. 
+We use the square brackets instead when it seems to make the <span class="insert2">Ada 
+</span><span class="insert3">2012</span><span class="insert2"></span><span class="insert2"><span class="delete3">&nbsp;2005</span></span><span class="insert2">&nbsp;RM</span><span class="delete2">&nbsp;RM95</span> more readable.</div>
 <div class="paranum"><a name="p2.e">2.e</a></div>
 <div class="SmallBulleted">The rules of the language (and some AARM-only 
 text) are categorized, and placed under certain <I>sub-headings</I> that 
 indicate the category. For example, the distinction between Name Resolution 
-Rules and Legality Rules is particularly important, as explained in <A HREF="aa-8-6.html">8.6</A>.</div>
+Rules and Legality Rules is particularly important, as explained in <A HREF="AA-8-6.html">8.6</A>.</div>
 <div class="paranum"><a name="p2.f">2.f</a></div>
 <div class="SmallBulleted">Text under the following sub-headings appears 
 in both documents:&nbsp;</div>
@@ -89,7 +115,7 @@ of each clause or subclause,</div>
 <div class="Indented4SmallNestedBulleted">Examples.&nbsp;</div>
 <div class="paranum"><a name="p2.w">2.w/3</a></div>
 <div class="SmallBulleted">Text under the following sub-headings does 
-not appear in the Ada 2012 RM:&nbsp;</div>
+not appear in the <span class="insert2">Ada&nbsp;</span><span class="insert3">2012</span><span class="insert2"></span><span class="insert2"><span class="delete3">&nbsp;2005</span></span><span class="insert2">&nbsp;RM</span><span class="delete2">&nbsp;RM95</span>:&nbsp;</div>
 <div class="paranum"><a name="p2.x">2.x</a></div>
 <div class="Indented4SmallNestedBulleted">Language Design Principles,</div>
 <div class="paranum"><a name="p2.y">2.y</a></div>
@@ -100,35 +126,31 @@ not appear in the Ada 2012 RM:&nbsp;</div>
 <div class="paranum"><a name="p2.aa">2.aa</a></div>
 <div class="Indented4SmallNestedBulleted">Extensions to Ada 83,</div>
 <div class="paranum"><a name="p2.bb">2.bb/2</a></div>
-<div class="Indented4SmallNestedBulleted">Wording Changes from Ada 83,</div>
+<div class="Indented4SmallNestedBulleted">Wording Changes from Ada 83<span class="insert2">,</span><span class="delete2">.</span></div>
 <div class="paranum"><a name="p2.bb.1">2.bb.1/2</a></div>
-<div class="Indented4SmallNestedBulleted">Inconsistencies With Ada 95,</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert2">Inconsistencies 
+With Ada 95,</span></div>
 <div class="paranum"><a name="p2.bb.2">2.bb.2/2</a></div>
-<div class="Indented4SmallNestedBulleted">Incompatibilities With Ada 
-95,</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert2">Incompatibilities 
+With Ada 95,</span></div>
 <div class="paranum"><a name="p2.bb.3">2.bb.3/2</a></div>
-<div class="Indented4SmallNestedBulleted">Extensions to Ada 95,</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert2">Extensions 
+to Ada 95,</span></div>
 <div class="paranum"><a name="p2.bb.4">2.bb.4/3</a></div>
-<div class="Indented4SmallNestedBulleted">Wording Changes from Ada 95,</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert2">Wording 
+Changes from Ada 95</span><span class="insert3">,</span><span class="insert2"></span><span class="insert2"><span class="delete3">.</span></span><span class="insert2"></span></div>
 <div class="paranum"><a name="p2.bb.5">2.bb.5/3</a></div>
-<div class="Indented4SmallNestedBulleted">Inconsistencies With Ada 2005,</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert3">Inconsistencies 
+With Ada 2005,</span></div>
 <div class="paranum"><a name="p2.bb.6">2.bb.6/3</a></div>
-<div class="Indented4SmallNestedBulleted">Incompatibilities With Ada 
-2005,</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert3">Incompatibilities 
+With Ada 2005,</span></div>
 <div class="paranum"><a name="p2.bb.7">2.bb.7/3</a></div>
-<div class="Indented4SmallNestedBulleted">Extensions to Ada 2005,</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert3">Extensions 
+to Ada 2005,</span></div>
 <div class="paranum"><a name="p2.bb.8">2.bb.8/3</a></div>
-<div class="Indented4SmallNestedBulleted">Wording Changes from Ada 2005.</div>
-<div class="paranum"><a name="p2.bb.9">2.bb.9/4</a></div>
-<div class="Indented4SmallNestedBulleted">Inconsistencies With Ada 2012,</div>
-<div class="paranum"><a name="p2.bb.10">2.bb.10/4</a></div>
-<div class="Indented4SmallNestedBulleted">Incompatibilities With Ada 
-2012,</div>
-<div class="paranum"><a name="p2.bb.11">2.bb.11/4</a></div>
-<div class="Indented4SmallNestedBulleted">Extensions to Ada 2012,</div>
-<div class="paranum"><a name="p2.bb.12">2.bb.12/4</a></div>
-<div class="Indented4SmallNestedBulleted">Wording Changes from Ada 2012. 
-</div>
+<div class="Indented4SmallNestedBulleted"><span class="insert3">Wording 
+Changes from Ada 2005.</span>&nbsp;</div>
 <div class="paranum"><a name="p2.cc">2.cc</a></div>
 <div class="SmallBulleted">The AARM also includes the following kinds 
 of annotations. These do not necessarily annotate the immediately preceding 
@@ -166,14 +188,14 @@ the only annotations that could be considered part of the language definition.
 </div>
 <div class="paranum"><a name="p2.kk">2.kk</a></div>
 <div class="Annotations"><B>Glossary entry:&nbsp;</B>The text of a Glossary 
-entry &mdash; this text will also appear in <A HREF="aa-N.html">Annex 
-N</A>, &ldquo;<A HREF="aa-N.html">Glossary</A>&rdquo;.&nbsp;</div>
+entry &mdash; this text will also appear in <A HREF="AA-N.html">Annex 
+N</A>, &ldquo;<A HREF="AA-N.html">Glossary</A>&rdquo;.&nbsp;</div>
 <div class="paranum"><a name="p2.ll">2.ll/3</a></div>
-<div class="Annotations"><B>Discussion:&nbsp;</B>In general, the Ada 2012 
-RM text appears in the normal font, whereas AARM-only text appears in 
-a smaller font. Notes also appear in the smaller font, as recommended 
-by ISO/IEC style guidelines. Ada examples are also usually printed in 
-a smaller font.</div>
+<div class="Annotations"><B>Discussion:&nbsp;</B>In general, <span class="insert2">the 
+Ada&nbsp;</span><span class="insert3">2012</span><span class="insert2"></span><span class="insert2"><span class="delete3">&nbsp;2005</span></span><span class="insert2">&nbsp;RM</span><span class="delete2">&nbsp;RM95</span> text appears in the normal 
+font, whereas AARM-only text appears in a smaller font. Notes also appear 
+in the smaller font, as recommended by ISO/IEC style guidelines. Ada 
+examples are also usually printed in a smaller font.</div>
 <div class="paranum"><a name="p2.mm">2.mm</a></div>
 <div class="Annotations">If you have trouble finding things, be sure 
 to use the index. <A NAME="I1003"></A>Each defined term appears there, 
@@ -187,12 +209,12 @@ in pieces distributed throughout the document. The pieces are marked
 definition applies to.&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-0-3.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-1-1.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-1-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

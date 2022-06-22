@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-7.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-8-1.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-7.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-8-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>A.8 Sequential and Direct Files</H1>
@@ -23,15 +24,16 @@
 <H4 Class="centered">Static Semantics</H4>
 <div class="paranum"><a name="p1">1/2</a></div>
 <div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00283.TXT">AI95-00283-01</A></I>} 
-<A NAME="I6867"></A><A NAME="I6868"></A><A NAME="I6869"></A>Two kinds 
-of access to external files are defined in this subclause: <I>sequential 
+<A NAME="I7034"></A><A NAME="I7035"></A><span class="insert2"><A NAME="I7036"></A></span>Two 
+kinds of access to external files are defined in this subclause: <I>sequential 
 access</I> and <I>direct access</I>. The corresponding file types and 
 the associated operations are provided by the generic packages Sequential_IO 
 and Direct_IO. A file object to be used for sequential access is called 
 a <I>sequential file</I>, and one to be used for direct access is called 
-a <I>direct file</I>. Access to <I>stream file</I>s is described in <A HREF="aa-A-12-1.html">A.12.1</A>.</div>
+a <I>direct file</I>. Access to <span class="insert2"><I>stream file</I>s</span><span class="delete2">&nbsp;stream 
+files</span> is described in <A HREF="AA-A-12-1.html">A.12.1</A>.</div>
 <div class="paranum"><a name="p2">2</a></div>
-<div class="Normal"><A NAME="I6870"></A>For sequential access, the file 
+<div class="Normal"><A NAME="I7037"></A>For sequential access, the file 
 is viewed as a sequence of values that are transferred in the order of 
 their appearance (as produced by the program or by the external environment). 
 When the file is opened with mode In_File or Out_File, transfer starts 
@@ -60,7 +62,7 @@ third category, informally called `access to streams'. (We decided against
 the term `stream access' because of possible confusion with the Stream_Access 
 type declared in one of the stream packages.)</div>
 <div class="paranum"><a name="p3">3</a></div>
-<div class="Normal"><A NAME="I6871"></A><A NAME="I6872"></A><A NAME="I6873"></A>For 
+<div class="Normal"><A NAME="I7038"></A><A NAME="I7039"></A><A NAME="I7040"></A>For 
 direct access, the file is viewed as a set of elements occupying consecutive 
 positions in linear order; a value can be transferred to or from an element 
 of the file at any selected position. The position of an element is specified 
@@ -70,7 +72,7 @@ of the last element, if any, is called the <I>current size</I>; the current
 size is zero if there are no elements. The current size is a property 
 of the external file.</div>
 <div class="paranum"><a name="p4">4</a></div>
-<div class="Normal"><A NAME="I6874"></A>An open direct file has a <I>current 
+<div class="Normal"><A NAME="I7041"></A>An open direct file has a <I>current 
 index</I>, which is the index that will be used by the next read or write 
 operation. When a direct file is opened, the current index is set to 
 one. The current index of a direct file is a property of a file object, 
@@ -79,16 +81,16 @@ not of an external file.&nbsp;</div>
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p4.a">4.a/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00283.TXT">AI95-00283-01</A></I>} 
-Italicized &ldquo;stream file&rdquo; to clarify that this is another 
-kind of file.&nbsp;</div>
+<span class="insert2">Italicized &ldquo;stream file&rdquo; to clarify 
+that this is another kind of file.</span>&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-7.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-8-1.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-7.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-8-1.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

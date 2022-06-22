@@ -7,38 +7,39 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-5-3.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-6.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-5-3.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-6.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>A.5.4 Attributes of Fixed Point Types</H1>
 
 <H4 Class="centered">Static Semantics</H4>
 <div class="paranum"><a name="p1">1</a></div>
-<div class="Normal" style="margin-bottom: 0.4em"><A NAME="I6844"></A>The 
+<div class="Normal" style="margin-bottom: 0.4em"><A NAME="I7011"></A>The 
 following <I>representation-oriented</I> attributes are defined for every 
 subtype S of a fixed point type <I>T</I>.&nbsp;</div>
 <div class="paranum"><a name="p2">2</a></div>
 <div class="WideHanging-Term">S'Machine_Radix</div><div class="WideHanging-Body"><br clear="left">
-<A NAME="I6845"></A><A NAME="I6846"></A>Yields the radix of the hardware 
+<A NAME="I7012"></A><A NAME="I7013"></A>Yields the radix of the hardware 
 representation of the type <I>T</I>. The value of this attribute is of 
 the type <I>universal_integer</I>.</div>
 <div class="paranum"><a name="p3">3</a></div>
 <div class="WideHanging-Term">S'Machine_Rounds</div><div class="WideHanging-Body"><br clear="left">
-<A NAME="I6847"></A><A NAME="I6848"></A>Yields the value True if rounding 
+<A NAME="I7014"></A><A NAME="I7015"></A>Yields the value True if rounding 
 is performed on inexact results of every predefined operation that yields 
 a result of the type <I>T</I>; yields the value False otherwise. The 
 value of this attribute is of the predefined type Boolean.</div>
 <div class="paranum"><a name="p4">4</a></div>
 <div class="WideHanging-Term">S'Machine_Overflows</div><div class="WideHanging-Body"><br clear="left">
-<A NAME="I6849"></A><A NAME="I6850"></A>Yields the value True if overflow 
+<A NAME="I7016"></A><A NAME="I7017"></A>Yields the value True if overflow 
 and divide-by-zero are detected and reported by raising Constraint_Error 
 for every predefined operation that yields a result of the type <I>T</I>; 
 yields the value False otherwise. The value of this attribute is of the 
@@ -46,7 +47,7 @@ predefined type Boolean.&nbsp;</div>
 
 <H4 Class="centered">Incompatibilities With Ada 83</H4>
 <div class="paranum"><a name="p4.a">4.a</a></div>
-<div class="Annotations"><A NAME="I6851"></A>The Mantissa, Large, Safe_Small, 
+<div class="Annotations"><A NAME="I7018"></A>The Mantissa, Large, Safe_Small, 
 and Safe_Large attributes of fixed point types are removed from the language.</div>
 <div class="paranum"><a name="p4.b">4.b</a></div>
 <div class="Annotations">Implementations are encouraged to eliminate 
@@ -56,17 +57,17 @@ their former values.&nbsp;</div>
 
 <H4 Class="centered">Extensions to Ada 83</H4>
 <div class="paranum"><a name="p4.c">4.c</a></div>
-<div class="Annotations"><A NAME="I6852"></A>The Machine_Radix attribute 
+<div class="Annotations"><A NAME="I7019"></A>The Machine_Radix attribute 
 is now allowed for fixed point types. It is also specifiable in an attribute 
-definition clause (see <A HREF="aa-F-1.html">F.1</A>).&nbsp;</div>
+definition clause (see <A HREF="AA-F-1.html">F.1</A>).&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-5-3.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-6.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-5-3.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-6.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

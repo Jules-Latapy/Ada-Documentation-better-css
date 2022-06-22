@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-G-2-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-G-2-4.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-G-2-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-G-2-4.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>G.2.3 Model of Fixed Point Arithmetic</H1>
@@ -33,7 +34,7 @@ on fixed point operands, are given below.&nbsp;</div>
 <div class="paranum"><a name="p2.a">2.a</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>This subclause does not cover 
 the accuracy of an operation of a static expression; such operations 
-have to be evaluated exactly (see <A HREF="aa-4-9.html">4.9</A>).&nbsp;</div>
+have to be evaluated exactly (see <A HREF="AA-4-9.html">4.9</A>).&nbsp;</div>
 <div class="paranum"><a name="p3">3</a></div>
 <div class="Normal">The operands of the fixed point adding operators, 
 absolute value, and comparisons have the same type. These operations 
@@ -46,13 +47,13 @@ defining the accuracy rules, the multiplication or division and the conversion
 are treated as a single operation whose accuracy depends on three types 
 (those of the operands and the result). For decimal fixed point types, 
 the attribute T'Round may be used to imply explicit conversion with rounding 
-(see <A HREF="aa-3-5-10.html">3.5.10</A>).</div>
+(see <A HREF="AA-3-5-10.html">3.5.10</A>).</div>
 <div class="paranum"><a name="p5">5</a></div>
 <div class="Normal">When the result type is a floating point type, the 
-accuracy is as given in <A HREF="aa-G-2-1.html">G.2.1</A>. <A NAME="I9111"></A>For 
+accuracy is as given in <A HREF="AA-G-2-1.html">G.2.1</A>. <A NAME="I9359"></A>For 
 some combinations of the operand and result types in the remaining cases, 
 the result is required to belong to a small set of values called the 
-<I>perfect result set</I>; <A NAME="I9112"></A>for other combinations, 
+<I>perfect result set</I>; <A NAME="I9360"></A>for other combinations, 
 it is required merely to belong to a generally larger and implementation-defined 
 set of values called the <I>close result set</I>. When the result type 
 is a decimal fixed point type, the perfect result set contains a single 
@@ -110,11 +111,11 @@ is an integer multiple of <SPAN Class="roman"><I>s</I></SPAN>, then the
 perfect result set contains only the value <SPAN Class="roman"><I>v</I></SPAN>;</div>
 <div class="paranum"><a name="p14">14/3</a></div>
 <div class="Indented2NestedBulleted">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0264-1.TXT">AI05-0264-1</A></I>} 
-otherwise, if truncation applies, then it contains only the integer multiple 
-of <SPAN Class="roman"><I>s</I></SPAN> in the direction toward zero, 
-whereas if rounding applies, then it contains only the nearest integer 
-multiple of <SPAN Class="roman"><I>s</I></SPAN> (with ties broken by 
-rounding away from zero).&nbsp;</div>
+otherwise, if truncation applies<span class="insert3">,</span> then it 
+contains only the integer multiple of <SPAN Class="roman"><I>s</I></SPAN> 
+in the direction toward zero, whereas if rounding applies<span class="insert3">,</span> 
+then it contains only the nearest integer multiple of <SPAN Class="roman"><I>s</I></SPAN> 
+(with ties broken by rounding away from zero).&nbsp;</div>
 <div class="paranum"><a name="p15">15</a></div>
 <div class="Bulleted-NoPrefix">The close result set is an implementation-defined 
 set of consecutive integer multiples of <SPAN Class="roman"><I>s</I></SPAN> 
@@ -199,12 +200,12 @@ operand to a fixed point type shall belong to the perfect result set.</div>
 <div class="Normal">The possibility of overflow in the result of a predefined 
 arithmetic operation or conversion yielding a result of a fixed point 
 type T is analogous to that for floating point types, except for being 
-related to the base range instead of the safe range. <A NAME="I9113"></A><A NAME="I9114"></A>If 
+related to the base range instead of the safe range. <A NAME="I9361"></A><A NAME="I9362"></A>If 
 all of the permitted results belong to the base range of T, then the 
 implementation shall deliver one of the permitted results; otherwise, 
 </div>
 <div class="paranum"><a name="p26">26</a></div>
-<div class="Bulleted"><A NAME="I9115"></A>if T'Machine_Overflows is True, 
+<div class="Bulleted"><A NAME="I9363"></A>if T'Machine_Overflows is True, 
 the implementation shall either deliver one of the permitted results 
 or raise Constraint_Error;</div>
 <div class="paranum"><a name="p27">27</a></div>
@@ -217,7 +218,7 @@ attribute of the result type is False.</div>
 
 <H4 Class="centered">Inconsistencies With Ada 83</H4>
 <div class="paranum"><a name="p27.b">27.b</a></div>
-<div class="Annotations"><A NAME="I9116"></A>Since the values of a fixed 
+<div class="Annotations"><A NAME="I9364"></A>Since the values of a fixed 
 point type are now just the integer multiples of its <I>small</I>, the 
 possibility of using extra bits available in the chosen representation 
 for extra accuracy rather than for increasing the base range would appear 
@@ -252,12 +253,12 @@ those adjacent values is allowed);</div>
 by the language.&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-G-2-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-G-2-4.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-G-2-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-G-2-4.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

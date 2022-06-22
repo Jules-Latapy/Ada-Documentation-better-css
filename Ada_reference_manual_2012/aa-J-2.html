@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-J-1.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-J-3.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-J-1.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-J-3.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>J.2 Allowed Replacements of Characters</H1>
@@ -29,15 +30,14 @@ are allowed for the vertical line, number sign, and quotation mark characters:
 <div class="Indented2Bulleted">A vertical line character (|) can be replaced 
 by an exclamation mark (!) where used as a delimiter.</div>
 <div class="paranum"><a name="p3">3</a></div>
-<div class="Indented2Bulleted">The number sign characters (#) of a <SPAN Class="swiss"><A HREF="aa-2-4-2.html#S0011">based_literal</A></SPAN> 
+<div class="Indented2Bulleted">The number sign characters (#) of a <SPAN Class="swiss"><A HREF="AA-2-4-2.html#S0011">based_literal</A></SPAN> 
 can be replaced by colons (:) provided that the replacement is done for 
 both occurrences.&nbsp;</div>
 <div class="paranum"><a name="p3.a">3.a/2</a></div>
 <div class="Annotations"><B>To be honest:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00285.TXT">AI95-00285-01</A></I>} 
-The intent is that such a replacement works in the Value, Wide_Value, 
-and Wide_Wide_Value attributes, and in the Get procedures of Text_IO 
-(and Wide_Text_IO and Wide_Wide_Text_IO as well)}, so that things like 
-&ldquo;16:.123:&rdquo; is acceptable.&nbsp;</div>
+The intent is that such a replacement works in the Value<span class="insert2">,</span><span class="delete2">&nbsp;and</span> Wide_Value<span class="insert2">, and Wide_Wide_Value</span> 
+attributes, and in the Get procedures of Text_IO<span class="insert2">&nbsp;(and Wide_Text_IO and Wide_Wide_Text_IO as well)</span> }, so that things 
+like &ldquo;16:.123:&rdquo; is acceptable.&nbsp;</div>
 <div class="paranum"><a name="p4">4</a></div>
 <div class="Indented2Bulleted">The quotation marks (&quot;) used as string 
 brackets at both ends of a string literal can be replaced by percent 
@@ -71,17 +71,18 @@ quotes in a string without doubling them &mdash; the string literal:
 <div class="SmallExamples">%&quot;This&nbsp;is&nbsp;quoted.&quot;%</div>
 <div class="paranum"><a name="p5.e">5.e/3</a></div>
 <div class="Annotations" style="margin-bottom: 0.4em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0248-1.TXT">AI05-0248-1</A></I>} 
-is not legal in Ada (and never was legal). One has to write:&nbsp;</div>
+is not legal in Ada <span class="insert3">(and never was legal)</span><span class="delete3">&nbsp;83, 
+nor will it be in Ada 95</span>. One has to write:&nbsp;</div>
 <div class="paranum"><a name="p5.f">5.f</a></div>
 <div class="SmallExamples">&quot;&quot;&quot;This&nbsp;is&nbsp;quoted.&quot;&quot;&quot;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-J-1.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-J-3.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-J-1.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-J-3.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

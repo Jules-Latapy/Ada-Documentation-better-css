@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-4-3.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-4-5.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-4-3.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-4-5.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>A.4.4 Bounded-Length String Handling</H1>
@@ -48,70 +49,70 @@ strings.</div>
 Strings.Bounded has the following declaration:&nbsp;</div>
 <div class="paranum"><a name="p3">3</a></div>
 <div class="Examples"><B>with</B>&nbsp;Ada.Strings.Maps;<BR>
-<A NAME="I6394"></A><B>package</B>&nbsp;Ada.Strings.Bounded&nbsp;<B>is</B><BR>
+<A NAME="I6558"></A><B>package</B>&nbsp;Ada.Strings.Bounded&nbsp;<B>is</B><BR>
 &nbsp;&nbsp;&nbsp;<B>pragma</B>&nbsp;Preelaborate(Bounded);</div>
 <div class="paranum"><a name="p4">4</a></div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;<B>generic</B><BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max&nbsp;&nbsp;&nbsp;:&nbsp;Positive;&nbsp;&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>&nbsp;Maximum&nbsp;length&nbsp;of&nbsp;a&nbsp;Bounded_String</I></SPAN><BR>
-&nbsp;&nbsp;&nbsp;<B>package</B>&nbsp;<A NAME="I6395"></A>Generic_Bounded_Length&nbsp;<B>is</B></div>
+&nbsp;&nbsp;&nbsp;<B>package</B>&nbsp;<A NAME="I6559"></A>Generic_Bounded_Length&nbsp;<B>is</B></div>
 <div class="paranum"><a name="p5">5</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A NAME="I6396"></A>Max_Length&nbsp;:&nbsp;<B>constant</B>&nbsp;Positive&nbsp;:=&nbsp;Max;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A NAME="I6560"></A>Max_Length&nbsp;:&nbsp;<B>constant</B>&nbsp;Positive&nbsp;:=&nbsp;Max;</div>
 <div class="paranum"><a name="p6">6</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I6397"></A>Bounded_String&nbsp;<B>is</B>&nbsp;<B>private</B>;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I6561"></A>Bounded_String&nbsp;<B>is</B>&nbsp;<B>private</B>;</div>
 <div class="paranum"><a name="p7">7</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A NAME="I6398"></A>Null_Bounded_String&nbsp;:&nbsp;<B>constant</B>&nbsp;Bounded_String;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A NAME="I6562"></A>Null_Bounded_String&nbsp;:&nbsp;<B>constant</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p8">8</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>subtype</B>&nbsp;<A NAME="I6399"></A>Length_Range&nbsp;<B>is</B>&nbsp;Natural&nbsp;<B>range</B>&nbsp;0&nbsp;..&nbsp;Max_Length;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>subtype</B>&nbsp;<A NAME="I6563"></A>Length_Range&nbsp;<B>is</B>&nbsp;Natural&nbsp;<B>range</B>&nbsp;0&nbsp;..&nbsp;Max_Length;</div>
 <div class="paranum"><a name="p9">9</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6400"></A>Length&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String)&nbsp;<B>return</B>&nbsp;Length_Range;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6564"></A>Length&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String)&nbsp;<B>return</B>&nbsp;Length_Range;</div>
 <div class="paranum"><a name="p10">10</a></div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>&nbsp;Conversion,&nbsp;Concatenation,&nbsp;and&nbsp;Selection&nbsp;functions</I></SPAN></div>
 <div class="paranum"><a name="p11">11</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6401"></A>To_Bounded_String&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6565"></A>To_Bounded_String&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p12">12</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6402"></A>To_String&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String)&nbsp;<B>return</B>&nbsp;String;</div>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6566"></A>To_String&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String)&nbsp;<B>return</B>&nbsp;String;</div>
 <div class="paranum"><a name="p12.1">12.1/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6403"></A>Set_Bounded_String<BR>
+<span class="insert2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6567"></A>Set_Bounded_String<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Target&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Truncation&nbsp;:=&nbsp;Error);</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Truncation&nbsp;:=&nbsp;Error);</span></div>
 <div class="paranum"><a name="p13">13</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6404"></A>Append&nbsp;(Left,&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6568"></A>Append&nbsp;(Left,&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p14">14</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6405"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6569"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p15">15</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6406"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6570"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p16">16</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6407"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6571"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Character;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p17">17</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6408"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6572"></A>Append&nbsp;(Left&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p18">18</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6409"></A>Append&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in&nbsp;out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6573"></A>Append&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in&nbsp;out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New_Item&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;&nbsp;:=&nbsp;Error);</div>
 <div class="paranum"><a name="p19">19</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6410"></A>Append&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in&nbsp;out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6574"></A>Append&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in&nbsp;out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New_Item&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;&nbsp;:=&nbsp;Error);</div>
 <div class="paranum"><a name="p20">20</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6411"></A>Append&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in&nbsp;out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6575"></A>Append&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in&nbsp;out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New_Item&nbsp;:&nbsp;<B>in</B>&nbsp;Character;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;&nbsp;:=&nbsp;Error);</div>
 <div class="paranum"><a name="p21">21</a></div>
@@ -130,32 +131,32 @@ Strings.Bounded has the following declaration:&nbsp;</div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;&quot;&amp;&quot;&nbsp;(Left&nbsp;:&nbsp;<B>in</B>&nbsp;Character;&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p26">26</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6412"></A>Element&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6576"></A>Element&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Character;</div>
 <div class="paranum"><a name="p27">27</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6413"></A>Replace_Element&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6577"></A>Replace_Element&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character);</div>
 <div class="paranum"><a name="p28">28</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6414"></A>Slice&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6578"></A>Slice&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Low&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;String;</div>
 <div class="paranum"><a name="p28.1">28.1/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6415"></A>Bounded_Slice<BR>
+<span class="insert2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6579"></A>Bounded_Slice<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Low&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</span></div>
 <div class="paranum"><a name="p28.2">28.2/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6416"></A>Bounded_Slice<BR>
+<span class="insert2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6580"></A>Bounded_Slice<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Target&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Low&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Positive;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Natural);</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Natural);</span></div>
 <div class="paranum"><a name="p29">29</a></div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;&quot;=&quot;&nbsp;&nbsp;(Left,&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String)&nbsp;<B>return</B>&nbsp;Boolean;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;&quot;=&quot;&nbsp;&nbsp;(Left&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;String)<BR>
@@ -197,85 +198,85 @@ Strings.Bounded has the following declaration:&nbsp;</div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Boolean;</div>
 <div class="paranum"><a name="p43">43/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>&nbsp;Search&nbsp;subprograms</I></SPAN></div>
+&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>&nbsp;Search&nbsp;</I></SPAN><span class="insert2"><SPAN Class="roman"><I>subprograms</I></SPAN></span><SPAN Class="roman"><I></I></SPAN><span class="delete2"><SPAN Class="roman"><I>&nbsp;functions</I></SPAN></span><SPAN Class="roman"><I></I></SPAN></div>
 <div class="paranum"><a name="p43.1">43.1/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6417"></A>Index&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<span class="insert2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6581"></A>Index&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;:=&nbsp;Forward;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping&nbsp;:=&nbsp;Maps.Identity)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</span></div>
 <div class="paranum"><a name="p43.2">43.2/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6418"></A>Index&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<span class="insert2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6582"></A>Index&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;:=&nbsp;Forward;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping_Function)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</span></div>
 <div class="paranum"><a name="p44">44</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6419"></A>Index&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6583"></A>Index&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;:=&nbsp;Forward;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;Maps.Identity)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
 <div class="paranum"><a name="p45">45</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6420"></A>Index&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6584"></A>Index&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;:=&nbsp;Forward;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping_Function)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
 <div class="paranum"><a name="p45.1">45.1/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6421"></A>Index&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<span class="insert2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6585"></A>Index&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Membership&nbsp;:=&nbsp;Inside;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;:=&nbsp;Forward)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</span></div>
 <div class="paranum"><a name="p46">46</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6422"></A>Index&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6586"></A>Index&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Membership&nbsp;:=&nbsp;Inside;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;&nbsp;:=&nbsp;Forward)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
 <div class="paranum"><a name="p46.1">46.1/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6423"></A>Index_Non_Blank&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<span class="insert2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6587"></A>Index_Non_Blank&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;:=&nbsp;Forward)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</span></div>
 <div class="paranum"><a name="p47">47</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6424"></A>Index_Non_Blank&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6588"></A>Index_Non_Blank&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Going&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Direction&nbsp;:=&nbsp;Forward)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
 <div class="paranum"><a name="p48">48</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6425"></A>Count&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6589"></A>Count&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;Maps.Identity)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
 <div class="paranum"><a name="p49">49</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6426"></A>Count&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6590"></A>Count&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping_Function)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
 <div class="paranum"><a name="p50">50</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6427"></A>Count&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6591"></A>Count&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Natural;</div>
 <div class="paranum"><a name="p50.1">50.1/3</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0031-1.TXT">AI05-0031-1</A></I>} 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6428"></A>Find_Token&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<span class="insert3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6592"></A>Find_Token&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Membership;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;Positive;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;Natural);</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last&nbsp;&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;Natural);</span></div>
 <div class="paranum"><a name="p51">51</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6429"></A>Find_Token&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6593"></A>Find_Token&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Membership;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;&nbsp;:&nbsp;<B>out</B>&nbsp;Positive;<BR>
@@ -283,101 +284,101 @@ Strings.Bounded has the following declaration:&nbsp;</div>
 <div class="paranum"><a name="p52">52</a></div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>&nbsp;String&nbsp;translation&nbsp;subprograms</I></SPAN></div>
 <div class="paranum"><a name="p53">53</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6430"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6594"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p54">54</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6431"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6595"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping);</div>
 <div class="paranum"><a name="p55">55</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6432"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6596"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping_Function)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p56">56</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6433"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6597"></A>Translate&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Mapping_Function);</div>
 <div class="paranum"><a name="p57">57</a></div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>&nbsp;String&nbsp;transformation&nbsp;subprograms</I></SPAN></div>
 <div class="paranum"><a name="p58">58</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6434"></A>Replace_Slice&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6598"></A>Replace_Slice&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p59">59</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6435"></A>Replace_Slice&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6599"></A>Replace_Slice&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Low&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error);</div>
 <div class="paranum"><a name="p60">60</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6436"></A>Insert&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6600"></A>Insert&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New_Item&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p61">61</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6437"></A>Insert&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6601"></A>Insert&nbsp;(Source&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New_Item&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error);</div>
 <div class="paranum"><a name="p62">62</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6438"></A>Overwrite&nbsp;(Source&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6602"></A>Overwrite&nbsp;(Source&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Position&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New_Item&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p63">63</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6439"></A>Overwrite&nbsp;(Source&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6603"></A>Overwrite&nbsp;(Source&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Position&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New_Item&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error);</div>
 <div class="paranum"><a name="p64">64</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6440"></A>Delete&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6604"></A>Delete&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Through&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p65">65</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6441"></A>Delete&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6605"></A>Delete&nbsp;(Source&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Through&nbsp;:&nbsp;<B>in</B>&nbsp;Natural);</div>
 <div class="paranum"><a name="p66">66</a></div>
 <div class="Examples">&nbsp;&nbsp;&nbsp;--<SPAN Class="roman"><I>String&nbsp;selector&nbsp;subprograms</I></SPAN></div>
 <div class="paranum"><a name="p67">67</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6442"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6606"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Side&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Trim_End)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6443"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6607"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Side&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Trim_End);</div>
 <div class="paranum"><a name="p68">68</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6444"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6608"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p69">69</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6445"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6609"></A>Trim&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Maps.Character_Set);</div>
 <div class="paranum"><a name="p70">70</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6446"></A>Head&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6610"></A>Head&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pad&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character&nbsp;&nbsp;:=&nbsp;Space;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p71">71</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6447"></A>Head&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6611"></A>Head&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pad&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character&nbsp;&nbsp;:=&nbsp;Space;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error);</div>
 <div class="paranum"><a name="p72">72</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6448"></A>Tail&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6612"></A>Tail&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pad&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character&nbsp;&nbsp;:=&nbsp;Space;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p73">73</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6449"></A>Tail&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I6613"></A>Tail&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pad&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character&nbsp;&nbsp;:=&nbsp;Space;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error);</div>
@@ -396,17 +397,17 @@ Strings.Bounded has the following declaration:&nbsp;</div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p78">78</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6450"></A>Replicate&nbsp;(Count&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6614"></A>Replicate&nbsp;(Count&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Character;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p79">79</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6451"></A>Replicate&nbsp;(Count&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6615"></A>Replicate&nbsp;(Count&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p80">80</a></div>
-<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6452"></A>Replicate&nbsp;(Count&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
+<div class="Examples">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I6616"></A>Replicate&nbsp;(Count&nbsp;:&nbsp;<B>in</B>&nbsp;Natural;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Truncation&nbsp;:=&nbsp;Error)<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
@@ -418,9 +419,14 @@ Strings.Bounded has the following declaration:&nbsp;</div>
 <div class="Examples"><B>end</B>&nbsp;Ada.Strings.Bounded;</div>
 <div class="paranum"><a name="p82.a.1">82.a.1/2</a></div>
 <div class="Annotations"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN>{<I><A HREF="defect2.html#8652/0097">8652/0097</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00115.TXT">AI95-00115-01</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00344.TXT">AI95-00344-01</A></I>} 
+was deleted.</I></SPAN><span class="delete2"><B>Implementation Note: 
+</B></span>{<I><A HREF="defect2.html#8652/0097">8652/0097</A></I>} <span class="delete2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00115.TXT">AI95-00115-01</A></I>} 
+<span class="delete2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00344.TXT">AI95-00344-01</A></I>} 
+<span class="delete2"></span><span class="insert1"><span class="delete2">Bounded_String 
+cannot be implemented as a (directly) controlled type, as Ada.Strings.Bounded.Generic_Bounded_Length 
+can be instantiated at any nesting depth. Bounded_String could have a 
+component of a controlled type, as long as that type is declared in some 
+other (nongeneric) package (including directly in Ada.Strings.Bounded).</span></span><span class="delete2"></span> 
 </div>
 <div class="paranum"><a name="p83">83</a></div>
 <div class="Normal">Null_Bounded_String represents the null string. If 
@@ -437,9 +443,9 @@ returns the length of the string represented by Source.</div>
 &nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
 <div class="paranum"><a name="p87">87/3</a></div>
 <div class="Indented2" style="margin-bottom: 0.4em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0264-1.TXT">AI05-0264-1</A></I>} 
-If Source'Length &lt;= Max_Length, then this function returns a Bounded_String 
-that represents Source. Otherwise, the effect depends on the value of 
-Drop:&nbsp;</div>
+If Source'Length &lt;= Max_Length<span class="insert3">,</span> then 
+this function returns a Bounded_String that represents Source. Otherwise<span class="insert3">,</span> 
+the effect depends on the value of Drop:&nbsp;</div>
 <div class="paranum"><a name="p88">88</a></div>
 <div class="Indented3Bulleted">If Drop=Left, then the result is a Bounded_String 
 that represents the string comprising the rightmost Max_Length characters 
@@ -458,13 +464,14 @@ then Strings.Length_Error is propagated.&nbsp;</div>
 the String value with lower bound 1 represented by Source. If B is a 
 Bounded_String, then B = To_Bounded_String(To_String(B)).</div>
 <div class="paranum"><a name="p92.1">92.1/2</a></div>
-<div class="Examples"><B>procedure</B>&nbsp;Set_Bounded_String<BR>
+<div class="Examples"><span class="insert2"><B>procedure</B>&nbsp;Set_Bounded_String<BR>
 &nbsp;&nbsp;&nbsp;(Target&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;Source&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Truncation&nbsp;:=&nbsp;Error);</div>
+&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Truncation&nbsp;:=&nbsp;Error);</span></div>
 <div class="paranum"><a name="p92.2">92.2/2</a></div>
 <div class="Indented2" style="margin-bottom: 0.9em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-Equivalent to Target := To_Bounded_String (Source, Drop);</div>
+<span class="insert2">Equivalent to Target := To_Bounded_String (Source, 
+Drop);</span></div>
 <div class="paranum"><a name="p93">93</a></div>
 <div class="Normal">Each of the Append functions returns a Bounded_String 
 obtained by concatenating the string or character given or represented 
@@ -505,28 +512,29 @@ is By; propagates Index_Error if Index &gt; Length(Source).</div>
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00128.TXT">AI95-00128-01</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00238.TXT">AI95-00238-01</A></I>} 
 Returns the slice at positions Low through High in the string represented 
-by Source; propagates Index_Error if Low &gt; Length(Source)+1 or High 
-&gt; Length(Source). The bounds of the returned string are Low and High..</div>
+by Source; propagates Index_Error if Low &gt; Length(Source)+1<span class="insert1">&nbsp;or High &gt; Length(Source)</span>.<span class="insert2">&nbsp;The bounds 
+of the returned string are Low and High.</span>.</div>
 <div class="paranum"><a name="p101.1">101.1/2</a></div>
-<div class="Examples"><B>function</B>&nbsp;Bounded_Slice<BR>
+<div class="Examples"><span class="insert2"><B>function</B>&nbsp;Bounded_Slice<BR>
 &nbsp;&nbsp;&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;Low&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Positive;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;Natural)<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>return</B>&nbsp;Bounded_String;</span></div>
 <div class="paranum"><a name="p101.2">101.2/2</a></div>
 <div class="Indented2" style="margin-bottom: 0.9em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-Returns the slice at positions Low through High in the string represented 
-by Source as a bounded string; propagates Index_Error if Low &gt; Length(Source)+1 
-or High &gt; Length(Source).</div>
+<span class="insert2">Returns the slice at positions Low through High 
+in the string represented by Source as a bounded string; propagates Index_Error 
+if Low &gt; Length(Source)+1 or High &gt; Length(Source).</span></div>
 <div class="paranum"><a name="p101.3">101.3/2</a></div>
-<div class="Examples"><B>procedure</B>&nbsp;Bounded_Slice<BR>
+<div class="Examples"><span class="insert2"><B>procedure</B>&nbsp;Bounded_Slice<BR>
 &nbsp;&nbsp;&nbsp;(Source&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;Target&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<B>out</B>&nbsp;Bounded_String;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;Low&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Positive;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Natural);</div>
+&nbsp;&nbsp;&nbsp;&nbsp;High&nbsp;&nbsp;&nbsp;:&nbsp;<B>in</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Natural);</span></div>
 <div class="paranum"><a name="p101.4">101.4/2</a></div>
 <div class="Indented2" style="margin-bottom: 0.9em">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-Equivalent to Target := Bounded_Slice (Source, Low, High);</div>
+<span class="insert2">Equivalent to Target := Bounded_Slice (Source, 
+Low, High);</span></div>
 <div class="paranum"><a name="p102">102</a></div>
 <div class="Normal">Each of the functions &quot;=&quot;, &quot;&lt;&quot;, 
 &quot;&gt;&quot;, &quot;&lt;=&quot;, and &quot;&gt;=&quot; returns the 
@@ -547,32 +555,36 @@ procedure, the string represented by the Bounded_String parameter after
 the translation is given by the Translate function for fixed-length strings 
 applied to the string represented by the original value of the parameter.</div>
 <div class="paranum"><a name="p105">105/1</a></div>
-<div class="Normal">&nbsp;{<I><A HREF="defect1.html#8652/0049">8652/0049</A></I>} 
+<div class="Normal">&nbsp;&nbsp;{<I><A HREF="defect1.html#8652/0049">8652/0049</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00128.TXT">AI95-00128-01</A></I>} 
 Each of the transformation subprograms (Replace_Slice, Insert, Overwrite, 
 Delete), selector subprograms (Trim, Head, Tail), and constructor functions 
 (&quot;*&quot;) has an effect based on its corresponding subprogram in 
-Strings.Fixed, and Replicate is based on Fixed.&quot;*&quot;. In the 
-case of a function, the corresponding fixed-length string subprogram 
+Strings.Fixed, and Replicate is based on Fixed.&quot;*&quot;. <span class="insert1">In 
+the case of a function</span><span class="delete1">&nbsp;For each of these 
+subprograms</span>, the corresponding fixed-length string subprogram 
 is applied to the string represented by the Bounded_String parameter. 
 To_Bounded_String is applied the result string, with Drop (or Error in 
 the case of Generic_Bounded_Length.&quot;*&quot;) determining the effect 
-when the string length exceeds Max_Length. In the case of a procedure, 
-the corresponding function in Strings.Bounded.Generic_Bounded_Length 
-is applied, with the result assigned into the Source parameter.&nbsp;</div>
+when the string length exceeds Max_Length. <span class="insert1">In the 
+case of a procedure, the corresponding function in Strings.Bounded.Generic_Bounded_Length 
+is applied, with the result assigned into the Source parameter.</span> 
+</div>
 <div class="paranum"><a name="p105.a">105.a/2</a></div>
 <div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00114.TXT">AI95-00114-01</A></I>} 
 The &quot;/=&quot; operations between Bounded_String and String, and 
 between String and Bounded_String, are automatically defined based on 
-the corresponding &quot;=&quot; operations.&nbsp;</div>
+the <span class="insert2">corresponding</span><span class="delete2">&nbsp;corrsponding</span> 
+&quot;=&quot; operations.&nbsp;</div>
 
 <H4 Class="centered">Implementation Advice</H4>
 <div class="paranum"><a name="p106">106</a></div>
 <div class="Normal">Bounded string objects should not be implemented 
 by implicit pointers and dynamic allocation.&nbsp;</div>
 <div class="paranum"><a name="p106.a.1">106.a.1/2</a></div>
-<div class="Annotations"><B>Implementation Advice:&nbsp;</B>Bounded string 
-objects should not be implemented by implicit pointers and dynamic allocation.</div>
+<div class="Annotations"><span class="insert2"><B>Implementation Advice: 
+</B></span><span class="insert2">Bounded string objects should not be 
+implemented by implicit pointers and dynamic allocation.</span></div>
 <div class="paranum"><a name="p106.a">106.a</a></div>
 <div class="Annotations" style="margin-bottom: 0.4em"><B>Implementation 
 Note:&nbsp;</B>The following is a possible implementation of the private part 
@@ -595,55 +607,59 @@ of the package:&nbsp;</div>
 <H4 Class="centered">Inconsistencies With Ada 95</H4>
 <div class="paranum"><a name="p106.e">106.e/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00238.TXT">AI95-00238-01</A></I>} 
-<A NAME="I6453"></A><B>Amendment Correction:</B> The bounds of the string 
-returned from Slice are now defined. This is technically an inconsistency; 
-if a program depended on some other lower bound for the string returned 
-from Slice, it could fail when compiled with Ada 2005. Such code is not 
-portable even between Ada 95 implementations, so it should be very rare. 
-</div>
+<span class="insert2"><A NAME="I6617"></A><B>Amendment Correction:</B> 
+The bounds of the string returned from Slice are now defined. This is 
+technically an inconsistency; if a program depended on some other lower 
+bound for the string returned from Slice, it could fail when compiled 
+with Ada 2005. Such code is not portable even between Ada 95 implementations, 
+so it should be very rare.</span>&nbsp;</div>
 
 <H4 Class="centered">Incompatibilities With Ada 95</H4>
 <div class="paranum"><a name="p106.f">106.f/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00301.TXT">AI95-00301-01</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0005-1.TXT">AI05-0005-1</A></I>} 
-<A NAME="I6454"></A>Procedure Set_Bounded_String, two Bounded_Slice subprograms, 
-and overloaded versions of Index and Index_Non_Blank are added to Strings.Bounded.Generic_Bounded_Length. 
-If an instance of Generic_Bounded_Length is referenced in a <SPAN Class="swiss"><A HREF="aa-8-4.html#S0196">use_clause</A></SPAN>, 
-and an entity <I>E</I> with the <SPAN Class="swiss"><A HREF="aa-3-1.html#S0022">defining_identifier</A></SPAN> 
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0005-1.TXT">AI05-0005-1</A></I>} 
+<span class="insert2"><A NAME="I6618"></A>Procedure Set_Bounded_String, 
+two Bounded_Slice subprograms, and overloaded versions of Index and Index_Non_Blank 
+are&nbsp;</span><span class="insert2"><span class="delete3">newly&nbsp;</span></span><span class="insert2">added 
+to Strings.Bounded.Generic_Bounded_Length. If an instance of Generic_Bounded_Length 
+is referenced in a <SPAN Class="swiss"><A HREF="AA-8-4.html#S0196">use_clause</A></SPAN>, 
+and an entity <I>E</I> with the <SPAN Class="swiss"><A HREF="AA-3-1.html#S0022">defining_identifier</A></SPAN> 
 as a new entity in Generic_Bounded_Length is defined in a package that 
-is also referenced in a <SPAN Class="swiss"><A HREF="aa-8-4.html#S0196">use_clause</A></SPAN>, 
+is also referenced in a <SPAN Class="swiss"><A HREF="AA-8-4.html#S0196">use_clause</A></SPAN>, 
 the entity <I>E</I> may no longer be use-visible, resulting in errors. 
-This should be rare and is easily fixed if it does occur.&nbsp;</div>
+This should be rare and is easily fixed if it does occur.</span>&nbsp;</div>
 
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p106.g">106.g/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0049">8652/0049</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00128.TXT">AI95-00128-01</A></I>} 
-<B>Corrigendum:</B> Corrected the conditions for which Slice raises Index_Error.</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00128.TXT">AI95-00128-01</A></I>} 
+<span class="insert2"><B>Corrigendum:</B> Corrected the conditions for 
+which Slice raises Index_Error.</span></div>
 <div class="paranum"><a name="p106.h">106.h/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0049">8652/0049</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00128.TXT">AI95-00128-01</A></I>} 
-<B>Corrigendum:</B> Clarified the meaning of transformation, selector, 
-and constructor subprograms by describing the effects of procedures and 
-functions separately.&nbsp;</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00128.TXT">AI95-00128-01</A></I>} 
+<span class="insert2"><B>Corrigendum:</B> Clarified the meaning of transformation, 
+selector, and constructor subprograms by describing the effects of procedures 
+and functions separately.</span>&nbsp;</div>
 
 <H4 Class="centered">Incompatibilities With Ada 2005</H4>
 <div class="paranum"><a name="p106.i">106.i/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0031-1.TXT">AI05-0031-1</A></I>} 
-<A NAME="I6455"></A>An overloaded version of Find_Token is added to Strings.Bounded.Generic_Bounded_Length. 
-If an instance of Generic_Bounded_Length is referenced in a <SPAN Class="swiss"><A HREF="aa-8-4.html#S0196">use_clause</A></SPAN>, 
-and an entity <I>E</I> with a <SPAN Class="swiss"><A HREF="aa-3-1.html#S0022">defining_identifier</A></SPAN> 
-of Find_Token is defined in a package that is also referenced in a <SPAN Class="swiss"><A HREF="aa-8-4.html#S0196">use_clause</A></SPAN>, 
+<span class="insert3"><A NAME="I6619"></A>An overloaded version of Find_Token 
+is added to Strings.Bounded.Generic_Bounded_Length. If an instance of 
+Generic_Bounded_Length is referenced in a <SPAN Class="swiss"><A HREF="AA-8-4.html#S0196">use_clause</A></SPAN>, 
+and an entity <I>E</I> with a <SPAN Class="swiss"><A HREF="AA-3-1.html#S0022">defining_identifier</A></SPAN> 
+of Find_Token is defined in a package that is also referenced in a <SPAN Class="swiss"><A HREF="AA-8-4.html#S0196">use_clause</A></SPAN>, 
 the entity <I>E</I> may no longer be use-visible, resulting in errors. 
-This should be rare and is easily fixed if it does occur.&nbsp;</div>
+This should be rare and is easily fixed if it does occur.</span>&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-4-3.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-4-5.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-4-3.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-4-5.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

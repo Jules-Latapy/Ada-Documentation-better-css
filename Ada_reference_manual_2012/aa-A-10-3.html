@@ -7,15 +7,16 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-10-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-10-4.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-10-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-10-4.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>A.10.3 Default Input, Output, and Error Files</H1>
@@ -51,14 +52,14 @@ file is not Out_File or Append_File.</div>
 <B>function</B>&nbsp;Standard_Input&nbsp;<B>return</B>&nbsp;File_Access;</div>
 <div class="paranum"><a name="p8">8</a></div>
 <div class="Indented2" style="margin-bottom: 0.9em">Returns the standard 
-input file (see <A HREF="aa-A-10.html">A.10</A>), or an access value 
+input file (see <A HREF="AA-A-10.html">A.10</A>), or an access value 
 designating the standard input file, respectively.</div>
 <div class="paranum"><a name="p9">9</a></div>
 <div class="Examples"><B>function</B>&nbsp;Standard_Output&nbsp;<B>return</B>&nbsp;File_Type;<BR>
 <B>function</B>&nbsp;Standard_Output&nbsp;<B>return</B>&nbsp;File_Access;</div>
 <div class="paranum"><a name="p10">10</a></div>
 <div class="Indented2" style="margin-bottom: 0.9em">Returns the standard 
-output file (see <A HREF="aa-A-10.html">A.10</A>) or an access value 
+output file (see <A HREF="AA-A-10.html">A.10</A>) or an access value 
 designating the standard output file, respectively.</div>
 <div class="paranum"><a name="p11">11</a></div>
 <div class="Examples"><B>function</B>&nbsp;Standard_Error&nbsp;<B>return</B>&nbsp;File_Type;<BR>
@@ -66,8 +67,9 @@ designating the standard output file, respectively.</div>
 <div class="paranum"><a name="p12">12/1</a></div>
 <div class="Indented2" style="margin-bottom: 0.9em">{<I><A HREF="defect1.html#8652/0052">8652/0052</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00194.TXT">AI95-00194-01</A></I>} 
-Returns the standard error file (see <A HREF="aa-A-10.html">A.10</A>), 
-or an access value designating the standard error file, respectively.</div>
+Returns the standard error file (see <A HREF="AA-A-10.html">A.10</A>), 
+or an access value designating the standard <span class="insert1">error</span><span class="delete1">&nbsp;output</span> 
+file, respectively.</div>
 <div class="paranum"><a name="p13">13</a></div>
 <div class="Normal" style="margin-bottom: 0.9em">The Form strings implicitly 
 associated with the opening of Standard_Input, Standard_Output, and Standard_Error 
@@ -96,84 +98,70 @@ error file, respectively.</div>
 <div class="paranum"><a name="p20">20/1</a></div>
 <div class="Examples">{<I><A HREF="defect1.html#8652/0051">8652/0051</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00057.TXT">AI95-00057-01</A></I>} 
-<B>procedure</B>&nbsp;Flush&nbsp;(File&nbsp;:&nbsp;<B>in</B>&nbsp;File_Type);<BR>
+<B>procedure</B>&nbsp;Flush&nbsp;(File&nbsp;:&nbsp;<B>in</B>&nbsp;<span class="delete1"><B>out</B>&nbsp;</span>File_Type);<BR>
 <B>procedure</B>&nbsp;Flush;</div>
-<div class="paranum"><a name="p21">21/4</a></div>
-<div class="Indented2">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0130-1.TXT">AI12-0130-1</A></I>} 
-[The effect of Flush is the same as the corresponding subprogram in Sequential_IO 
-(see <A HREF="aa-A-8-2.html">A.8.2</A>).] If File is not explicitly specified, 
-Current_Output is used.&nbsp;</div>
-<div class="paranum"><a name="p21.a">21.a/4</a></div>
-<div class="Annotations"><B>Discussion:&nbsp;</B>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0052-1.TXT">AI12-0052-1</A></I>} 
-For the purpose of determining whether concurrent calls on text input-output 
-subprograms are required to perform as specified, subprograms that implicitly 
-operate on one of the default input-output files are considered to have 
-a parameter of Current_Input or Current_Output (as appropriate). The 
-result of Current_Output is considered to be overlapping with the file 
-given to the latest call of Set_Output (or Standard_Output if Set_Output 
-hasn't been called); a corresponding consideration applies to the result 
-of Current_Input. See the introduction of <A HREF="aa-A.html">Annex A</A> 
-for details.&nbsp;</div>
+<div class="paranum"><a name="p21">21</a></div>
+<div class="Indented2">The effect of Flush is the same as the corresponding 
+subprogram in Streams.Stream_IO (see <A HREF="AA-A-12-1.html">A.12.1</A>). 
+If File is not explicitly specified, Current_Output is used.&nbsp;</div>
 
 <H4 Class="centered">Erroneous Execution</H4>
 <div class="paranum"><a name="p22">22/1</a></div>
-<div class="Normal">{<I><A HREF="defect1.html#8652/0053">8652/0053</A></I>} 
+<div class="Normal">&nbsp;{<I><A HREF="defect1.html#8652/0053">8652/0053</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00063.TXT">AI95-00063-01</A></I>} 
-<A NAME="I7116"></A>The execution of a program is erroneous if it invokes 
-an operation on a current default input, default output, or default error 
-file, and if the corresponding file object is closed or no longer exists. 
-</div>
+<A NAME="I7279"></A>The execution of a program is erroneous if it <span class="insert1">invokes 
+an operation on</span><span class="delete1">&nbsp;attempts to use</span> a 
+current default input, default output, or default error file<span class="insert1">, 
+and if the corresponding file object is closed or</span><span class="delete1">&nbsp;that</span> no longer exists.&nbsp;</div>
 <div class="paranum"><a name="p22.a.1">22.a.1/1</a></div>
-<div class="Annotations"><B>Ramification:&nbsp;</B>{<I><A HREF="defect1.html#8652/0053">8652/0053</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00063.TXT">AI95-00063-01</A></I>} 
-Closing a default file, then setting the default file to another open 
-file before accessing it is not erroneous.&nbsp;</div>
+<div class="Annotations"><span class="insert1"><B>Ramification:&nbsp;</B></span>{<I><A HREF="defect1.html#8652/0053">8652/0053</A></I>} 
+<span class="insert1"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00063.TXT">AI95-00063-01</A></I>} 
+<span class="insert1">Closing a default file, then setting the default 
+file to another open file before accessing it is not erroneous.</span> 
+</div>
 <div class="paranum"><a name="p23">23/1</a></div>
-<div class="Normal"><SPAN STYLE="font-size: 80%"><I>This paragraph was 
-deleted.</I></SPAN>{<I><A HREF="defect1.html#8652/0053">8652/0053</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00063.TXT">AI95-00063-01</A></I>} 
+<div class="Normal">&nbsp;<SPAN STYLE="font-size: 80%"><I>This paragraph was 
+deleted.</I></SPAN><span class="delete1"></span>{<I><A HREF="defect1.html#8652/0053">8652/0053</A></I>} 
+<span class="delete1"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00063.TXT">AI95-00063-01</A></I>} 
+<span class="delete1">If the Close operation is applied to a file object 
+that is also serving as the default input, default output, or default 
+error file, then subsequent operations on such a default file are erroneous.</span> 
 </div>
 <div class="NotesHeader">NOTES</div>
 <div class="paranum"><a name="p24">24</a></div>
-<div class="Notes">28&nbsp;&nbsp;The standard input, standard output, 
+<div class="Notes">29&nbsp;&nbsp;The standard input, standard output, 
 and standard error files cannot be opened, closed, reset, or deleted, 
 because the parameter File of the corresponding procedures has the mode 
 <B>in</B> <B>out</B>.</div>
 <div class="paranum"><a name="p25">25</a></div>
-<div class="Notes">29&nbsp;&nbsp;The standard input, standard output, 
+<div class="Notes">30&nbsp;&nbsp;The standard input, standard output, 
 and standard error files are different file objects, but not necessarily 
 different external files.&nbsp;</div>
 
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p25.a">25.a/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0051">8652/0051</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00057.TXT">AI95-00057-01</A></I>} 
-<B>Corrigendum:</B> Corrected the parameter mode of Flush; otherwise 
-it could not be used on Standard_Output.</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00057.TXT">AI95-00057-01</A></I>} 
+<span class="insert2"><B>Corrigendum:</B> Corrected the parameter mode 
+of Flush; otherwise it could not be used on Standard_Output.</span></div>
 <div class="paranum"><a name="p25.b">25.b/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0052">8652/0052</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00194.TXT">AI95-00194-01</A></I>} 
-<B>Corrigendum:</B> Corrected Standard_Error so it refers to the correct 
-file.</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00194.TXT">AI95-00194-01</A></I>} 
+<span class="insert2"><B>Corrigendum:</B> Corrected Standard_Error so 
+it refers to the correct file.</span></div>
 <div class="paranum"><a name="p25.c">25.c/2</a></div>
 <div class="Annotations">{<I><A HREF="defect1.html#8652/0053">8652/0053</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00063.TXT">AI95-00063-01</A></I>} 
-<B>Corrigendum:</B> Clarified that execution is erroneous only when a 
-closed default file is accessed.&nbsp;</div>
-
-<H4 Class="centered">Wording Changes from Ada 2012</H4>
-<div class="paranum"><a name="p25.d">25.d/4</a></div>
-<div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI12s/AI12-0130-1.TXT">AI12-0130-1</A></I>} 
-<B>Corrigendum:</B> Moved the definition of Flush to <A HREF="aa-A-8-2.html">A.8.2</A>, 
-as all input-output packages now have it.&nbsp;</div>
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00063.TXT">AI95-00063-01</A></I>} 
+<span class="insert2"><B>Corrigendum:</B> Clarified that execution is 
+erroneous only when a closed default file is accessed.</span>&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-A-10-2.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-A-10-4.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-10-2.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-A-10-4.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>

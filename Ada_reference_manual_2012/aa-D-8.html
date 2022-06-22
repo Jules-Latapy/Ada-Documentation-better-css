@@ -7,43 +7,44 @@
     <META NAME="Author" CONTENT="JTC1/SC22/WG9/ARG, by Randall Brukardt, ARG Editor">
     <META NAME="GENERATOR" CONTENT="Arm_Form.Exe, Ada Reference Manual generator">
     <link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../logo.svg"></HEAD>
+	<link rel="icon" href="../logo.svg">
+</HEAD>
 <BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#000080" VLINK="#330033" ALINK="#0000FF">
-<DIV class="enTete"><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
-<div class="navig" style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-D-7.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-D-9.html">Next</A>&nbsp;
+<DIV><B><SPAN Style="font-size:200%; color: rgb(0,51,153)">Annotated</SPAN><SPAN Style="font-size:200%; color: rgb(0,0,102)">&nbsp;Ada Reference Manual</SPAN></B> &mdash; <A HREF="AA-TTL.html"><B>Legal Information</B></A></DIV>
+<div style="margin-top: 0.6em; margin-bottom: 0.0em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-D-7.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-D-9.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <div class="main">
 <H1>D.8 Monotonic Time</H1>
 <div class="paranum"><a name="p1">1/3</a></div>
 <div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-[This subclause specifies a high-resolution, monotonic clock package.] 
-</div>
+[This <span class="insert3">subclause</span><span class="delete3">&nbsp;clause</span> 
+specifies a high-resolution, monotonic clock package.]&nbsp;</div>
 
 <H4 Class="centered">Static Semantics</H4>
 <div class="paranum"><a name="p2">2</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">The following language-defined 
 library package exists:&nbsp;</div>
 <div class="paranum"><a name="p3">3</a></div>
-<div class="Examples"><B>package</B>&nbsp;Ada.Real_Time&nbsp;<B>is</B><A NAME="I8654"></A></div>
+<div class="Examples"><B>package</B>&nbsp;Ada.Real_Time&nbsp;<B>is</B><A NAME="I8900"></A></div>
 <div class="paranum"><a name="p4">4</a></div>
-<div class="Examples">&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8655"></A>Time&nbsp;<B>is</B>&nbsp;<B>private</B>;<BR>
-&nbsp;&nbsp;<A NAME="I8656"></A>Time_First&nbsp;:&nbsp;<B>constant</B>&nbsp;Time;<BR>
-&nbsp;&nbsp;<A NAME="I8657"></A>Time_Last&nbsp;:&nbsp;<B>constant</B>&nbsp;Time;<BR>
-&nbsp;&nbsp;<A NAME="I8658"></A>Time_Unit&nbsp;:&nbsp;<B>constant</B>&nbsp;:=&nbsp;<SPAN Class="roman"><I>implementation-defined-real-number</I></SPAN>;</div>
+<div class="Examples">&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8901"></A>Time&nbsp;<B>is</B>&nbsp;<B>private</B>;<BR>
+&nbsp;&nbsp;<A NAME="I8902"></A>Time_First&nbsp;:&nbsp;<B>constant</B>&nbsp;Time;<BR>
+&nbsp;&nbsp;<A NAME="I8903"></A>Time_Last&nbsp;:&nbsp;<B>constant</B>&nbsp;Time;<BR>
+&nbsp;&nbsp;<A NAME="I8904"></A>Time_Unit&nbsp;:&nbsp;<B>constant</B>&nbsp;:=&nbsp;<SPAN Class="roman"><I>implementation-defined-real-number</I></SPAN>;</div>
 <div class="paranum"><a name="p5">5</a></div>
-<div class="Examples">&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8659"></A>Time_Span&nbsp;<B>is</B>&nbsp;<B>private</B>;<BR>
-&nbsp;&nbsp;<A NAME="I8660"></A>Time_Span_First&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<A NAME="I8661"></A>Time_Span_Last&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<A NAME="I8662"></A>Time_Span_Zero&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<A NAME="I8663"></A>Time_Span_Unit&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;</div>
+<div class="Examples">&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8905"></A>Time_Span&nbsp;<B>is</B>&nbsp;<B>private</B>;<BR>
+&nbsp;&nbsp;<A NAME="I8906"></A>Time_Span_First&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
+&nbsp;&nbsp;<A NAME="I8907"></A>Time_Span_Last&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
+&nbsp;&nbsp;<A NAME="I8908"></A>Time_Span_Zero&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
+&nbsp;&nbsp;<A NAME="I8909"></A>Time_Span_Unit&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;</div>
 <div class="paranum"><a name="p6">6</a></div>
-<div class="Examples">&nbsp;&nbsp;<A NAME="I8664"></A>Tick&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8665"></A>Clock&nbsp;<B>return</B>&nbsp;Time;</div>
+<div class="Examples">&nbsp;&nbsp;<A NAME="I8910"></A>Tick&nbsp;:&nbsp;<B>constant</B>&nbsp;Time_Span;<BR>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8911"></A>Clock&nbsp;<B>return</B>&nbsp;Time;</div>
 <div class="paranum"><a name="p7">7</a></div>
 <div class="Examples">&nbsp;&nbsp;<B>function</B>&nbsp;&quot;+&quot;&nbsp;(Left&nbsp;:&nbsp;Time;&nbsp;Right&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Time;<BR>
 &nbsp;&nbsp;<B>function</B>&nbsp;&quot;+&quot;&nbsp;(Left&nbsp;:&nbsp;Time_Span;&nbsp;Right&nbsp;:&nbsp;Time)&nbsp;<B>return</B>&nbsp;Time;<BR>
@@ -66,39 +67,41 @@ library package exists:&nbsp;</div>
 <div class="Examples">&nbsp;&nbsp;<B>function</B>&nbsp;&quot;<B>abs</B>&quot;(Right&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Time_Span;</div>
 <div class="paranum"><a name="p11">11/1</a></div>
 <div class="Examples"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN></div>
+was deleted.</I></SPAN><span class="delete1">&nbsp;</span></div>
 <div class="paranum"><a name="p12">12</a></div>
 <div class="Examples">&nbsp;&nbsp;<B>function</B>&nbsp;&quot;&lt;&quot;&nbsp;(Left,&nbsp;Right&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Boolean;<BR>
 &nbsp;&nbsp;<B>function</B>&nbsp;&quot;&lt;=&quot;(Left,&nbsp;Right&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Boolean;<BR>
 &nbsp;&nbsp;<B>function</B>&nbsp;&quot;&gt;&quot;&nbsp;(Left,&nbsp;Right&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Boolean;<BR>
 &nbsp;&nbsp;<B>function</B>&nbsp;&quot;&gt;=&quot;(Left,&nbsp;Right&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Boolean;</div>
 <div class="paranum"><a name="p13">13</a></div>
-<div class="Examples">&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8666"></A>To_Duration&nbsp;(TS&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Duration;<BR>
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8667"></A>To_Time_Span&nbsp;(D&nbsp;:&nbsp;Duration)&nbsp;<B>return</B>&nbsp;Time_Span;</div>
+<div class="Examples">&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8912"></A>To_Duration&nbsp;(TS&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Duration;<BR>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8913"></A>To_Time_Span&nbsp;(D&nbsp;:&nbsp;Duration)&nbsp;<B>return</B>&nbsp;Time_Span;</div>
 <div class="paranum"><a name="p14">14/2</a></div>
 <div class="Examples">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00386.TXT">AI95-00386-01</A></I>} 
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8668"></A>Nanoseconds&nbsp;&nbsp;(NS&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8669"></A>Microseconds&nbsp;(US&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8670"></A>Milliseconds&nbsp;(MS&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8671"></A>Seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(S&nbsp;&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<BR>
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8672"></A>Minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(M&nbsp;&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;</div>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8914"></A>Nanoseconds&nbsp;&nbsp;(NS&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<BR>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8915"></A>Microseconds&nbsp;(US&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<BR>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8916"></A>Milliseconds&nbsp;(MS&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<span class="insert2"><BR>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8917"></A>Seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(S&nbsp;&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;<BR>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8918"></A>Minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(M&nbsp;&nbsp;:&nbsp;Integer)&nbsp;<B>return</B>&nbsp;Time_Span;</span></div>
 <div class="paranum"><a name="p15">15</a></div>
-<div class="Examples">&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8673"></A>Seconds_Count&nbsp;<B>is</B>&nbsp;<B>range</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;</div>
+<div class="Examples">&nbsp;&nbsp;<B>type</B>&nbsp;<A NAME="I8919"></A>Seconds_Count&nbsp;<B>is</B>&nbsp;<B>range</B>&nbsp;<SPAN Class="roman"><I>implementation-defined</I></SPAN>;</div>
 <div class="paranum"><a name="p16">16</a></div>
-<div class="Examples">&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I8674"></A>Split(T&nbsp;:&nbsp;<B>in</B>&nbsp;Time;&nbsp;SC&nbsp;:&nbsp;<B>out</B>&nbsp;Seconds_Count;&nbsp;TS&nbsp;:&nbsp;<B>out</B>&nbsp;Time_Span);<BR>
-&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8675"></A>Time_Of(SC&nbsp;:&nbsp;Seconds_Count;&nbsp;TS&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Time;</div>
+<div class="Examples">&nbsp;&nbsp;<B>procedure</B>&nbsp;<A NAME="I8920"></A>Split(T&nbsp;:&nbsp;<B>in</B>&nbsp;Time;&nbsp;SC&nbsp;:&nbsp;<B>out</B>&nbsp;Seconds_Count;&nbsp;TS&nbsp;:&nbsp;<B>out</B>&nbsp;Time_Span);<BR>
+&nbsp;&nbsp;<B>function</B>&nbsp;<A NAME="I8921"></A>Time_Of(SC&nbsp;:&nbsp;Seconds_Count;&nbsp;TS&nbsp;:&nbsp;Time_Span)&nbsp;<B>return</B>&nbsp;Time;</div>
 <div class="paranum"><a name="p17">17</a></div>
 <div class="Examples"><B>private</B><BR>
 &nbsp;&nbsp;&nbsp;...&nbsp;--&nbsp;<SPAN Class="roman"><I>not&nbsp;specified&nbsp;by&nbsp;the&nbsp;language</I></SPAN><BR>
 <B>end</B>&nbsp;Ada.Real_Time;</div>
 <div class="paranum"><a name="p17.a">17.a/2</a></div>
 <div class="Annotations"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN></div>
+was deleted.</I></SPAN><span class="delete2"><B>Implementation defined: 
+</B></span><span class="delete2">Implementation-defined aspects of package 
+Real_Time.</span></div>
 <div class="paranum"><a name="p18">18</a></div>
-<div class="Normal"><A NAME="I8676"></A>In this Annex, <I>real time</I> 
+<div class="Normal"><A NAME="I8922"></A>In this Annex, <I>real time</I> 
 is defined to be the physical time as observed in the external environment. 
-The type Time is a <I>time type</I> as defined by <A HREF="aa-9-6.html">9.6</A>; 
-[values of this type may be used in a <SPAN Class="swiss"><A HREF="aa-9-6.html#S0228">delay_until_statement</A></SPAN>.] 
+The type Time is a <I>time type</I> as defined by <A HREF="AA-9-6.html">9.6</A>; 
+[values of this type may be used in a <SPAN Class="swiss"><A HREF="AA-9-6.html#S0228">delay_until_statement</A></SPAN>.] 
 Values of this type represent segments of an ideal time line. The set 
 of values of the type Time corresponds one-to-one with an implementation-defined 
 range of mathematical integers.&nbsp;</div>
@@ -115,7 +118,7 @@ for comparison purposes.&nbsp;</div>
 of TAI as &ldquo;real time&rdquo; does not preclude the use of a simulated 
 TAI clock for simulated execution environments.&nbsp;</div>
 <div class="paranum"><a name="p19">19</a></div>
-<div class="Normal"><A NAME="I8677"></A><A NAME="I8678"></A>The Time 
+<div class="Normal"><A NAME="I8923"></A><A NAME="I8924"></A>The Time 
 value I represents the half-open real time interval that starts with 
 E+I*Time_Unit and is limited by E+(I+1)*Time_Unit, where Time_Unit is 
 an implementation-defined real number and E is an unspecified origin 
@@ -160,41 +163,48 @@ time, measured in seconds, since the epoch.</div>
 by the Time type; it is expressed in seconds. Time_Span_Unit is the difference 
 between two successive values of the Time type. It is also the smallest 
 positive value of type Time_Span. Time_Unit and Time_Span_Unit represent 
-the same real time duration. <A NAME="I8679"></A>A <I>clock tick</I> 
+the same real time duration. <A NAME="I8925"></A>A <I>clock tick</I> 
 is a real time interval during which the clock value (as observed by 
 calling the Clock function) remains constant. Tick is the average length 
 of such intervals.</div>
 <div class="paranum"><a name="p24">24/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00432.TXT">AI95-00432-01</A></I>} 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00432.TXT">AI95-00432-01</A></I>} 
 The function To_Duration converts the value TS to a value of type Duration. 
 Similarly, the function To_Time_Span converts the value D to a value 
-of type Time_Span. For To_Duration, the result is rounded to the nearest 
-value of type Duration (away from zero if exactly halfway between two 
-values). If the result is outside the range of Duration, Constraint_Error 
-is raised. For To_Time_Span, the value of D is first rounded to the nearest 
-integral multiple of Time_Unit, away from zero if exactly halfway between 
-two multiples. If the rounded value is outside the range of Time_Span, 
-Constraint_Error is raised. Otherwise, the value is converted to the 
-type Time_Span.</div>
+of type Time_Span. For <span class="insert2">To_Duration</span><span class="delete2">&nbsp;both 
+operations</span>, the result is rounded to the nearest <span class="insert2">value 
+of type Duration</span><span class="delete2">&nbsp;exactly representable value</span> 
+(away from zero if exactly halfway between two <span class="delete2">exactly 
+representable&nbsp;</span>values).<span class="insert2">&nbsp;If the result is 
+outside the range of Duration, Constraint_Error is raised. For To_Time_Span, 
+the value of D is first rounded to the nearest integral multiple of Time_Unit, 
+away from zero if exactly halfway between two multiples. If the rounded 
+value is outside the range of Time_Span, Constraint_Error is raised. 
+Otherwise, the value is converted to the type Time_Span.</span></div>
 <div class="paranum"><a name="p25">25</a></div>
 <div class="Normal">To_Duration(Time_Span_Zero) returns 0.0, and To_Time_Span(0.0) 
 returns Time_Span_Zero.</div>
 <div class="paranum"><a name="p26">26/2</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00386.TXT">AI95-00386-01</A></I>} 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00386.TXT">AI95-00386-01</A></I>} 
 {<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00432.TXT">AI95-00432-01</A></I>} 
-The functions Nanoseconds, Microseconds, Milliseconds, Seconds, and Minutes 
-convert the input parameter to a value of the type Time_Span. NS, US, 
-MS, S, and M are interpreted as a number of nanoseconds, microseconds, 
-milliseconds, seconds, and minutes respectively. The input parameter 
-is first converted to seconds and rounded to the nearest integral multiple 
-of Time_Unit, away from zero if exactly halfway between two multiples. 
-If the rounded value is outside the range of Time_Span, Constraint_Error 
-is raised. Otherwise, the rounded value is converted to the type Time_Span. 
-</div>
+The functions Nanoseconds, Microseconds, <span class="delete2">and&nbsp;</span>Milliseconds<span class="insert2">, 
+Seconds, and Minutes</span> convert the input parameter to a value of 
+the type Time_Span. NS, US,<span class="delete2">&nbsp;and</span> MS<span class="insert2">, 
+S, and M</span> are interpreted as a number of nanoseconds, microseconds,<span class="delete2">&nbsp;and</span> milliseconds<span class="insert2">, seconds, and minutes</span> 
+respectively.<span class="insert2">&nbsp;The input parameter is first converted 
+to seconds and rounded to the nearest integral multiple of Time_Unit, 
+</span><span class="delete2">The result is rounded to the nearest exactly 
+representable value (</span>away from zero if exactly halfway between 
+two <span class="insert2">multiples. If the rounded value is outside 
+the range of Time_Span, Constraint_Error is raised. Otherwise, the rounded 
+value is converted to the type Time_Span</span><span class="delete2">&nbsp;exactly 
+representable values)</span>.&nbsp;</div>
 <div class="paranum"><a name="p26.a">26.a/2</a></div>
 <div class="Annotations"><SPAN STYLE="font-size: 80%"><I>This paragraph 
-was deleted.</I></SPAN>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00432.TXT">AI95-00432-01</A></I>} 
-</div>
+was deleted.</I></SPAN><span class="delete2"><B>Discussion:&nbsp;</B></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00432.TXT">AI95-00432-01</A></I>} 
+<span class="delete2">The above does not imply that the Time_Span type 
+will have to accommodate Integer'Last of milliseconds; Constraint_Error 
+is allowed to be raised.</span>&nbsp;</div>
 <div class="paranum"><a name="p27">27</a></div>
 <div class="Normal">The effects of the operators on Time and Time_Span 
 are as for the operators defined for integer types.&nbsp;</div>
@@ -230,7 +240,7 @@ seconds, and Time_Span_Last shall be no less than 3600 seconds.&nbsp;</div>
 <div class="Annotations"><B>Reason:&nbsp;</B>This is equivalent to &plusmn; 
 one hour and there is still room for a two-microsecond resolution.&nbsp;</div>
 <div class="paranum"><a name="p32">32</a></div>
-<div class="Normal"><A NAME="I8680"></A>A <I>clock jump</I> is the difference 
+<div class="Normal"><A NAME="I8926"></A>A <I>clock jump</I> is the difference 
 between two successive distinct values of the clock (as observed by calling 
 the Clock function). There shall be no backward clock jumps.</div>
 
@@ -240,17 +250,19 @@ the Clock function). There shall be no backward clock jumps.</div>
 Time_Last, Time_Span_First, Time_Span_Last, Time_Span_Unit, and Tick. 
 </div>
 <div class="paranum"><a name="p33.a">33.a/2</a></div>
-<div class="Annotations"><B>Documentation Requirement:&nbsp;</B>The values 
-of Time_First, Time_Last, Time_Span_First, Time_Span_Last, Time_Span_Unit, 
-and Tick for package Real_Time.</div>
+<div class="Annotations"><span class="insert2"><B>Documentation Requirement: 
+</B></span><span class="insert2">The values of Time_First, Time_Last, 
+Time_Span_First, Time_Span_Last, Time_Span_Unit, and Tick for package 
+Real_Time.</span></div>
 <div class="paranum"><a name="p34">34</a></div>
 <div class="Normal">The implementation shall document the properties 
 of the underlying time base used for the clock and for type Time, such 
 as the range of values supported and any relevant aspects of the underlying 
 hardware or operating system facilities used.&nbsp;</div>
 <div class="paranum"><a name="p34.a.1">34.a.1/2</a></div>
-<div class="Annotations"><B>Documentation Requirement:&nbsp;</B>The properties 
-of the underlying time base used in package Real_Time.</div>
+<div class="Annotations"><span class="insert2"><B>Documentation Requirement: 
+</B></span><span class="insert2">The properties of the underlying time 
+base used in package Real_Time.</span></div>
 <div class="paranum"><a name="p34.a">34.a</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>If there is an underlying 
 operating system, this might include information about which system call 
@@ -263,16 +275,19 @@ synchronization exists, the sources of synchronization information, the
 frequency of synchronization, and the synchronization method applied. 
 </div>
 <div class="paranum"><a name="p35.a.1">35.a.1/2</a></div>
-<div class="Annotations"><B>Documentation Requirement:&nbsp;</B>Any synchronization 
-of package Real_Time with external time references.</div>
+<div class="Annotations"><span class="insert2"><B>Documentation Requirement: 
+</B></span><span class="insert2">Any synchronization of package Real_Time 
+with external time references.</span></div>
 <div class="paranum"><a name="p36">36/3</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-The implementation shall document any aspects of the external environment 
-that could interfere with the clock behavior as defined in this subclause. 
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
+The implementation shall document any aspects of the <span class="delete1">the</span> 
+external environment that could interfere with the clock behavior as 
+defined in this <span class="insert3">subclause</span><span class="delete3">&nbsp;clause</span>. 
 </div>
 <div class="paranum"><a name="p36.a.1">36.a.1/2</a></div>
-<div class="Annotations"><B>Documentation Requirement:&nbsp;</B>Any aspects 
-of the external environment that could interfere with package Real_Time.</div>
+<div class="Annotations"><span class="insert2"><B>Documentation Requirement: 
+</B></span><span class="insert2">Any aspects of the external environment 
+that could interfere with package Real_Time.</span></div>
 <div class="paranum"><a name="p36.a">36.a</a></div>
 <div class="Annotations"><B>Discussion:&nbsp;</B>For example, the implementation 
 is allowed to rely on the time services of an underlying operating system, 
@@ -282,9 +297,9 @@ clock to be reset by an operator. This dependence has to be documented.
 
 <H4 Class="centered">Metrics</H4>
 <div class="paranum"><a name="p37">37/3</a></div>
-<div class="Normal">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-For the purpose of the metrics defined in this subclause, real time is 
-defined to be the International Atomic Time (TAI).</div>
+<div class="Normal">&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
+For the purpose of the metrics defined in this <span class="insert3">subclause</span><span class="delete3">&nbsp;clause</span>, 
+real time is defined to be the International Atomic Time (TAI).</div>
 <div class="paranum"><a name="p38">38</a></div>
 <div class="Normal" style="margin-bottom: 0.4em">The implementation 
 shall document the following metrics:&nbsp;</div>
@@ -297,7 +312,7 @@ then t2 &ndash; t1 &lt;= D.</div>
 <div class="paranum"><a name="p40">40</a></div>
 <div class="Bulleted">An upper bound on the size of a clock jump.</div>
 <div class="paranum"><a name="p41">41</a></div>
-<div class="Bulleted"><A NAME="I8681"></A>An upper bound on the <I>drift 
+<div class="Bulleted"><A NAME="I8927"></A>An upper bound on the <I>drift 
 rate</I> of Clock with respect to real time. This is a real number D 
 such that&nbsp;</div>
 <div class="paranum"><a name="p42">42</a></div>
@@ -329,8 +344,8 @@ value twice. It is highly improbable that more than three reads will
 be necessary. Arithmetic on time values should not be significantly slower 
 than 64-bit arithmetic in the underlying machine instruction set.&nbsp;</div>
 <div class="paranum"><a name="p45.a.1">45.a.1/2</a></div>
-<div class="Annotations"><B>Documentation Requirement:&nbsp;</B>The metrics 
-for package Real_Time.</div>
+<div class="Annotations"><span class="insert2"><B>Documentation Requirement: 
+</B></span><span class="insert2">The metrics for package Real_Time.</span></div>
 
 <H4 Class="centered">Implementation Permissions</H4>
 <div class="paranum"><a name="p46">46</a></div>
@@ -349,8 +364,9 @@ defined, the supported values need to be documented.&nbsp;</div>
 <div class="Normal">When appropriate, implementations should provide 
 configuration mechanisms to change the value of Tick.&nbsp;</div>
 <div class="paranum"><a name="p47.a.1">47.a.1/2</a></div>
-<div class="Annotations"><B>Implementation Advice:&nbsp;</B>When appropriate, 
-mechanisms to change the value of Tick should be provided.</div>
+<div class="Annotations"><span class="insert2"><B>Implementation Advice: 
+</B></span><span class="insert2">When appropriate, mechanisms to change 
+the value of Tick should be provided.</span></div>
 <div class="paranum"><a name="p47.a">47.a</a></div>
 <div class="Annotations"><B>Reason:&nbsp;</B>This is often needed when the 
 compilation system was originally targeted to a particular processor 
@@ -368,56 +384,59 @@ specific module.&nbsp;</div>
 <div class="Normal">It is recommended that Calendar.Clock and Real_Time.Clock 
 be implemented as transformations of the same time base.&nbsp;</div>
 <div class="paranum"><a name="p48.a.1">48.a.1/2</a></div>
-<div class="Annotations"><B>Implementation Advice:&nbsp;</B>Calendar.Clock 
-and Real_Time.Clock should be transformations of the same time base.</div>
+<div class="Annotations"><span class="insert2"><B>Implementation Advice: 
+</B></span><span class="insert2">Calendar.Clock and Real_Time.Clock should 
+be transformations of the same time base.</span></div>
 <div class="paranum"><a name="p49">49</a></div>
 <div class="Normal">It is recommended that the &ldquo;best&rdquo; time 
 base which exists in the underlying system be available to the application 
 through Clock. &ldquo;Best&rdquo; may mean highest accuracy or largest 
 range.&nbsp;</div>
 <div class="paranum"><a name="p49.a.1">49.a.1/2</a></div>
-<div class="Annotations"><B>Implementation Advice:&nbsp;</B>The &ldquo;best&rdquo; 
-time base which exists in the underlying system should be available to 
-the application through Real_Time.Clock.</div>
+<div class="Annotations"><span class="insert2"><B>Implementation Advice: 
+</B></span><span class="insert2">The &ldquo;best&rdquo; time base which 
+exists in the underlying system should be available to the application 
+through Real_Time.Clock.</span></div>
 <div class="NotesHeader">NOTES</div>
 <div class="paranum"><a name="p50">50/3</a></div>
-<div class="Notes">35&nbsp;&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
-The rules in this subclause do not imply that the implementation can 
-protect the user from operator or installation errors which could result 
-in the clock being set incorrectly.</div>
+<div class="Notes">38&nbsp;&nbsp;{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0299-1.TXT">AI05-0299-1</A></I>} 
+The rules in this <span class="insert3">subclause</span><span class="delete3">&nbsp;clause</span> 
+do not imply that the implementation can protect the user from operator 
+or installation errors which could result in the clock being set incorrectly.</div>
 <div class="paranum"><a name="p51">51</a></div>
-<div class="Notes">36&nbsp;&nbsp;Time_Unit is the granularity of the 
+<div class="Notes">39&nbsp;&nbsp;Time_Unit is the granularity of the 
 Time type. In contrast, Tick represents the granularity of Real_Time.Clock. 
 There is no requirement that these be the same.</div>
 
 <H4 Class="centered">Incompatibilities With Ada 95</H4>
 <div class="paranum"><a name="p51.a">51.a/3</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00386.TXT">AI95-00386-01</A></I>} 
-{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0005-1.TXT">AI05-0005-1</A></I>} 
-<A NAME="I8682"></A>Functions Seconds and Minutes are added to Real_Time. 
-If Real_Time is referenced in a <SPAN Class="swiss"><A HREF="aa-8-4.html#S0196">use_clause</A></SPAN>, 
-and an entity <I>E</I> with a <SPAN Class="swiss"><A HREF="aa-3-1.html#S0022">defining_identifier</A></SPAN> 
+<span class="insert2"></span>{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AI05s/AI05-0005-1.TXT">AI05-0005-1</A></I>} 
+<span class="insert2"><A NAME="I8928"></A>Functions Seconds and Minutes 
+are&nbsp;</span><span class="insert2"><span class="delete3">newly&nbsp;</span></span><span class="insert2">added 
+to Real_Time. If Real_Time is referenced in a <SPAN Class="swiss"><A HREF="AA-8-4.html#S0196">use_clause</A></SPAN>, 
+and an entity <I>E</I> with a <SPAN Class="swiss"><A HREF="AA-3-1.html#S0022">defining_identifier</A></SPAN> 
 of Seconds or Minutes is defined in a package that is also referenced 
-in a <SPAN Class="swiss"><A HREF="aa-8-4.html#S0196">use_clause</A></SPAN>, 
+in a <SPAN Class="swiss"><A HREF="AA-8-4.html#S0196">use_clause</A></SPAN>, 
 the entity <I>E</I> may no longer be use-visible, resulting in errors. 
-This should be rare and is easily fixed if it does occur.&nbsp;</div>
+This should be rare and is easily fixed if it does occur.</span>&nbsp;</div>
 
 <H4 Class="centered">Wording Changes from Ada 95</H4>
 <div class="paranum"><a name="p51.b">51.b/2</a></div>
 <div class="Annotations">{<I><A HREF="http://www.ada-auth.org/cgi-bin/cvsweb.cgi/AIs/AI-00432.TXT">AI95-00432-01</A></I>} 
-Added wording explaining how and when many of these functions can raise 
-Constraint_Error. While there always was an intent to raise Constraint_Error 
-if the values did not fit, there never was any wording to that effect, 
-and since Time_Span was a private type, the normal numeric type rules 
-do not apply to it.&nbsp;</div>
+<span class="insert2">Added wording explaining how and when many of these 
+functions can raise Constraint_Error. While there always was an intent 
+to raise Constraint_Error if the values did not fit, there never was 
+any wording to that effect, and since Time_Span was a private type, the 
+normal numeric type rules do not apply to it.</span>&nbsp;</div>
 
 </div>
-<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="aa-TOC.html">Contents</A>&nbsp;
-<img src="../logo.svg" class="adaLogo" />&nbsp;<A HREF="aa-0-5.html">Index</A>&nbsp;
-&nbsp;<A HREF="AA-STDS.html">References</A>&nbsp;
-&nbsp;<A HREF="../RM-SRCH.html">Search</A>&nbsp;
-&nbsp;<A HREF="aa-D-7.html">Previous</A>&nbsp;
-&nbsp;<A HREF="aa-D-9.html">Next</A>&nbsp;
+<div style="margin-top: 0.0em; margin-bottom: 0.6em"><A HREF="AA-TOC.html"><IMG SRC="cont.gif" ALT="Contents" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-0-4.html"><IMG SRC="index.gif" ALT="Index" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-STDS.html"><IMG SRC="lib.gif" ALT="References" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-SRCH.html"><IMG SRC="find.gif" ALT="Search" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-D-7.html"><IMG SRC="prev.gif" ALT="Previous" BORDER=0></A>&nbsp;
+&nbsp;<A HREF="AA-D-9.html"><IMG SRC="next.gif" ALT="Next" BORDER=0></A>&nbsp;
 </div>
 <DIV Style="margin-top:0.0em"><IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">
 <SPAN Style="vertical-align: middle; font-size:120%">Ada 2005 and 2012 Editions sponsored in part by <SPAN Style="font-size: 125%"><A HREF="http://www.ada-europe.org/"><B>Ada-Europe</B></A></SPAN></SPAN></DIV>
