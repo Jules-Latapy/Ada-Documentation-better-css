@@ -39,7 +39,7 @@ center {
     margin-left: 40px;
 }
 
-.Bulleted, .SmallBulleted, .Indented4SmallNestedBulleted, .WideAbove, .Indented2Bulleted, .Bulleted-NoPrefix, .Enumerated-Body, .SmallIndented3, .Index{
+.Bulleted, .SmallBulleted, .Indented4SmallNestedBulleted, .WideAbove, .Indented2Bulleted, .Bulleted-NoPrefix, .Enumerated-Body, .SmallIndented3, .Index, .WideHanging-Term, .WideHanging-Body{
     margin-left: 40px;
 }
 
