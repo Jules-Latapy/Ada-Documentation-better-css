@@ -23,53 +23,56 @@ def StringReplacementInFolder(motif,replacement,regex=False,dirList=["./Ada_refe
 				newFile.write(data)
 				newFile.close()
 
-##mettre le liens du css a la place de l'inner-css
 
-##remplacer le premier HR par <div class="main">
-
-##remplacer le deuxieme HR par </div>
-
-##remplacer la fin de l'entete par la l'icon+ la fin de l'entete
-
-
+"""mettre le liens du css a la place de l'inner-css                 """     
 #StringReplacementInFolder(r"<STYLE.*</STYLE>", """<link rel="stylesheet" href="../styles.css">\n\t<link rel="icon" href="../logo.svg">""",True)
-"""StringReplacementInFolder("<HR>",'<div class="main">')
-StringReplacementInFolder("<HR>",'</div>')
 
-StringReplacementInFolder('<IMG SRC="cont.gif" ALT="Contents" BORDER=0>','Contents')
-StringReplacementInFolder('<IMG SRC="index.gif" ALT="Index" BORDER=0>','Index')
-StringReplacementInFolder('<IMG SRC="lib.gif" ALT="References" BORDER=0>','References')
-StringReplacementInFolder('<IMG SRC="find.gif" ALT="Search" BORDER=0>','Search')
-StringReplacementInFolder('<IMG SRC="next.gif" ALT="Next" BORDER=0>','Next')
-StringReplacementInFolder('<IMG SRC="prev.gif" ALT="Previous" BORDER=0>','Previous')"""
+"""remplacer le premier HR par <div class="main">                   """ 
+#StringReplacementInFolder("<HR>",'<div class="main">')
 
-#StringReplacementInFolder('<div style="margin-top: 0.0em; margin-bottom: 0.6em">','<div class="navig">',dirList=["./Ada_reference_manual_2012"])
-#StringReplacementInFolder('<IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">',"")
+"""remplacer le deuxieme HR par </div>                              """     
+#StringReplacementInFolder("<HR>",'</div>')
 
+"""remplacer la fin de l'entete par la l'icon+ la fin de l'entete   """     
 #StringReplacementInFolder("""</div>
 #<div class="main">""","""<img SRC="../logo.svg" class="adaLogo">
 #</div>
 #<div class="main">""")
 
-#StringReplacementInFolder("""</P>
-#<div class="main">""","""<img SRC="../logo.svg" class="adaLogo">
-#</div>
-#<div class="main">""")
+"""remplacer la div par la class navig qui indique les liens pour naviguer"""   
+#StringReplacementInFolder('<div style="margin-top: 0.0em; margin-bottom: 0.6em">','<div class="navig">',dirList=["./Ada_reference_manual_2012"])
 #StringReplacementInFolder("""<BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
 #<P>""","""<BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
 #<div class="navig">""")
 
+"""remplace les image moche
+StringReplacementInFolder('<IMG SRC="cont.gif" ALT="Contents" BORDER=0>','Contents')
+StringReplacementInFolder('<IMG SRC="index.gif" ALT="Index" BORDER=0>','Index')
+StringReplacementInFolder('<IMG SRC="lib.gif" ALT="References" BORDER=0>','References')
+StringReplacementInFolder('<IMG SRC="find.gif" ALT="Search" BORDER=0>','Search')
+StringReplacementInFolder('<IMG SRC="next.gif" ALT="Next" BORDER=0>','Next')
+StringReplacementInFolder('<IMG SRC="prev.gif" ALT="Previous" BORDER=0>','Previous')
+StringReplacementInFolder('<IMG SRC="AE_logo.gif" height=100 width=113 align=right ALT="Ada-Europe">',"")
+"""
+
+#StringReplacementInFolder("""</P>
+#<div class="main">""","""<img SRC="../logo.svg" class="adaLogo">
+#</div>
+#<div class="main">""")
+
+
+
 #StringReplacementInFolder("""<P><A HREF="AA-TOC.html">Contents""","""<div class="navig"><P><A HREF="AA-TOC.html">Contents""")
-##StringReplacementInFolder("""</P>
+
+#StringReplacementInFolder("""</P>
 #</BODY>
 #</HTML>""","""</div>
 #</BODY>
 #</HTML>""")
 
 
-StringReplacementInFolder("""<A HREF="AA-SRCH.html">""","""<A HREF="../RM-SRCH.html">""")
-
-
+"""Remplacement de lien de recherche"""
+#StringReplacementInFolder("""<A HREF="AA-SRCH.html">""","""<A HREF="../RM-SRCH.html">""")
 
 """
 	<STYLE type="text/css">
