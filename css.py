@@ -23,6 +23,16 @@ def StringReplacementInFolder(motif,replacement,regex=False,dirList=["./Ada_refe
 				newFile.write(data)
 				newFile.close()
 
+def renameFileinFolder(di="./Ada_reference_manual_2012"):
+
+	directory = os.listdir(di)
+
+	for fileName in directory:
+
+		if fileName.startswith("aa-"):
+
+			os.rename(di+"\\"+fileName,di+"\\"+fileName.replace("aa-","AA-"))
+
 
 """mettre le liens du css a la place de l'inner-css                 """     
 #StringReplacementInFolder(r"<STYLE.*</STYLE>", """<link rel="stylesheet" href="../styles.css">\n\t<link rel="icon" href="../logo.svg">""",True)
@@ -70,6 +80,7 @@ StringReplacementInFolder('<IMG SRC="AE_logo.gif" height=100 width=113 align=rig
 #</BODY>
 #</HTML>""")
 
+#renameFileinFolder()
 
 """Remplacement de lien de recherche"""
 #StringReplacementInFolder("""<A HREF="AA-SRCH.html">""","""<A HREF="../RM-SRCH.html">""")
