@@ -67,7 +67,7 @@ StringReplacementInFolder('<IMG SRC="prev.gif" ALT="Previous" BORDER=0>','Previo
 #</HTML>""")
 
 
-
+StringReplacementInFolder("""<A HREF="AA-SRCH.html">""","""<A HREF="../RM-SRCH.html">""")
 
 
 

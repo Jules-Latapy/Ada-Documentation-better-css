@@ -1,55 +1,56 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-	<TITLE>Search - Ada 95 Reference Manual</TITLE>
-	<link rel="stylesheet" href="./styles.css">
-	<link rel="icon" href="logo.svg">
-	<script type="text/javascript">
-		
-		var urlParams;
-
-		(window.onpopstate = function () {
-			var match,
-			pl     = /\+/g,  // Regex for replacing addition symbol with a space
-			search = /([^&=]+)=?([^&]*)/g,
-			decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-			query  = window.location.search.substring(1);
-
-			urlParams = {};
-			while (match = search.exec(query))
-				urlParams[decode(match[1])] = decode(match[2]);
-		})();
-
-		urlParams.toString = function() {
+	<head>
+		<TITLE>Search - Ada 95 Reference Manual</TITLE>
+		<link rel="stylesheet" href="./styles.css">
+		<link rel="icon" href="logo.svg">
+		<script type="text/javascript">
 			
-			return this.SearchO+ ":" +this.SearchA + ":" + this.SearchN;
-		};
+			var urlParams;
 
-		
+			(window.onpopstate = function () {
+				var match,
+				pl     = /\+/g,  // Regex for replacing addition symbol with a space
+				search = /([^&=]+)=?([^&]*)/g,
+				decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+				query  = window.location.search.substring(1);
 
-	</script>
-</head>
-<BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
-	<P>
-		<A HREF="Ada_reference_manual_1995/RM-TOC.html" >Contents[1995]</A>&nbsp;&nbsp;&nbsp;
-		<A HREF="Ada_reference_manual_1995/RM-0-29.html">Index[1995]</A>&nbsp;&nbsp;&nbsp;
-		<A HREF="RM-SRCH.html"							>Search</A>&nbsp;&nbsp;&nbsp;
-		<A HREF="Ada_reference_manual_1995/RM-0-29.html">Previous[1995]</A>
-		<img src="logo.svg" class="adaLogo" />
-	</P>
-	
-	<div class="main">
+				urlParams = {};
+				while (match = search.exec(query))
+					urlParams[decode(match[1])] = decode(match[2]);
+			})();
 
-	<center>
-		<h3>Found words in Ada Reference Manual: </h3>
+			urlParams.toString = function() {
+				
+				return this.SearchO+ ":" +this.SearchA + ":" + this.SearchN;
+			};
 
-		</center>
+			
+
+		</script>
+	</head>
+
+	<BODY TEXT="#000000" BGCOLOR="#FFFFF0" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+		<div class="navig">
+			<A HREF="Ada_reference_manual_1995/AA-TOC.html" >Contents[1995]</A>&nbsp;&nbsp;&nbsp;
+			<A HREF="Ada_reference_manual_1995/AA-0-29.html">Index[1995]</A>&nbsp;&nbsp;&nbsp;
+			<A HREF="RM-SRCH.html"							>Search</A>&nbsp;&nbsp;&nbsp;
+			<img src="logo.svg" class="adaLogo" />
 		</div>
-			<A HREF="Ada_reference_manual_2012/aa-TOC.html">Contents[2012]</A>&nbsp;&nbsp;&nbsp;
-			<A HREF="Ada_reference_manual_2012/aa-0-5.html">Index[2012]</A>&nbsp;&nbsp;&nbsp;
-			<A HREF="RM-SRCH.html"						   >Search</A>&nbsp;&nbsp;&nbsp;
-			<A HREF="Ada_reference_manual_2012/aa-0-5.html">Previous[2012]</A></P>
+		
+		<div class="main">
 
+			<center>
+				<h3>Found words in Ada Reference Manual: </h3>
+			</center>
+
+		</div>
+
+		<div class="navig">
+			<A HREF="Ada_reference_manual_2012/AA-TOC.html">Contents[2012]</A>&nbsp;&nbsp;&nbsp;
+			<A HREF="Ada_reference_manual_2012/AA-0-4.html">Index[2012]</A>&nbsp;&nbsp;&nbsp;
+			<A HREF="RM-SRCH.html"						   >Search</A>&nbsp;&nbsp;&nbsp;
+		</div>
 	</BODY>
 </HTML>
 
