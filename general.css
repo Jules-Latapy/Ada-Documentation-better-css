@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Martian+Mono');
+
+:root {
+
+    --pureBlack  : #000000 ;
+    --sanguine   : #B00016 ;
+    --sharkGrey  : #282923 ;
+}
+
+h2,h3 {
+    margin: 4%;
+}
+
+body{
+    background-color: var(--pureBlack) ;
+    color: white;
+    font-family: "Martian Mono", monospace;
+    margin: 3%;
+}
+
+.link {
+    background-color: var(--sharkGrey);
+    padding: 2%;
+    margin: 2%;
+    border-radius: 20px;
+}
+
+.indicateur {
+
+    filter: invert(1);
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#banniere {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.deco {
+    width: 10%;
+}
+
+.explanation {
+    text-align: justify;
+    background-color: var(--sanguine);
+    color:  var(--pureBlack);
+    padding: 2%;
+    margin: 2%;
+    border-radius: 20px;
+}
