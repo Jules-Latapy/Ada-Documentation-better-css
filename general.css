@@ -23,6 +23,10 @@ body{
     padding: 2%;
     margin: 2%;
     border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .indicateur {
@@ -42,7 +46,7 @@ body{
 }
 
 .deco {
-    width: 10%;
+    width: 10px;
 }
 
 .explanation {
@@ -52,4 +56,12 @@ body{
     padding: 2%;
     margin: 2%;
     border-radius: 20px;
+}
+
+.accompagement {
+    filter: invert(1);
+    width: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
