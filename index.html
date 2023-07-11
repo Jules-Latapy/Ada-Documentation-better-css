@@ -5,6 +5,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PORTFOLIO JL</title>
 	<link rel="stylesheet" href="./general.css">
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+		  
+			for (let fooElement of document.getElementsByClassName('logo')) {
+				let siblings = fooElement.children;
+				
+				if (siblings[1])
+					siblings[1].style.display = 'none';
+			}
+		});
+
+		function revealSibling(elem) {
+		    let sibling = elem.children[1];
+		    if (sibling) {
+
+				if (sibling.style.display != 'none')
+		      		sibling.style.display = 'none';
+		      	else
+		      		sibling.style.display = 'flex';
+		    }
+		}
+	</script>
+	<link rel="icon" href="./star_3.png">
 </head>
 <body>
 
@@ -13,30 +36,124 @@
 <div class="explanation">
 	Hello there ! Im Jules Latapy <br/>
 	<br/>
-	Im a IT guy who want to build applications for peoples and find solutions to modern problemes !<br/>
-
+	I am an IT guy who wants to build applications for people and find solutions to modern problems !<br/>
 </div>
 
-	<img src="./star_down.png" class="indicateur"/>
+	<img src="./explosion.png" class="indicateur"/>
+
+Language
+<br/>
+<table class="language">
+	<tr>
+	    <td class="doc-widget" onclick='revealSibling(this)'>
+	    	<div class="logo">
+	    		<img  src="./logo/Haskell-Logo.svg"	onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+	    	</div>
+	    	<div class="explanation">								
+		    	<br/>Haskell<br/>
+		    	A fascinating language ! </br>
+		    	Closer from mathematical theorie. </br>
+		    	Everything is so logical ! </br>
+ 				</br>
+		    	It's kinda tricky sometime, </br>
+		    	because its a singular language type with </br>
+		    	singular thinking pattern. </br>
+		    	Its not used in industry :< </br>
+		    </div>
+	    </td>
+	    <td class="doc-widget" onclick='revealSibling(this)'>
+	    	<div class="logo">
+		    	<img src="./logo/Java-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    </div>
+		    <div class="explanation">
+		    	<br/>Java<br/>
+		     	My first language ! </br>
+		    	Its robust and powerfull, </br>
+		    	there is a lot of feature, </br>
+		    	there is a big communauty </br>
+		    	a lot of software use it. </br>
+				</br>
+		    	because its my first language, </br>
+		    	sometime i want to see something else </br>
+		    </div>
+	    </td>
+	    <td class="doc-widget" onclick='revealSibling(this)'>
+	    	<div class="logo">
+		    	<img src="./logo/Ada-Logo.svg" style="transform: scale(3);" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    </div>
+	    	<div class="explanation">
+		    	<br/>Ada<br/>
+		    	Old but gold !
+		    	I wanted to learn it to be stronger,
+		    	but I discovered a great language full featured,
+		    	Its robust and readable.
+		    	and low use of memory
+
+		    	The small communauty is a big default.
+		    	the compiler driving me nuts sometime
+		    	and the documentation was ugly until recently
+	    	</div>
+	    </td>
+	    <td class="doc-widget" onclick='revealSibling(this)'>
+	    	<div class="logo">
+	   	    	<img src="./logo/JavaScript-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+	    	</div>
+	    	<div class="explanation">
+	    		<br/>JavaScript<br/>
+		    	Fashion and Flexibility
+		    	You can make everything in JS like no other language
+		    	there is a module for everything
+		    	Script are easy to write
+
+		    	Can be complex with big project
+		    	"3"+3 = 33
+		    	the downloading time for library could be astronomical
+		    	not fast
+		    </div>
+	    </td>
+	    <td class="doc-widget" onclick='revealSibling(this)'>
+	    	<div class="logo">
+	    		<img src="./logo/C-Logo.svg" style="transform: scale(1.5);" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+	    	</div>
+	    	<div class="explanation">
+		    	<br/>C<br/>
+		    	Fast and simple
+		    	C is the fastest programming language
+
+		    	So simple that its realy lack of feature and library
+		    	the compiler can be lax and authorize wrong thing
+	    	</div>
+	    </td>
+	</tr>
+</table>
+
+Software
+<table class="software">
+	<tr>
+	    <td>git</td>
+	    <td>sublime-text</td>
+	    <td>intellij</td>
+	</tr>
+</table>
 
 <h2> Projet N°1 </h2>
 
 <h3> Apave's work-study program </h3>
 
-<!--<div class="link">
+<!--<div class="subsection">
 	
 	<img src = "projet_1.svg" alt="diagram"/>
 
 </div>-->
 
 <div class="explanation">
-	Apave want a guy to write test, maintain an app and arrange technical dept,<br/>
+	Apave wanted a guy to write tests, maintain an app and arrange technical debt.<br/>
 	<br/>
-	the first project is not this one. xD<br/>
-	My journey on Apave have lead me too build automatic tests suites which simulate user input and action,<br/>
-	the project is to automate the process off testing after each app delivery<br/>
+	The first project is not this one. xD<br/>
+	My journey on Apave have lead me to build automatic tests suites which simulate user input and action,<br/>
+	the project is to automate the process off testing after each app delivery.<br/>
 	<br/>
-	I lay this project on my portfolio because its my first real working experiences and its quite good at what's suppose to do<br/>
+	I include this project on my portfolio because it's my first real working experience and its quite good at what it is suppose to do.<br/>
 </div>
 
 		<img src="./star_down.png" class="indicateur"/>
@@ -47,40 +164,87 @@
 
 <div class="explanation">
 	Henix needed a tool to calculate the number of tests inside a project<br/>
-	I have done it in java with a librairy<br/>
-<br/>
+	I have did it in java with a library<br/>
+	<br/>
 	I put this project on my portfolio because I am pretty proud of it<br/>
-	it help me find an work-study program because there topic have thing in common<br/>
+	it helped me find an work-study program because both topic have similarities<br/>
 	its complete (fine grained),<br/>
-	the documentation is well rediged. <br/>
+	the documentation is well written. <br/>
 	For those who maintain and use the project it would be very easy<br/>
-	because on one part of the application i have made 2 solutions (1 by language)<br/>
+	because on one part of the application I have made in 2 different languages<br/>
 </div>
 
 	<img src="./star_down.png" class="indicateur"/>
 
 <h2> Projet N°3 </h2>
 
-<h3> esoteric language interpreter 🌙 </h3>
+<h3> Esoteric language interpreter 🌙 </h3>
 
-<div class="link"> 
+<div class="subsection"> 
 	<a href="https://github.com/Jules-Latapy/Esoteric-language"> https://github.com/Jules-Latapy/Esoteric-language </a>
 	<img class="accompagement" src="star_6.png"/>
+</div>
+
+<div class="subsection">
+	<pre>
+<code_comment>(roman number: 0 I V X L C D M )
+
+(constant)</code_comment>
+<code_keyword>INCOMMUTABILIS</code_keyword> <code_type>VERITAS</code_type>  <code_keyword>NOMINE</code_keyword> NAME_V <code_keyword>VALET</code_keyword> <code_const>FICTUS</code_const>.
+<code_comment>(variables)</code_comment>
+		<code_type>ALBUM    </code_type><code_keyword>NOMINE</code_keyword> NAME_A <code_keyword>VALET</code_keyword> [<code_const>I</code_const>;<code_const>II</code_const>;<code_const>III</code_const>;<code_const>IX</code_const>].
+		<code_type>NUMERUS  </code_type><code_keyword>NOMINE</code_keyword> NAME_N <code_keyword>VALET</code_keyword> <code_const>I</code_const>,<code_const>II</code_const>.
+		<code_type>PHRASIS  </code_type><code_keyword>NOMINE</code_keyword> NAME_P <code_keyword>VALET</code_keyword> "<code_litteral>hello</code_litteral>".
+		<code_type>SYMBOLUM </code_type><code_keyword>NOMINE</code_keyword> NAME_S <code_keyword>VALET</code_keyword> '<code_litteral>r</code_litteral>'.
+
+<code_comment>(if-else)</code_comment>
+<code_keyword>SI FICTUS FACERE	</code_keyword>
+<code_keyword>ALIUS.			</code_keyword>
+<code_keyword>COMPLEVIT			</code_keyword>
+
+<code_comment>(switch-case)</code_comment>
+<code_keyword>SECUNDUM</code_keyword> NAME_S <code_keyword>FACERE</code_keyword>
+    <code_keyword>QUANDO</code_keyword> '<code_litteral>e</code_litteral>' <code_keyword>FACERE COMPLEVIT</code_keyword>.
+    <code_keyword>QUANDO</code_keyword> '<code_litteral>f</code_litteral>' <code_keyword>FACERE COMPLEVIT</code_keyword>.
+    <code_keyword>ALIUS</code_keyword>.
+<code_keyword>COMPLEVIT</code_keyword>
+
+<code_comment>(while)</code_comment>
+<code_keyword>QUANDIU</code_keyword> <code_const>FICTUS</code_const> <code_keyword>FACERE</code_keyword>
+    <code_keyword>RUMPITUR</code_keyword>. <code_comment>(break)   </code_comment>
+    <code_keyword>PROGREDI</code_keyword>. <code_comment>(continue)</code_comment>
+<code_keyword>COMPLEVIT</code_keyword>
+
+<code_comment>(for-each)</code_comment>
+<code_keyword>TRAICERE</code_keyword> [<code_const>I</code_const>;<code_const>II</code_const>;<code_const>III</code_const>;<code_const>IX</code_const>] <code_keyword>NOMINE</code_keyword> u <code_keyword>FACERE</code_keyword>
+    <code_name>SCRIPTO</code_name>![u].
+<code_keyword>COMPLEVIT</code_keyword>
+
+<code_comment>(function)</code_comment>
+<code_keyword>IUSSUS</code_keyword> <code_name>namefct</code_name>[<code_type>NUMERUS</code_type> <code_keyword>NOMINE</code_keyword> _] <code_keyword>REDIT</code_keyword> <code_type>NUMERUS</code_type> <code_keyword>FACERE</code_keyword>
+    <code_name>SCRIPTO</code_name>!["<code_litteral>hi</code_litteral>"].
+    <code_keyword>REDIT</code_keyword> <code_const>X</code_const>.
+<code_keyword>COMPLEVIT</code_keyword>
+
+<code_name>namefct</code_name>![<code_const>I</code_const>].
+	</pre>
 </div>
 
 <div class="explanation">
 	<img class="deco" src="star_3.png"/>
 	<br/>
-	Something doing code feels like being a wizard, <br/>
-	i have push the concept further by making a programming language that do what other language do but in latin, <br/>
-	I put this solo project on my portfolio because I am pretty proud of it <br/>
-	the inside archtecture is very clean and modular, <br/>
-	i have made the unit tests (which can be rare in programmer project), <br/>
+	Something avout writting code feels like being a wizard, <br/>
+	I push the concept further by making a programming language, that do what other languages do, but in Latin.<br/>
+	I put this solo project on my portfolio because I am pretty proud of it.<br/>
+	The inside archtecture is very clean and modular, <br/>
+	I have made the unit tests (which can be rare in programmer project), <br/>
 	the document is not done :(, but I feel like there is no need <br/>
-	and i made a coloring extension for a IDE call sublime text <br/>
+	and I made a coloring extension for an IDE call sublime text.<br/>
 	<img class="deco" style="
 		display: block;
-		margin-left: auto;" 
+		margin-left: 	auto;
+		margin-right: auto;
+		margin-bottom: 0;" 
 		src="star_1.png"/>
 </div>
 
@@ -90,14 +254,14 @@
 
 <div class="explanation">
 
-	My hobbys are to create projects that I never finish <br/>
+	My hobbies are to create projects that I never finish <br/>
 	and make stuff in 3D with blender.
 
 </div>
 
 <img id="banniere"src="./exemple.blender.png"/>
 
-here some of my creation.
+Here some of my creations.
 
 </body>
 </html>
