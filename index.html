@@ -24,7 +24,6 @@
 	<div class="menu-button">
 		<img src="./icon/sun.png" 
 			onclick='
-				this.setAttribute("style", "filter: rotate(45);");
 				let menu = document.getElementById("menu");
 
 				if (menu.style.display != "none")
@@ -32,18 +31,27 @@
 		      	else
 		      		menu.style.display = "block";'
 		/>
-
+		<!--
 		<img src="./icon/explosion.png"/>
 		<img src="./icon/star_down.png"/>
-		<img src="./icon/atom.png"     />
+		<img src="./icon/atom.png"     />-->
 	</div>
 
-	<div id="menu" onclick='' hidden>
-		<img src="icon/sun.png"/>
-		Jules Latapy
+	<div id="menu" onclick='' style="display: block;">
+
+		<div class="menu-profil">
+			<div class="navigation-img-bubble"><img src="./icon/explosion.png" />
+			Jules Latapy
+		</div>
+			
+		<div id="inner-menu">
+			<div class="navigation"><div class="navigation-img-bubble"><img src="./icon/explosion.png" /></div> Skills   </div>
+			<div class="navigation"><div class="navigation-img-bubble"><img src="./icon/star_down.png" /></div> Projects </div>
+			<div class="navigation"><div class="navigation-img-bubble"><img src="./icon/atom.png"      /></div> Creations</div>
+		</div>
 	</div>
 
-	<img id="banniere" src="./banniere.png"/>
+		<img id="banniere" src="./banniere.png"/>
 
 	<div class="explanation">
 		Hello there ! Im Jules Latapy <br/>
@@ -53,7 +61,7 @@
 
 		<img src="./icon/explosion.png" class="indicateur"/>
 
-	Language
+	<h2>Language</h2>
 	<br/>
 	<table class="language">
 		<tr>
@@ -157,7 +165,9 @@
 		</tr>
 	</table>
 
-	Software
+		<img src="./icon/explosion.png" class="indicateur"/>
+
+	<h2>Software</h2>
 	<table class="software">
 		<tr>
 		    <td class="doc-widget" onclick='revealSibling(this)'>
@@ -218,6 +228,8 @@
 		</tr>
 	</table>
 
+		<img src="./icon/star_down.png" class="indicateur"/>
+
 	<h2> Projet N°1 </h2>
 
 	<h3> Apave's work-study program </h3>
@@ -227,6 +239,7 @@
 		<img src = "projet_1.svg" alt="diagram"/>
 
 	</div>-->
+
 
 	<div class="explanation">
 		<p>
@@ -242,7 +255,7 @@
 		</p>
 	</div>
 
-			<img src="./icon/star_down.png" class="indicateur"/>
+		<img src="./icon/star_down.png" class="indicateur"/>
 
 	<h2> Projet N°2 </h2>
 

@@ -20,6 +20,16 @@
     --monokaiPurple     : #AE81FF ;
     --lightGreen        : #047a74 ;
 }
+
+body{
+    background-color: var(--pureBlack) ;
+    color: white;
+    font-family: "Martian", monospace;
+    margin: 3%;
+}
+
+/*---------CODE BLOCK---------*/
+
 pre {
     justify-content: space-between;
 }
@@ -48,20 +58,22 @@ code_name {
     color: var(--monokaiGreen);
 }
 
+/*---------NAVIGATION---------*/
+
 .menu-button {
     z-index: 3;
     top: 0%;
-    display: block;
-    position: fixed;
     float: right;
 }
 
 .menu-button img {
+    position: fixed;
     display: flex;
-    /*position: static;*/
     filter: invert(1); 
     border-radius: 50%;
-    width: 10%;
+    width: 5%;
+    top: 0%;
+    right: 0%;
 }
 
 .menu-button img:hover {
@@ -69,33 +81,59 @@ code_name {
     transform: rotate(-40deg);
 }
 
+/*LEFT PANEL*/
+
 #menu {
-    z-index: 3;
-    background-color: var(--sanguine);
-    height: 100%;
-    width: 2%;
-    padding: 5%;
+    z-index: 4;
+    background-color: var(--pureBlack);
+    height: 100vh;
+    padding: 1%;
     margin: 0%;
-    margin-left: -3%;
+    top: 0%;
+    left: 0%;
     position: fixed;
     border-radius: 20px;
 }
 
-#menu img {
-    /*width: 10%;*/
+#inner-menu {
+    background-color: var(--sanguine);
+    color: var(--pureBlack);
+    z-index: 4;
+    top: 0%;
+    width: 100%;
+    padding: 0%;
+    border-radius: 20px;
 }
+
+.menu-profil {
+    padding: 10%;
+}
+
+.navigation {
+    align-items: center;
+    display: flex;
+}
+
+.navigation-img-bubble {
+    justify-content: right;
+    border-radius: 50%;
+    background-color: var(--pureBlack);
+    margin: 2%;
+    display: block;
+    width: 10%;
+}
+
+.navigation img {
+    width: 100%;
+    filter: invert(1);
+}
+
+/*---------SECTION---------*/
 
 h2,h3 {
     margin: 4%;
 }
 
-body{
-    background-color: var(--pureBlack) ;
-    color: white;
-    font-family: "Martian", monospace;
-    font-size: ;
-    margin: 3%;
-}
 
 .subsection {
     background-color: var(--sharkGrey);
