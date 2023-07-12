@@ -48,6 +48,43 @@ code_name {
     color: var(--monokaiGreen);
 }
 
+.menu-button {
+    z-index: 3;
+    top: 0%;
+    display: block;
+    position: fixed;
+    float: right;
+}
+
+.menu-button img {
+    display: flex;
+    /*position: static;*/
+    filter: invert(1); 
+    border-radius: 50%;
+    width: 10%;
+}
+
+.menu-button img:hover {
+    animation: pulsate 1s ease-in-out;
+    transform: rotate(-40deg);
+}
+
+#menu {
+    z-index: 3;
+    background-color: var(--sanguine);
+    height: 100%;
+    width: 2%;
+    padding: 5%;
+    margin: 0%;
+    margin-left: -3%;
+    position: fixed;
+    border-radius: 20px;
+}
+
+#menu img {
+    /*width: 10%;*/
+}
+
 h2,h3 {
     margin: 4%;
 }
@@ -55,7 +92,8 @@ h2,h3 {
 body{
     background-color: var(--pureBlack) ;
     color: white;
-    font-family: "Martian Mono", monospace;
+    font-family: "Martian", monospace;
+    font-size: ;
     margin: 3%;
 }
 
@@ -66,12 +104,11 @@ body{
     border-radius: 20px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .indicateur {
-
     filter: invert(1);
     width: 10%;
     display: block;
@@ -80,19 +117,27 @@ body{
 }
 
 #banniere {
+    margin-top: -7%;
     width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+.big-picture {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*symbol agrementant les paragraphes*/
 .deco {
     width: 10%;
 }
 
 
 .explanation {
-    text-align: justify;
     background-color: var(--sanguine);
     color:  var(--pureBlack);
     padding: 2%;
@@ -104,8 +149,6 @@ body{
     filter: invert(1);
     width: 8%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 /*******************/
@@ -114,7 +157,16 @@ body{
     width: 20%;
 }
 
+.doc {
+    background-color: var(--sanguine);
+    color:  var(--pureBlack);
+    padding: 10%;
+    border-radius: 20px;
+}
+
 .logo {
+    margin: 0;
+    top: 0%;
     padding: 10%;
     border-radius: 20px;
     background-color:  var(--sharkGrey);
@@ -140,3 +192,5 @@ body{
         0 0 50px #4e00c2;
     }
 }
+
+/**************************/

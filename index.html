@@ -6,16 +6,6 @@
 	<title>PORTFOLIO JL</title>
 	<link rel="stylesheet" href="./general.css">
 	<script>
-		window.addEventListener('DOMContentLoaded', function() {
-		  
-			for (let fooElement of document.getElementsByClassName('logo')) {
-				let siblings = fooElement.children;
-				
-				if (siblings[1])
-					siblings[1].style.display = 'none';
-			}
-		});
-
 		function revealSibling(elem) {
 		    let sibling = elem.children[1];
 		    if (sibling) {
@@ -23,169 +13,268 @@
 				if (sibling.style.display != 'none')
 		      		sibling.style.display = 'none';
 		      	else
-		      		sibling.style.display = 'flex';
+		      		sibling.style.display = 'block';
 		    }
 		}
 	</script>
-	<link rel="icon" href="./star_3.png">
+	<link rel="icon" href="./icon/star_3.png">
 </head>
 <body>
 
+	<div class="menu-button">
+		<img src="./icon/sun.png" 
+			onclick='
+				this.setAttribute("style", "filter: rotate(45);");
+				let menu = document.getElementById("menu");
+
+				if (menu.style.display != "none")
+		      		menu.style.display = "none";
+		      	else
+		      		menu.style.display = "block";'
+		/>
+
+		<img src="./icon/explosion.png"/>
+		<img src="./icon/star_down.png"/>
+		<img src="./icon/atom.png"     />
+	</div>
+
+	<div id="menu" onclick='' hidden>
+		<img src="icon/sun.png"/>
+		Jules Latapy
+	</div>
+
 	<img id="banniere" src="./banniere.png"/>
 
-<div class="explanation">
-	Hello there ! Im Jules Latapy <br/>
+	<div class="explanation">
+		Hello there ! Im Jules Latapy <br/>
+		<br/>
+		I am an IT guy who wants to build applications for people and find solutions to modern problems !
+	</div>
+
+		<img src="./icon/explosion.png" class="indicateur"/>
+
+	Language
 	<br/>
-	I am an IT guy who wants to build applications for people and find solutions to modern problems !<br/>
-</div>
+	<table class="language">
+		<tr>
+		    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+		    		<img  src="./logo/Haskell-Logo.svg"	onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    	</div>
+		    	<div class="doc">								
+			    	<h4>Haskell</h4>
+			    	
+			    	<p>
+			    	What a fascinating language !
+			    	It's closer from mathematical theorie,
+			    	and everything in it seem so logical !
+	 				</p>
+	 				<p>
+			    	It's kinda tricky sometimes,
+			    	because it's a singular language type with
+			    	singular thinking pattern.
+			    	Its also not used in industry :<
+			    	</p>
+			    </div>
+		    </td>
+		    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+			    	<img src="./logo/Java-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+			    </div>
+			    <div class="doc">
+			    	<h4>Java</h4>
+			    	
+			    	<p>
+			     	My first language ! 
+			    	Its robust and powerfull, 
+			    	there is a lots of features 
+			    	and big communauty. 
+			    	A lot of compagny use it.
+					</p>
+					<p>
+			    	because its my first language, 
+			    	sometime I am bored of it.
+			    	</p>
+			    </div>
+		    </td>
+		    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+			    	<img src="./logo/Ada-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+			    </div>
+		    	<div class="doc">
+			    	<h4>Ada</h4>
+			    
+			    	<p>
+			    	Old but gold !
+			    	I wanted to learn it to be stronger,
+			    	but I discovered a great language full featured,
+			    	Its robust, readable
+			    	and low use of memory.
+					</p>
+					<p>
+			    	The small communauty is a big default.
+			    	Sometimes the compiler driving me nuts
+			    	and the documentation was ugly until recently.
+			    	</p>
+		    	</div>
+		    </td>
+		    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+		   	    	<img src="./logo/JavaScript-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    	</div>
+		    	<div class="doc">
+		    		<h4>JavaScript</h4>
+		    		
+		    		<p>
+			    	Fashion and flexible,
+			    	you can make everything in JS like no other language,
+			    	there is a module for everything.
+			    	Script are easy to write.
+			    	<p>
+			    	<p>
+			    	Can be complex with big project.
+			    	There is some non-sense like 1 < 2 < 3; -> true but 3 > 2 > 1; -> false.
+			    	the downloading time for library could feels like an eternity.
+			    	</p>
+			    </div>
+		    </td>
+		    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+		    		<img src="./logo/C-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    	</div>
+		    	<div class="doc">
+			    	<h4>C</h4>
+			    	<p>
+			    	It's fast and simple.
+			    	C is the fastest programming language.
+					</p>
+					<p>
+			    	So simple that its realy lack of features and librarys.
+			    	the compiler can be lax and authorize wrong things.
+			    	</p>
+		    	</div>
+		    </td>
+		</tr>
+	</table>
 
-	<img src="./explosion.png" class="indicateur"/>
+	Software
+	<table class="software">
+		<tr>
+		    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+		   	    	<img src="./logo/Intellij-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    	</div>
+		    	<div class="doc">
+		    		<h4>Intellij</h4>
+		    		
+		    		<p>
+			    	Productivity at is peak !
+			    	It's so pleasant when you just have to click on a button.
+			    	Intellij give me cool advise to guaranteed integrity of my apps.
+			    	<p>
+			    	<p>
+			    	Can be slow to open and indexing project,
+			    	also it can "panic" when you do thing in your way/ not in order and
+			    	often you need to upgrade it.
+			    	</p>
+			    </div>
+		    </td>
+		    	    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+		   	    	<img src="./logo/Sublime-Text-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    	</div>
+		    	<div class="doc">
+		    		<h4>Sublime-Text</h4>
+		    		
+		    		<p>
+			    	It's simple and customisable,
+			    	you can easily make complex syntax coloring and build system,
+			    	It's very fast to open and the search system could be usefull.
+			    	<p>
+			    	<p>
+			    	Can be too simple for big project.
+			    	does'nt replace a true IDE.
+			    	</p>
+			    </div>
+		    </td>
+		    	    <td class="doc-widget" onclick='revealSibling(this)'>
+		    	<div class="logo">
+		   	    	<img src="./logo/Git-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+		    	</div>
+		    	<div class="doc">
+		    		<h4>Git</h4>
+		    		
+		    		<p>
+			    	It's a <i>must</i> to known.
+			    	On my programming journey,
+			    	I have learn some trickshots too do complex versionning operations.
+			    	<p>
+			    	<p>
+			    	The learning curve is very flat, you need a lot of time to understand it.
+			    	You can trap yourself in complex mess.
+			    	</p>
+			    </div>
+		    </td>
+		</tr>
+	</table>
 
-Language
-<br/>
-<table class="language">
-	<tr>
-	    <td class="doc-widget" onclick='revealSibling(this)'>
-	    	<div class="logo">
-	    		<img  src="./logo/Haskell-Logo.svg"	onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-	    	</div>
-	    	<div class="explanation">								
-		    	<br/>Haskell<br/>
-		    	A fascinating language ! </br>
-		    	Closer from mathematical theorie. </br>
-		    	Everything is so logical ! </br>
- 				</br>
-		    	It's kinda tricky sometime, </br>
-		    	because its a singular language type with </br>
-		    	singular thinking pattern. </br>
-		    	Its not used in industry :< </br>
-		    </div>
-	    </td>
-	    <td class="doc-widget" onclick='revealSibling(this)'>
-	    	<div class="logo">
-		    	<img src="./logo/Java-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-		    </div>
-		    <div class="explanation">
-		    	<br/>Java<br/>
-		     	My first language ! </br>
-		    	Its robust and powerfull, </br>
-		    	there is a lot of feature, </br>
-		    	there is a big communauty </br>
-		    	a lot of software use it. </br>
-				</br>
-		    	because its my first language, </br>
-		    	sometime i want to see something else </br>
-		    </div>
-	    </td>
-	    <td class="doc-widget" onclick='revealSibling(this)'>
-	    	<div class="logo">
-		    	<img src="./logo/Ada-Logo.svg" style="transform: scale(3);" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-		    </div>
-	    	<div class="explanation">
-		    	<br/>Ada<br/>
-		    	Old but gold !
-		    	I wanted to learn it to be stronger,
-		    	but I discovered a great language full featured,
-		    	Its robust and readable.
-		    	and low use of memory
+	<h2> Projet N°1 </h2>
 
-		    	The small communauty is a big default.
-		    	the compiler driving me nuts sometime
-		    	and the documentation was ugly until recently
-	    	</div>
-	    </td>
-	    <td class="doc-widget" onclick='revealSibling(this)'>
-	    	<div class="logo">
-	   	    	<img src="./logo/JavaScript-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-	    	</div>
-	    	<div class="explanation">
-	    		<br/>JavaScript<br/>
-		    	Fashion and Flexibility
-		    	You can make everything in JS like no other language
-		    	there is a module for everything
-		    	Script are easy to write
+	<h3> Apave's work-study program </h3>
 
-		    	Can be complex with big project
-		    	"3"+3 = 33
-		    	the downloading time for library could be astronomical
-		    	not fast
-		    </div>
-	    </td>
-	    <td class="doc-widget" onclick='revealSibling(this)'>
-	    	<div class="logo">
-	    		<img src="./logo/C-Logo.svg" style="transform: scale(1.5);" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-	    	</div>
-	    	<div class="explanation">
-		    	<br/>C<br/>
-		    	Fast and simple
-		    	C is the fastest programming language
+	<!--<div class="subsection">
+		
+		<img src = "projet_1.svg" alt="diagram"/>
 
-		    	So simple that its realy lack of feature and library
-		    	the compiler can be lax and authorize wrong thing
-	    	</div>
-	    </td>
-	</tr>
-</table>
+	</div>-->
 
-Software
-<table class="software">
-	<tr>
-	    <td>git</td>
-	    <td>sublime-text</td>
-	    <td>intellij</td>
-	</tr>
-</table>
+	<div class="explanation">
+		<p>
+		Apave wanted a guy to write tests, maintain an app and arrange technical debt.
+		</p>
+		<p>
+		The first project is not this one. xD
+		My journey on Apave have lead me to build automatic tests suites which simulate user input and action,
+		the project is to automate the process off testing after each app delivery.
+		</p>
+		<p>
+		I include this project on my portfolio because it's my first real working experience and its quite good at what it is suppose to do.
+		</p>
+	</div>
 
-<h2> Projet N°1 </h2>
+			<img src="./icon/star_down.png" class="indicateur"/>
 
-<h3> Apave's work-study program </h3>
+	<h2> Projet N°2 </h2>
 
-<!--<div class="subsection">
-	
-	<img src = "projet_1.svg" alt="diagram"/>
+	<h3> Henix's internship </h3>
 
-</div>-->
+	<div class="explanation">
+		<p>
+		Henix needed a tool to calculate the number of tests inside a project
+		I have did it in java with a library
+		</p>
+		<p>
+		I put this project on my portfolio because I am pretty proud of it
+		it helped me find an work-study program because both topic have similarities
+		its complete (fine grained),
+		the documentation is well written. 
+		For those who maintain and use the project it would be very easy
+		because on one part of the application I have made in 2 different languages
+		</p>
+	</div>
 
-<div class="explanation">
-	Apave wanted a guy to write tests, maintain an app and arrange technical debt.<br/>
-	<br/>
-	The first project is not this one. xD<br/>
-	My journey on Apave have lead me to build automatic tests suites which simulate user input and action,<br/>
-	the project is to automate the process off testing after each app delivery.<br/>
-	<br/>
-	I include this project on my portfolio because it's my first real working experience and its quite good at what it is suppose to do.<br/>
-</div>
+		<img src="./icon/star_down.png" class="indicateur"/>
 
-		<img src="./star_down.png" class="indicateur"/>
+	<h2> Projet N°3 </h2>
 
-<h2> Projet N°2 </h2>
+	<h3> Esoteric language interpreter 🌙 </h3>
 
-<h3> Henix's internship </h3>
+	<div class="subsection"> 
+		<a href="https://github.com/Jules-Latapy/Esoteric-language"> https://github.com/Jules-Latapy/Esoteric-language </a>
+		<img class="accompagement" src="./icon/star_6.png"/>
+	</div>
 
-<div class="explanation">
-	Henix needed a tool to calculate the number of tests inside a project<br/>
-	I have did it in java with a library<br/>
-	<br/>
-	I put this project on my portfolio because I am pretty proud of it<br/>
-	it helped me find an work-study program because both topic have similarities<br/>
-	its complete (fine grained),<br/>
-	the documentation is well written. <br/>
-	For those who maintain and use the project it would be very easy<br/>
-	because on one part of the application I have made in 2 different languages<br/>
-</div>
-
-	<img src="./star_down.png" class="indicateur"/>
-
-<h2> Projet N°3 </h2>
-
-<h3> Esoteric language interpreter 🌙 </h3>
-
-<div class="subsection"> 
-	<a href="https://github.com/Jules-Latapy/Esoteric-language"> https://github.com/Jules-Latapy/Esoteric-language </a>
-	<img class="accompagement" src="star_6.png"/>
-</div>
-
-<div class="subsection">
+	<div class="subsection">
 	<pre>
 <code_comment>(roman number: 0 I V X L C D M )
 
@@ -228,40 +317,42 @@ Software
 
 <code_name>namefct</code_name>![<code_const>I</code_const>].
 	</pre>
-</div>
+	</div>
 
-<div class="explanation">
-	<img class="deco" src="star_3.png"/>
+	<div class="explanation">
+		<img class="deco" src="./icon/star_3.png"/>
+		<p>
+		Something about writting code feels like being a wizard, 
+		I push the concept further by making a programming language, that do what other languages do, but in Latin.
+		I put this solo project on my portfolio because I am pretty proud of it.
+		The inside archtecture is very clean and modular, 
+		I have made the unit tests (which can be rare in programmer project), 
+		the document is not done :(, but I feel like there is no need 
+		and I made a coloring extension for an IDE call sublime text.
+		</p>
+		<img class="deco" style="
+			display: block;
+			margin-left: 	auto;
+			margin-right: auto;
+			margin-bottom: 0;" 
+			src="./icon/star_1.png"/>
+	</div>
+
+		<img src="./icon/atom.png" class="indicateur"/>
+
+	<h2> Hobby </h2>
+
+	<div class="explanation">
+
+		My hobbies are to create projects that I never finish <br/>
+		and make stuff in 3D with blender.
+
+	</div>
+
+	<img id="big-picture"src="./exemple.blender.png"/>
 	<br/>
-	Something avout writting code feels like being a wizard, <br/>
-	I push the concept further by making a programming language, that do what other languages do, but in Latin.<br/>
-	I put this solo project on my portfolio because I am pretty proud of it.<br/>
-	The inside archtecture is very clean and modular, <br/>
-	I have made the unit tests (which can be rare in programmer project), <br/>
-	the document is not done :(, but I feel like there is no need <br/>
-	and I made a coloring extension for an IDE call sublime text.<br/>
-	<img class="deco" style="
-		display: block;
-		margin-left: 	auto;
-		margin-right: auto;
-		margin-bottom: 0;" 
-		src="star_1.png"/>
-</div>
-
-	<img src="./star_down.png" class="indicateur"/>
-
-<h2> Hobby </h2>
-
-<div class="explanation">
-
-	My hobbies are to create projects that I never finish <br/>
-	and make stuff in 3D with blender.
-
-</div>
-
-<img id="banniere"src="./exemple.blender.png"/>
-
-Here some of my creations.
-
+	<p>
+	Here some of my creations.
+	</p>
 </body>
 </html>
