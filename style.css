@@ -40,6 +40,17 @@ pre {
     tab-size:         var(--tab-size); /* Chrome 21+, Safari 6.1+, Opera 15+ */
 }
 
+.sample {
+
+    white-space: pre-wrap;
+    font-size: 80%;
+    font-family: Martian Mono;
+    text-overflow: ellipsis;
+    background-color: var(--mainGrey);
+    padding: 10%;
+    border-radius: 20px;
+}
+
 code_comment {
     color:var(--monokaiComment);
 }
@@ -73,6 +84,8 @@ code_name {
 }
 
 .menu-button img {
+    right: 0%;
+    top: 0%;
     border-style: solid;
     border-color: black;
     position: fixed;
@@ -80,8 +93,6 @@ code_name {
     filter: invert(1); 
     border-radius: 50%;
     width: 5%;
-    top: 0%;
-    right: 0%;
 }
 
 .menu-button img:hover {
@@ -90,21 +101,36 @@ code_name {
 }
 
 /*LEFT PANEL*/
-.menu-profil {
-
+#menu-profil {
+    display: flex;
+    margin-bottom: 2%;
 }
 
-.menu-profil img{
-    width: 100%;
+#profil-text {
+    border-radius: 20px;
+    background-color: var(--sanguine);
+    padding: 2%;
+    margin-left: 2%;
+}
+
+#profil-text:before {
+    visibility: visible;
+    content: "Jules Latapy";
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    background-color: var(--sanguine);
+    top: -30px;
+    left: -8%;
+}
+
+#profil-img {
+    width: 20%;
     z-index: 4;
-    top: 0%;
-    width: 100%;
-    padding: 0%;
     border-radius: 50%;
 }
 
-
-#menu {
+#menu-panel {
     z-index: 4;
     background-color: var(--pureBlack);
     height: 100vh;
@@ -113,17 +139,18 @@ code_name {
     top: 0%;
     left: 0%;
     position: fixed;
+    display: flex;
     border-radius: 20px;
 }
 
 #inner-menu {
     background-color: var(--sanguine);
-    z-index: 4;
+    background-image: url('./fond-menu.png');
     top: 0%;
-    width: 100%;
+    width: 100px;
     padding: 0%;
     border-radius: 20px;
-    background-image: url('./fond-menu.png');
+    float: left;
 }
 
 #inner-menu a {
@@ -135,14 +162,19 @@ code_name {
     animation: pulsate 1s ease-in-out;
 }
 
-
-.menu-profil {
-    padding: 10%;
+.navigation {
+    align-items: center;
+    display: flex;
+    width: 100%;
 }
 
-.navigation {
-    display: flex;
-    align-items: center;
+.navigation-text {
+    padding: 4%;
+    border-radius: 999px;
+    backdrop-filter: blur(20px);
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
 }
 
 .navigation-img-bubble {
@@ -236,17 +268,6 @@ a:visited {
     padding: 10%;
     border-radius: 20px;
 }
-
-.sample {
-    white-space: pre-wrap;
-    font-size: 80%;
-    font-family: Martian Mono;
-    text-overflow: ellipsis;
-    background-color: var(--mainGrey);
-    padding: 10%;
-    border-radius: 20px;
-}
-
 .logo {
     margin: 0;
     top: 0%;
@@ -277,3 +298,7 @@ a:visited {
 }
 
 /**************************/
+
+.hobbies table { max-width:100%; table-layout: fixed;    }
+.hobbies table td { width: 33%; }
+.hobbies table td img{ width: 100px; }

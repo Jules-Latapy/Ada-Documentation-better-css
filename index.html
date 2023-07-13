@@ -1,8 +1,4 @@
 <!--
-	font-> blanc
-	text trop petit ***
-	mettre en valeur le bouton de menu
-	image->menu
 	faire un truc different pour les softwares
 -->
 
@@ -31,9 +27,9 @@
 
 	<div class="menu-button">
 			
-		<img src="./icon/sun.png" 
+		<img src="./icon/sun.png"
 			onclick='
-				let menu = document.getElementById("menu");
+				let menu = document.getElementById("menu-panel");
 
 				if (menu.style.display != "none")
 		      		menu.style.display = "none";
@@ -43,22 +39,29 @@
 		<!--
 		<img src="./icon/explosion.png"/>
 		<img src="./icon/star_down.png"/>
-		<img src="./icon/atom.png"     />-->
+		<img src="./icon/atom.png"     />
+
+		<img src="./icon/moon.png" style="float: right;right: 0%;bottom: 0%;" />-->
 	</div>
 
-	<div id="menu" style="display: none;">
+	<div id="menu-panel" style="display: none;">
 
-		<div class="menu-profil">
-			<!-- <div class="navigation-img-bubble"><img src="./blender/cute-cat.png" /></div> -->
-			Jules Latapy
+		<div id="menu-profil">
+			<img id="profil-img" src="./blender/sailor-cat.png" />
+			<div id="profil-text">
+				<br/>
+				3 rue de la feste 76510<br/>
+				Saint-Aubin-Lès-Pin<br/>
+				jules.latapy.professionnal@gmail.com<br/>
+				https://www.linkedin.com/in/jules-latapy/<br/>
+
+			</div>
 		</div>
-			
+
 		<div src="./fond-menu.png" id="inner-menu">
-			<b>
-			<a href="#skills"   class="navigation"><div class="navigation-img-bubble"><img src="./icon/explosion.png" /></div> Skills   </a>
-			<a href="#projects" class="navigation"><div class="navigation-img-bubble"><img src="./icon/star_down.png" /></div> Projects </a>
-			<a href="#hobbies"  class="navigation"><div class="navigation-img-bubble"><img src="./icon/atom.png"      /></div> Hobbies</a>
-			</b>
+			<a href="#skills"   class="navigation"><div class="navigation-img-bubble"><img src="./icon/explosion.png" /></div> <div class="navigation-text"> Skills   </div></a>
+			<a href="#projects" class="navigation"><div class="navigation-img-bubble"><img src="./icon/star_down.png" /></div> <div class="navigation-text"> Projects </div></a>
+			<a href="#hobbies"  class="navigation"><div class="navigation-img-bubble"><img src="./icon/atom.png"      /></div> <div class="navigation-text"> Hobbies  </div></a>
 		</div>
 	</div>
 
@@ -303,6 +306,34 @@
 		</table>
 	</div>
 
+	<div id="routes">
+
+		<img src="./icon/star_carret.png" class="indicateur"/>
+
+		<h2> Professional Path </h2>
+
+		<div align="center" class="explanation">
+
+			BAC S - IT option (ISN)
+
+		</div>
+		<div align="center" class="explanation">
+
+			Le Havre's IUT
+
+		</div>
+		<div align="center" class="explanation">
+
+			CESI - Application Designer and Developer Bachelor
+
+		</div>
+		<div align="center" class="explanation">
+
+			ESIEA - Software option ?
+
+		</div>
+	</div>
+
 	<div id="projects">
 
 		<img src="./icon/star_down.png" class="indicateur"/>
@@ -443,7 +474,19 @@
 
 		</div>
 
-		<img id="big-picture"src="./blender/eye-figure.png"/>
+		<table>
+			<tr>
+			<td><img sizes="100,100" id="big-picture"src="./blender/platypus.png"     /></td>
+			<td><img sizes="100,100" id="big-picture"src="./blender/sailor-cat.png"   /></td>
+			<td><img sizes="100,100" id="big-picture"src="./blender/inuit-otter.png"  /></td>
+			</tr>
+			<tr>
+			<td><img id="big-picture"src="./blender/eye-figure.png"   /></td>
+			<td><img id="big-picture"src="./blender/disco-machine.jpg"/></td>
+			<td><img id="big-picture"src="./blender/phos.png"         /></td>
+			</tr>
+		</table>
+
 		<br/>
 		<p>
 		Here some of my creations.
