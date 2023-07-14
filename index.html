@@ -36,7 +36,7 @@
 		</div>
 	</div>
 
-	<div id="menu-panel"> <!--style="display: none;"-->
+	<div id="menu-panel" style="display: none;">
 
 		<div id="menu-profil">
 			<img id="profil-img" src="./blender/sailor-cat.png" />
@@ -109,13 +109,13 @@
 				    	</p>
 				    </div>
 <pre class="sample">
-<code_keyword>import</code_keyword> <code_name>Prelude</code_name> <code_keyword>hiding</code_keyword> (<code_name>even</code_name>, <code_name>odd</code_name>)
+<span class="code-keyword">import</span> <span class="code-name">Prelude</span> <span class="code-keyword">hiding</span> (<span class="code-name">even</span>, <span class="code-name">odd</span>)
 
-<code_name>even</code_name> :: (<code_type>Integral</code_type> a) <code_keyword>=></code_keyword> a <code_keyword>-></code_keyword> <code_type>Bool</code_type>
-<code_name>even</code_name> <code_keyword>=</code_keyword> (<code_const>0</code_const> <code_keyword>==</code_keyword>) <code_keyword>.</code_keyword> (`<code_name>rem</code_name>` <code_const>2</code_const>)
+<span class="code-name">even</span> :: (<span class="code-type">Integral</span> a) <span class="code-keyword">=></span> a <span class="code-keyword">-></span> <span class="code-type">Bool</span>
+<span class="code-name">even</span> <span class="code-keyword">=</span> (<span class="code-const">0</span> <span class="code-keyword">==</span>) <span class="code-keyword">.</span> (`<span class="code-name">rem</span>` <span class="code-const">2</span>)
 
-<code_name>main</code_name> :: <code_type>IO</code_type> ()
-<code_name>main</code_name> = <code_keyword>let</code_keyword> n <code_keyword>=</code_keyword> <code_const>5</code_const> <code_keyword>in</code_keyword> <code_name>print</code_name> (<code_name>even</code_name> n)
+<span class="code-name">main</span> :: <span class="code-type">IO</span> ()
+<span class="code-name">main</span> = <span class="code-keyword">let</span> n <span class="code-keyword">=</span> <span class="code-const">5</span> <span class="code-keyword">in</span> <span class="code-name">print</span> (<span class="code-name">even</span> n)
 </pre>
 
 			    </td>
@@ -139,13 +139,13 @@
 				    	</p>
 				    </div>
 <pre class="sample">
-<code_keyword>public static</code_keyword><code_type> boolean</code_type> <code_name>isEven</code_name>(<code_type>int</code_type> i){
-    <code_keyword>return</code_keyword> (i <code_keyword>&</code_keyword> 1) <code_keyword>==</code_keyword> <code_const>0</code_const>;
+<span class="code-keyword">public static</span><span class="code-type"> boolean</span> <span class="code-name">isEven</span>(<span class="code-type">int</span> i){
+    <span class="code-keyword">return</span> (i <span class="code-keyword">&</span> 1) <span class="code-keyword">==</span> <span class="code-const">0</span>;
 }
 
-<code_keyword>public static</code_keyword><code_type> void</code_type> <code_name>main</code_name>(<code_type>String[]</code_type> args) {
-	<code_type>int</code_type> N <code_keyword>=</code_keyword> <code_const>5</code_const>;
-	<code_type>System</code_type>.out.<code_name>println</code_name>(<code_name>isEven</code_name>(N));
+<span class="code-keyword">public static</span><span class="code-type"> void</span> <span class="code-name">main</span>(<span class="code-type">String[]</span> args) {
+	<span class="code-type">int</span> N <span class="code-keyword">=</span> <span class="code-const">5</span>;
+	<span class="code-type">System</span>.out.<span class="code-name">println</span>(<span class="code-name">isEven</span>(N));
 }
 </pre>
 			    </td>
@@ -170,19 +170,19 @@
 				    	</p>
 			    	</div>
 <pre class="sample">
-<code_keyword>with</code_keyword><code_name> Ada.text_io</code_name>; 
-<code_keyword>use</code_keyword> <code_name>Ada.text_io</code_name>;
+<span class="code-keyword">with</span><span class="code-name"> Ada.text_io</span>; 
+<span class="code-keyword">use</span> <span class="code-name">Ada.text_io</span>;
 
-<code_keyword>procedure</code_keyword> <code_name>main</code_name> <code_keyword>is</code_keyword>
+<span class="code-keyword">procedure</span> <span class="code-name">main</span> <span class="code-keyword">is</span>
 
-	<code_keyword>function</code_keyword> <code_name>isEven</code_name>(i:<code_type>Integer</code_type>) <code_keyword>return</code_keyword> <code_type>Boolean</code_type> <code_keyword>is</code_keyword> (
-		i <code_keyword>rem</code_keyword> <code_const>2</code_const> <code_keyword>=</code_keyword> <code_const>0</code_const>
+	<span class="code-keyword">function</span> <span class="code-name">isEven</span>(i:<span class="code-type">Integer</span>) <span class="code-keyword">return</span> <span class="code-type">Boolean</span> <span class="code-keyword">is</span> (
+		i <span class="code-keyword">rem</span> <span class="code-const">2</span> <span class="code-keyword">=</span> <span class="code-const">0</span>
 	);
 
-	N : <code_type>Integer</code_type> <code_keyword>:=</code_keyword> <code_const>5</code_const>;
-<code_keyword>begin</code_keyword>
-	<code_name>Put_Line</code_name>(<code_name>isEven</code_name>(N)'Image);
-<code_keyword>end</code_keyword>;
+	N : <span class="code-type">Integer</span> <span class="code-keyword">:=</span> <span class="code-const">5</span>;
+<span class="code-keyword">begin</span>
+	<span class="code-name">Put_Line</span>(<span class="code-name">isEven</span>(N)'Image);
+<span class="code-keyword">end</span>;
 </pre>
 			    </td>
 			    <td class="doc-widget" onclick='revealSibling(this)'>
@@ -205,11 +205,11 @@
 				    	</p>
 				    </div>
 <pre class="sample">
-<code_keyword>const</code_keyword> <code_name>isEven</code_name> <code_keyword>=</code_keyword> x <code_keyword>=> !</code_keyword>(x <code_keyword>%</code_keyword> <code_const>2</code_const>)
+<span class="code-keyword">const</span> <span class="code-name">isEven</span> <span class="code-keyword">=</span> x <span class="code-keyword">=> !</span>(x <span class="code-keyword">%</span> <span class="code-const">2</span>)
 
-<code_keyword>const</code_keyword> N <code_keyword>=</code_keyword> <code_const>5</code_const>;
+<span class="code-keyword">const</span> N <span class="code-keyword">=</span> <span class="code-const">5</span>;
 
-<code_type>console</code_type>.<code_name>log</code_name>(<code_name>isEven</code_name>(N)); 
+<span class="code-type">console</span>.<span class="code-name">log</span>(<span class="code-name">isEven</span>(N)); 
 </pre>
 			    </td>
 			    <td class="doc-widget" onclick='revealSibling(this)'>
@@ -228,20 +228,20 @@
 				    	</p>
 			    	</div>
 <pre class="sample">
-<code_keyword>#include</code_keyword> &lt;<code_name>stdio.h</code_name>&gt;
+<span class="code-keyword">#include</span> &lt;<span class="code-name">stdio.h</span>&gt;
 
-<code_type>int</code_type> <code_name>isEven</code_name>(<code_type>int</code_type> i){
-	<code_keyword>return !</code_keyword>(i <code_keyword>&</code_keyword> <code_const>1</code_const>);
+<span class="code-type">int</span> <span class="code-name">isEven</span>(<span class="code-type">int</span> i){
+	<span class="code-keyword">return !</span>(i <span class="code-keyword">&</span> <span class="code-const">1</span>);
 }
 
-<code_type>int</code_type> <code_name>main</code_name>() {
-	<code_keyword>const</code_keyword> <code_type>int</code_type> N<code_keyword> =</code_keyword> 5;
+<span class="code-type">int</span> <span class="code-name">main</span>() {
+	<span class="code-keyword">const</span> <span class="code-type">int</span> N<span class="code-keyword"> =</span> 5;
 
-	<code_keyword>if</code_keyword>(<code_name>isEven</code_name>(N)) 
-		<code_name>printf</code_name>("<code_litteral>true</code_litteral>");
-	<code_keyword>else</code_keyword>
-		<code_name>printf</code_name>("<code_litteral>false</code_litteral>");
-	<code_keyword>return</code_keyword> <code_const>0</code_const>;
+	<span class="code-keyword">if</span>(<span class="code-name">isEven</span>(N)) 
+		<span class="code-name">printf</span>("<span class="code-litteral">true</span>");
+	<span class="code-keyword">else</span>
+		<span class="code-name">printf</span>("<span class="code-litteral">false</span>");
+	<span class="code-keyword">return</span> <span class="code-const">0</span>;
 }
 </pre>
 			    </td>
@@ -251,61 +251,55 @@
 			<img src="./icon/explosion.png" class="indicateur"/>
 
 		<h2>Software</h2>
-		<table class="software">
-			<tr>
-			    <td>
-			    	<div class="doc">
+		<div class="software">
 
-			   	    	<img class="deco" src="./logo/Intellij-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-			    		<h4>Intellij</h4>
-			    		
-			    		<p>
-				    	Productivity at is peak !
-				    	It's so pleasant when you just have to click on a button.
-				    	Intellij give me cool advise to guaranteed integrity of my apps.
-				    	<p>
-				    	<p>
-				    	Can be slow to open and indexing project,
-				    	also it can "panic" when you do thing in your way/ not in order and
-				    	often you need to upgrade it.
-				    	</p>
-				    </div>
-			    </td>
-			    <td>
+	    	<div class="doc">
 
-			    	<div class="doc">
-			   	    	<img class="deco" src="./logo/Sublime-Text-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-			    		<h4>Sublime-Text</h4>
-			    		
-			    		<p>
-				    	It's simple and customisable,
-				    	you can easily make complex syntax coloring and build system,
-				    	It's very fast to open and the search system could be usefull.
-				    	<p>
-				    	<p>
-				    	Can be too simple for big project.
-				    	does'nt replace a true IDE.
-				    	</p>
-				    </div>
-			    </td>
-			    <td>
-			    	<div class="doc">
-			   	    	<img class="deco" src="./logo/Git-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-			    		<h4>Git</h4>
-			    		
-			    		<p>
-				    	It's a <i>must</i> to known.
-				    	On my programming journey,
-				    	I have learn some trickshots too do complex versionning operations.
-				    	<p>
-				    	<p>
-				    	The learning curve is very flat, you need a lot of time to understand it.
-				    	You can trap yourself in complex mess.
-				    	</p>
-				    </div>
-			    </td>
-			</tr>
-		</table>
+	   	    	<img class="deco" src="./logo/Intellij-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+	    		<h4>Intellij</h4>
+	    		
+	    		<p>
+		    	Productivity at is peak !
+		    	It's so pleasant when you just have to click on a button.
+		    	Intellij give me cool advise to guaranteed integrity of my apps.
+		    	<p>
+		    	</p>
+		    	Can be slow to open and indexing project,
+		    	also it can "panic" when you do thing in your way/ not in order and
+		    	often you need to upgrade it.
+		    	</p>
+		    </div>
+
+	    	<div class="doc">
+	   	    	<img class="deco" src="./logo/Sublime-Text-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+	    		<h4>Sublime-Text</h4>
+	    		
+	    		<p>
+		    	It's simple and customisable,
+		    	you can easily make complex syntax coloring and build system,
+		    	It's very fast to open and the search system could be usefull.
+		    	</p>
+		    	<p>
+		    	Can be too simple for big project.
+		    	does'nt replace a true IDE.
+		    	</p>
+		    </div>
+
+	    	<div class="doc">
+	   	    	<img class="deco" src="./logo/Git-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
+	    		<h4>Git</h4>
+	    		
+	    		<p>
+		    	It's a <i>must</i> to known.
+		    	On my programming journey,
+		    	I have learn some trickshots too do complex versionning operations.
+		    	</p>
+		    	<p>
+		    	The learning curve is very flat, you need a lot of time to understand it.
+		    	You can trap yourself in complex mess.
+		    	</p>
+		    </div>
+		</div>
 	</div>
 
 	<div id="routes">
@@ -423,46 +417,46 @@
 		</div>
 <div class="explanation-bis">
 <pre>
-<code_comment>(roman number: 0 I V X L C D M )
+<span class="code-comment">(roman number: 0 I V X L C D M )
 
-(constant)</code_comment>
-<code_keyword>INCOMMUTABILIS</code_keyword> <code_type>VERITAS</code_type>  <code_keyword>NOMINE</code_keyword> NAME_V <code_keyword>VALET</code_keyword> <code_const>FICTUS</code_const>.
-<code_comment>(variables)</code_comment>
-		<code_type>ALBUM    </code_type><code_keyword>NOMINE</code_keyword> NAME_A <code_keyword>VALET</code_keyword> [<code_const>I</code_const>;<code_const>II</code_const>;<code_const>III</code_const>;<code_const>IX</code_const>].
-		<code_type>NUMERUS  </code_type><code_keyword>NOMINE</code_keyword> NAME_N <code_keyword>VALET</code_keyword> <code_const>I</code_const>,<code_const>II</code_const>.
-		<code_type>PHRASIS  </code_type><code_keyword>NOMINE</code_keyword> NAME_P <code_keyword>VALET</code_keyword> "<code_litteral>hello</code_litteral>".
-		<code_type>SYMBOLUM </code_type><code_keyword>NOMINE</code_keyword> NAME_S <code_keyword>VALET</code_keyword> '<code_litteral>r</code_litteral>'.
+(constant)</span>
+<span class="code-keyword">INCOMMUTABILIS</span> <span class="code-type">VERITAS</span>  <span class="code-keyword">NOMINE</span> NAME_V <span class="code-keyword">VALET</span> <span class="code-const">FICTUS</span>.
+<span class="code-comment">(variables)</span>
+		<span class="code-type">ALBUM    </span><span class="code-keyword">NOMINE</span> NAME_A <span class="code-keyword">VALET</span> [<span class="code-const">I</span>;<span class="code-const">II</span>;<span class="code-const">III</span>;<span class="code-const">IX</span>].
+		<span class="code-type">NUMERUS  </span><span class="code-keyword">NOMINE</span> NAME_N <span class="code-keyword">VALET</span> <span class="code-const">I</span>,<span class="code-const">II</span>.
+		<span class="code-type">PHRASIS  </span><span class="code-keyword">NOMINE</span> NAME_P <span class="code-keyword">VALET</span> "<span class="code-litteral">hello</span>".
+		<span class="code-type">SYMBOLUM </span><span class="code-keyword">NOMINE</span> NAME_S <span class="code-keyword">VALET</span> '<span class="code-litteral">r</span>'.
 
-<code_comment>(if-else)</code_comment>
-<code_keyword>SI FICTUS FACERE	</code_keyword>
-<code_keyword>ALIUS.			</code_keyword>
-<code_keyword>COMPLEVIT			</code_keyword>
+<span class="code-comment">(if-else)</span>
+<span class="code-keyword">SI FICTUS FACERE	</span>
+<span class="code-keyword">ALIUS.			</span>
+<span class="code-keyword">COMPLEVIT			</span>
 
-<code_comment>(switch-case)</code_comment>
-<code_keyword>SECUNDUM</code_keyword> NAME_S <code_keyword>FACERE</code_keyword>
-    <code_keyword>QUANDO</code_keyword> '<code_litteral>e</code_litteral>' <code_keyword>FACERE COMPLEVIT</code_keyword>.
-    <code_keyword>QUANDO</code_keyword> '<code_litteral>f</code_litteral>' <code_keyword>FACERE COMPLEVIT</code_keyword>.
-    <code_keyword>ALIUS</code_keyword>.
-<code_keyword>COMPLEVIT</code_keyword>
+<span class="code-comment">(switch-case)</span>
+<span class="code-keyword">SECUNDUM</span> NAME_S <span class="code-keyword">FACERE</span>
+    <span class="code-keyword">QUANDO</span> '<span class="code-litteral">e</span>' <span class="code-keyword">FACERE COMPLEVIT</span>.
+    <span class="code-keyword">QUANDO</span> '<span class="code-litteral">f</span>' <span class="code-keyword">FACERE COMPLEVIT</span>.
+    <span class="code-keyword">ALIUS</span>.
+<span class="code-keyword">COMPLEVIT</span>
 
-<code_comment>(while)</code_comment>
-<code_keyword>QUANDIU</code_keyword> <code_const>FICTUS</code_const> <code_keyword>FACERE</code_keyword>
-    <code_keyword>RUMPITUR</code_keyword>. <code_comment>(break)   </code_comment>
-    <code_keyword>PROGREDI</code_keyword>. <code_comment>(continue)</code_comment>
-<code_keyword>COMPLEVIT</code_keyword>
+<span class="code-comment">(while)</span>
+<span class="code-keyword">QUANDIU</span> <span class="code-const">FICTUS</span> <span class="code-keyword">FACERE</span>
+    <span class="code-keyword">RUMPITUR</span>. <span class="code-comment">(break)   </span>
+    <span class="code-keyword">PROGREDI</span>. <span class="code-comment">(continue)</span>
+<span class="code-keyword">COMPLEVIT</span>
 
-<code_comment>(for-each)</code_comment>
-<code_keyword>TRAICERE</code_keyword> [<code_const>I</code_const>;<code_const>II</code_const>;<code_const>III</code_const>;<code_const>IX</code_const>] <code_keyword>NOMINE</code_keyword> u <code_keyword>FACERE</code_keyword>
-    <code_name>SCRIPTO</code_name>![u].
-<code_keyword>COMPLEVIT</code_keyword>
+<span class="code-comment">(for-each)</span>
+<span class="code-keyword">TRAICERE</span> [<span class="code-const">I</span>;<span class="code-const">II</span>;<span class="code-const">III</span>;<span class="code-const">IX</span>] <span class="code-keyword">NOMINE</span> u <span class="code-keyword">FACERE</span>
+    <span class="code-name">SCRIPTO</span>![u].
+<span class="code-keyword">COMPLEVIT</span>
 
-<code_comment>(function)</code_comment>
-<code_keyword>IUSSUS</code_keyword> <code_name>namefct</code_name>[<code_type>NUMERUS</code_type> <code_keyword>NOMINE</code_keyword> _] <code_keyword>REDIT</code_keyword> <code_type>NUMERUS</code_type> <code_keyword>FACERE</code_keyword>
-    <code_name>SCRIPTO</code_name>!["<code_litteral>hi</code_litteral>"].
-    <code_keyword>REDIT</code_keyword> <code_const>X</code_const>.
-<code_keyword>COMPLEVIT</code_keyword>
+<span class="code-comment">(function)</span>
+<span class="code-keyword">IUSSUS</span> <span class="code-name">namefct</span>[<span class="code-type">NUMERUS</span> <span class="code-keyword">NOMINE</span> _] <span class="code-keyword">REDIT</span> <span class="code-type">NUMERUS</span> <span class="code-keyword">FACERE</span>
+    <span class="code-name">SCRIPTO</span>!["<span class="code-litteral">hi</span>"].
+    <span class="code-keyword">REDIT</span> <span class="code-const">X</span>.
+<span class="code-keyword">COMPLEVIT</span>
 
-<code_name>namefct</code_name>![<code_const>I</code_const>].
+<span class="code-name">namefct</span>![<span class="code-const">I</span>].
 </pre>
 </div>
 		<div class="step"> 

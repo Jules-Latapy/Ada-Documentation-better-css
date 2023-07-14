@@ -66,27 +66,27 @@ pre {
     border-radius: 20px;
 }
 
-code_comment {
+.code-comment {
     color:var(--monokaiComment);
 }
 
-code_keyword {
+.code-keyword {
     color:var(--monokaiRed);
 }
 
-code_type {
+.code-type {
     color:var(--monokaiType);
 }
 
-code_const {
+.code-const {
     color: var(--monokaiPurple);
 }
 
-code_litteral {
+.code-litteral {
     color: var(--monokaiYellow);
 }
 
-code_name {
+.code-name {
     color: var(--monokaiGreen);
 }
 
@@ -158,7 +158,7 @@ code_name {
 
 #profil-text {
     border-radius: 20px;
-    background-color: var(--sanguine);
+    background-color: var(--sharkGrey);
     padding: 2%;
     margin-left: 2%;
     width: 100%;
@@ -176,6 +176,7 @@ code_name {
     top: 0%;
     width: 100%;
     padding: 0%;
+    margin-top: 10%;
     border-radius: 20px;
     float: left;
 }
@@ -187,12 +188,11 @@ code_name {
     width: 100%;
 }
 
-.navigation:hover {
+.navigation-text:hover {
     animation: pulsate 1s ease-in-out;
 }
 
-.navigation-text {
-
+.navigation-text  {
     color: white;
     padding: 4%;
     border-radius: 999px;
@@ -306,12 +306,20 @@ code_name {
     margin-bottom: 1%;
 }
 
-/*******************/
+/*---------OVERRIDE---------*/
+
 
 h2,h3 {
     margin: 4%;
 }
 
+/*
+h3 {
+    font-family: "Planet Kosmos";
+    letter-spacing: 0.1em;
+    font-weight: lighter;
+}
+*/
 
 a[href]{
     color: var(--monokaiYellow) ;
@@ -320,6 +328,8 @@ a[href]{
 a:visited {
     color: var(--monokaiPurple);
 }
+
+/*******************/
 
 .logo {
     margin: 0;
@@ -352,12 +362,16 @@ a:visited {
 
 /**************************/
 
-.sofware, .sofware tr {
+.software {
+
     width: 100%;
+    display: flex;
 }
 
-.sofware tr td {
-    width: 33.33%;
+.software .doc {
+    padding: 5%;
+    margin: 1%;
+    width: 33%;
 }
 
 #hobbies tr {
