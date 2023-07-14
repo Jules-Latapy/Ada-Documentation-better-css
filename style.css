@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Martian+Mono');
 
+@font-face {
+
+    font-family: 'Planet Kosmos';
+    src: url('./fonts/Planet Kosmos.ttf');
+}
+
+@font-face {
+    font-family: 'Acidic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Acidic'), url('./fonts/Acidic.woff') format('woff');
+}
+
 :root {
 
     --pureBlack  : #000000 ;
@@ -24,16 +37,21 @@
 }
 
 body{
-    background-color: var(--pureBlack) ;
+    font-weight: lighter;
     color: white;
-    font-family: "Martian", monospace;
+    font-family: "Martian Mono", monospace;
+    font-size: 90%;
+
+    background-color: var(--pureBlack) ;
     margin: 3%;
 }
 
 /*---------CODE BLOCK---------*/
 
 pre {
+    font-family: Martian Mono;
     justify-content: space-between;
+    margin: 0%;
 
     -moz-tab-size:    var(--tab-size); /* Firefox 4+ */
     -o-tab-size:      var(--tab-size); /* Opera 11.5 & 12.1 only */
@@ -41,10 +59,7 @@ pre {
 }
 
 .sample {
-
     white-space: pre-wrap;
-    font-size: 80%;
-    font-family: Martian Mono;
     text-overflow: ellipsis;
     background-color: var(--mainGrey);
     padding: 10%;
@@ -79,30 +94,65 @@ code_name {
 
 .menu-button {
     z-index: 3;
-    top: 0%;
-    float: right;
-}
-
-.menu-button img {
-    right: 0%;
-    top: 0%;
-    border-style: solid;
-    border-color: black;
+    
     position: fixed;
+    top: 0%;
+    right: 0%;
+
+    backdrop-filter: blur(20px);
+    border-style: solid;
+    border-color: white;
+    border-radius: 999px;
+    border-width: 1px;
+
+    padding: 0.5%;
+    padding-right: 3%;
+    margin: 0.5%;
+
+    align-items: center;
     display: flex;
-    filter: invert(1); 
-    border-radius: 50%;
     width: 5%;
 }
 
-.menu-button img:hover {
-    animation: pulsate 1s ease-in-out;
-    transform: rotate(-45deg);
+.menu-button-text {
+    font-family: "Planet Kosmos", monospace;
+    color: white;
+    letter-spacing: 0.2em;
 }
 
-/*LEFT PANEL*/
+.menu-button-img {
+    filter: invert(1);
+    width: 50%;
+}
+
+.menu-button:hover {
+    animation: pulsate 1s ease-in-out;
+    /*transform: rotate(-90deg);*/
+}
+
+/*---------LEFT PANEL---------*/
+
+#menu-panel {
+    z-index: 4;
+    width: 30%;
+
+    height: 100%;
+    padding: 1%;
+    margin: 0%;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+
+    border-radius: 20px;
+    backdrop-filter: blur(80px);
+    border-style: solid;
+    border-width: 1px;
+}
+
 #menu-profil {
-    display: flex;
+    align-items: center;
+
+    display: inline-flex;
     margin-bottom: 2%;
 }
 
@@ -111,64 +161,39 @@ code_name {
     background-color: var(--sanguine);
     padding: 2%;
     margin-left: 2%;
-}
-
-#profil-text:before {
-    visibility: visible;
-    content: "Jules Latapy";
-    border-radius: 10px;
-    padding: 10px;
-    position: relative;
-    background-color: var(--sanguine);
-    top: -30px;
-    left: -8%;
+    width: 100%;
 }
 
 #profil-img {
     width: 20%;
-    z-index: 4;
     border-radius: 50%;
 }
 
-#menu-panel {
-    z-index: 4;
-    background-color: var(--pureBlack);
-    height: 100vh;
-    padding: 1%;
-    margin: 0%;
-    top: 0%;
-    left: 0%;
-    position: fixed;
-    display: flex;
-    border-radius: 20px;
-}
 
 #inner-menu {
     background-color: var(--sanguine);
     background-image: url('./fond-menu.png');
     top: 0%;
-    width: 100px;
+    width: 100%;
     padding: 0%;
     border-radius: 20px;
     float: left;
 }
 
-#inner-menu a {
-    color: white;
-    text-decoration: none;
-}
-
-#inner-menu a:hover {
-    animation: pulsate 1s ease-in-out;
-}
-
 .navigation {
+    text-decoration: none;
     align-items: center;
     display: flex;
     width: 100%;
 }
 
+.navigation:hover {
+    animation: pulsate 1s ease-in-out;
+}
+
 .navigation-text {
+
+    color: white;
     padding: 4%;
     border-radius: 999px;
     backdrop-filter: blur(20px);
@@ -191,14 +216,74 @@ code_name {
     filter: invert(1);
 }
 
-/*---------SECTION---------*/
+/*---------SEPARATOR/DECORATION---------*/
 
-h2,h3 {
-    margin: 4%;
+.indicateur {
+    filter: invert(1);
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.step-indicateur {
+    filter: invert(1);
+    width: 2%;
+    display: block;
+    margin-left: 10%;
+}
 
-.subsection {
+/*symbol agrementant les paragraphes*/
+.deco {
+    width: 5%;
+}
+
+.menu-deco {
+    filter: invert(1);
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* au bout des sections */
+.accompagement {
+    filter: invert(1);
+    width: 8%;
+}
+
+/*---------SECTION---------*/
+
+#banniere {
+    margin-top: -7%;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    background-color: var(--sharkGrey);
+    padding-inline: 2%;
+    border-radius: 999px;
+    margin: 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.step-title {
+}
+
+.explanation {
+    background-color: var(--sanguine);
+    padding: 2%;
+    margin: 2%;
+    border-radius: 20px;
+}
+
+.explanation-bis {
     background-color: var(--sharkGrey);
     padding: 2%;
     margin: 2%;
@@ -209,56 +294,6 @@ h2,h3 {
     justify-content: space-between;
 }
 
-.indicateur {
-    filter: invert(1);
-    width: 10%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#banniere {
-    margin-top: -7%;
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.big-picture {
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/*symbol agrementant les paragraphes*/
-.deco {
-    width: 5%;
-}
-
-a[href]{
-    color: var(--monokaiYellow) ;
-}
-
-a:visited {
-    color: var(--sanguine);
-}
-.explanation {
-    background-color: var(--sanguine);
-    padding: 2%;
-    margin: 2%;
-    border-radius: 20px;
-}
-
-.accompagement {
-    filter: invert(1);
-    width: 8%;
-    display: flex;
-}
-
-/*******************/
-
 .doc-widget{
     width: 20%;
 }
@@ -267,7 +302,25 @@ a:visited {
     background-color: var(--sanguine);
     padding: 10%;
     border-radius: 20px;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
+
+/*******************/
+
+h2,h3 {
+    margin: 4%;
+}
+
+
+a[href]{
+    color: var(--monokaiYellow) ;
+}
+
+a:visited {
+    color: var(--monokaiPurple);
+}
+
 .logo {
     margin: 0;
     top: 0%;
@@ -299,6 +352,23 @@ a:visited {
 
 /**************************/
 
-.hobbies table { max-width:100%; table-layout: fixed;    }
-.hobbies table td { width: 33%; }
-.hobbies table td img{ width: 100px; }
+.sofware, .sofware tr {
+    width: 100%;
+}
+
+.sofware tr td {
+    width: 33.33%;
+}
+
+#hobbies tr {
+    width: 100%;
+    display: flex;
+}
+
+/*----------------------*/
+
+.picture-serie {
+    padding-left: 50%;
+    padding-right: 50%;
+    width: 20vw; 
+}
