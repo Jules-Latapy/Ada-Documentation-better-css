@@ -6,6 +6,9 @@
 	<title>E-book</title>
 </head>
 <style type="text/css">
+
+	/*---- GLOBAL ----*/
+
 	:root {
 
 	    --pureBlack  : #000000 ;
@@ -31,11 +34,28 @@
 	    color: white;
 	}
 
+	/*---- Section ----*/
+
 	.monday    { background-color: var(--monday   ); }
 	.tuesday   { background-color: var(--tuesday  ); }
 	.wednesday { background-color: var(--wednesday); }
 	.thursday  { background-color: var(--thursday ); }
 	.friday    { background-color: var(--friday   ); }
+
+	.section {
+	    padding: 2%;
+	    margin: 2%;
+	    border-radius: 20px;
+	    color: black;
+	}
+
+	.sub-section {
+	    background-color: var(--sharkGrey);
+	    color: white;
+	    padding: 2%;
+	    margin: 2%;
+	    border-radius: 20px;
+	}
 
 	.banner {
 	    display: flex;
@@ -46,17 +66,31 @@
 	    position: relative;
 	}
 
+	/*---- Image ----*/
+
 	.icon-container {
 	    text-align: center;
 	}
 
 	.icon {
 	    filter: invert(100%);
+	    width: 50%;
 	}
 
 	.content {
 	    padding: 20px;
 	}
+
+	.section-icon-deco {
+		width: 20%; 
+		filter: invert(100%);
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 20%;
+	}
+
+	/**/
 
 	table {
 	  width: 100%;
@@ -76,21 +110,19 @@
 	  background-color: #f1f1f1;
 	}
 
-	.section {
-	    padding: 2%;
-	    margin: 2%;
-	    border-radius: 20px;
-	}
-
-	.sub-section {
-	    background-color: var(--sharkGrey);
-	    padding: 2%;
-	    margin: 2%;
-	    border-radius: 20px;
-	}
-
 	h3 {
 		margin-bottom: 2%;
+	}
+
+	ol, ul {
+		padding-left: 2%;
+		padding-top: 1%;
+		padding-bottom: 1%;
+	}
+
+	li {
+		padding-top: 1%;
+		padding-bottom: 1%;
 	}
 
 	.Annotations {
@@ -111,6 +143,26 @@
 	    top: -30px;
 	    left: -30px;
 	}
+
+
+@media only screen and (max-width: 900px) {
+	.section {
+	    padding: 3%;
+	    margin: 3%;
+	    border-radius: 10px;
+	}
+
+	.sub-section {
+	    background-color: var(--sharkGrey);
+	    padding: 4%;
+	    margin: 3%;
+	    border-radius: 10px;
+	}
+
+	ol, ul {
+		padding-left: 6%;
+	}
+}
 
 </style>
 <script type="text/javascript">
@@ -164,6 +216,7 @@
 				Thai people use tone to change word meaning,
 				for non-asian people it could be very confusing,
 				And its could be hard to understand/be understand.
+				the mark follow the way you should say the letter
 
 				<table>
 	      		<tr><th> Tone      </th><th> how to say                       </th></tr>
@@ -180,8 +233,6 @@
 				<h3>The H</h3>
 				there is multiple way of translating thai word to latin characters,<br/>
 				when thai word are written in latin, some letter can be misleanding.<br/>
-				<br/>
-				the mark follow the way you should say the letter
 				
 				<table>
 	      		<tr><th> the way of writing </th><th> how to say </th></tr>
@@ -204,7 +255,14 @@
 				<h3>Greeting</h3>
 				When you meet people salute politely. for foreigner is not mandatory to waii at everybody,<br/>
 				the waii is a way of greeting and thanks in thailand,<br/> 
-				to waii you should: put you palm together, the up of youre index should be at you shin. and ypu should bow you body slightly.
+				to waii you should: put you palm together, the up of youre index should be at you shin. and you should bow you body slightly.
+				the high of you index is the amount of respect.<br/> 
+				<ol>
+					<li>for normal : shin<br/> </li>
+					<li>for elder : nose<br/> </li>
+					<li>for monk : eyebrow<br/> </li>
+					<li>for royality : hairline<br/> </li>
+				<ol>
 			</div>
 
 			<div class="sub-section">
@@ -220,17 +278,20 @@
 			</div>
 
 			<h2>Dont do</h2>
-			<div class="sub-section">	
-				You should realy not critisize the king, and you should not begin a conversation about the royality, thai respect a lot the monarchy and it's forbiden to jock about the king.<br/>
-				For Thai, head is the highest part of the body, you should not touch someone head even in celebration.<br/>
+			<div class="sub-section">
+				<ol>
+				<li>
+				You should realy not critisize the king, and you should not begin a conversation about the royality, thai respect a lot the monarchy and it's forbiden to jock about the king.<br/></li>
+				<li>For Thai, head is the highest part of the body, you should not touch someone head even in celebration.<br/>
 				Because feet are the lowest part, you should not point with feet.<br/>
 				Thai think about upper and lower, 
 				for exemple, you should not put trash on the table.<br/>
-				If you're a woman, don't try to touch monk, it's forbiden for the monk to touch woman.
-				It's a bit impolite to point at something with something with finger, use youre all palm.
-				Dont throw toilet paper inside the toilet, the sewer system is not made for it.
-				When you enter temple and someone's home, you should take of your shoes.
-			</div>
+				<li>If you're a woman, don't try to touch monk, it's forbiden for the monk to touch woman.<br/></li>
+				<li>It's a bit impolite to point at something with something with finger, use youre all palm.<br/></li>
+				<li>Dont throw toilet paper inside the toilet, the sewer system is not made for it.<br/></li>
+				<li>When you enter temple and someone's home, you should take of your shoes.<br/></li>
+			</ol>
+		</div>
 
 		</div>
 
@@ -241,18 +302,36 @@
 				<h3>Temple</h3>
 				In thai culture, religion is very important and like church in europe, temple are everywhere.
 				There is multiple kind of temple:<br/>
-					1) thai style temple
-						1) wat arun, the temple of the dawn, is a old-style buddist temple, its in front of the river and is realy beautifull by the night.
-						2) wat po, also known as the Temple of the Reclining Buddha, is a bigg temple
-						3) Wat Rong Khun
-					2) Chinese
-						1) Wihan Phra Photisat Kuan Im
-					3) Indian
+				<ol>
+					<li>thai style temple<br/>
+						<ul> 
+							<li>Wat arun, the temple of the dawn, is a old-style buddist temple, its in front of the river and is realy beautifull by the night.<br/></li>
+							<li>Wat po, also known as the Temple of the Reclining Buddha, is a big temple.<br/></li>
+							<li>Wat Rong Khun, the white temple is beautifull modern temple in the north of thailand, its feel like its just came from heaven.<br/></li>
+						</ul>
+					</li>
+					<li>Chinese style temple<br/>
+					There is many kind of chinese temple,
+					For instance the <a href="https://www.google.com/maps/place/Wihan+Phra+Photisat+Kuan+Im/@14.0397683,99.5020571,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOO0RKJRVezuIY9Nx_bD3VzxLSad5LVYKStoUCg!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOO0RKJRVezuIY9Nx_bD3VzxLSad5LVYKStoUCg%3Dw203-h270-k-no!7i3000!8i4000!4m9!3m8!1s0x30e374fb5f873da5:0xc65934e5fd955921!8m2!3d14.040105!4d99.5022843!10e5!14m1!1BCgIgAQ!16s%2Fg%2F1hm5f60d5?entry=ttu" target="_blank">Wihan Phra Photisat Kuan Im</a>, is a buddist temple by the river and it got a lot of bright colors.<br/>
+					</li>
+					<li>Indian<br/>
+					Indians temple are complex temples that features a lot of details.
+					</li>
+				</ol>
+			</div>
+
+			<div class="sub-section">
+				<h3>Khǒn dance</h3>
+				<img src="dance.png" class="section-icon-deco">
+				khǒn dance is a kind of drama, 
+				actor wear beautifull and burlesque mask, there is a orchestra with a narrator (because actor cannot speak with mask),
+				It's switch between galant and martial dance.
 			</div>
 
 			<div class="sub-section">
 				<h3>Market</h3>
-				floating market, amulette market is a great spot to buy some souvenirs, but it close early and is not open on sunday.
+				You can go by boat see the floating market, it's very nice, but the tour is really fast somehow,<br/>
+				There is also the amulette market, is a great spot to buy some souvenirs, but it close early and is not open on sunday.
 			</div>
 
 			<div class="sub-section">
@@ -262,7 +341,7 @@
 
 			<div class="sub-section">
 				<h3>Clubs</h3>
-				there is very good clubs in bangkok, the staff is reallly here for you.
+				there is very good clubs in bangkok, there is good dj, the staff is really here for you, and it's feel secure.
 			</div>
 		</div>
 
@@ -287,20 +366,21 @@
 			</div>
 
 			<div class="sub-section">
-				<h3>Salad</h3>
+				<h3>Papaya salad</h3>
 			</div>
 
 			<div class="sub-section">
-				<h3>soup</h3>
-				every soup are good !
+				<h3>Soup</h3>
+				Every soup are good !
+				lemongrass and seafood soup are the best in my opinion.
 			</div>
 
 			<div class="sub-section">
-				<h3>skewer</h3>
+				<h3>Skewer</h3>
 				on the roadside you may sometime accounter skewer stand, it's very good you should try it !
 			</div>
 
-			Special mention to the 7/11 ham toast.
+			Special mention to the 7/11 ham toast, which come in various flavour and are always here when you need the most.
 
 		</div>
 
@@ -309,8 +389,10 @@
 
 			<div class="sub-section">
 				<h3>The spirit house</h3>
-				on the road or at rooftop, sometime, there is little house,
-				its look like little temple with caracter inside,
+				on the road or at rooftop, sometime, there is little yellow house,
+				its look like little temple with caracter inside, 
+				thai people sometime offer food for the spirit inside,
+				especialy the strawberry fanta, because its red color.
 			</div>
 
 			<div class="sub-section">
