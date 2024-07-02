@@ -106,7 +106,7 @@
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', () => {
 	    const banner = document.getElementById('banner');
-	    const content = document.getElementById('content');
+	    const content = document.getElementsByClassName('content')[0];
 	    
 	    const scrollToContent = () => {
 	        window.scrollTo({
@@ -167,12 +167,19 @@
 
 			<div class="sub-section">
 				<h3>The H</h3>
-				when thai word are written in latin, 
-				the 
+				there is multiple way of translating thai word to latin charactere
+				when thai word are written in latin, some letter can be misleanding 
+				
+				<table>
+	      		<tr><th> the way of writing </th><th> how to say </th></tr>
 
-				| Kh/K   | Th/T   | Rh/R   |
-				| ------ | ------ | ------ |
-				| c -> g | t -> d | r -> l |
+	      		<tr><td> Kh                 </td><td> c          </td></tr>
+	      		<tr><td> K                  </td><td> g          </td></tr>
+	      		<tr><td> Th                 </td><td> t          </td></tr>
+	      		<tr><td> T                  </td><td> d          </td></tr>
+	      		<tr><td> Rh                 </td><td> r          </td></tr>
+	      		<tr><td> R                  </td><td> l          </td></tr>
+				</table>
 			</div>
 
 		</div>
@@ -255,11 +262,19 @@
 				thin
 			</div>
 
-			<h3>Salad</h3>
-			<h3>soup</h3>
-			every soup are good !
-			<h3>skewer</h3>
-			on the roadside you may sometime accounter skewer stand, it's very good you should try it !
+			<div class="sub-section">
+				<h3>Salad</h3>
+			</div>
+
+			<div class="sub-section">
+				<h3>soup</h3>
+				every soup are good !
+			</div>
+
+			<div class="sub-section">
+				<h3>skewer</h3>
+				on the roadside you may sometime accounter skewer stand, it's very good you should try it !
+			</div>
 
 			Special mention to the 7/11 ham toast.
 
