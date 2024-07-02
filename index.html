@@ -3,498 +3,288 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PORTFOLIO JL</title>
-	<link rel="stylesheet" href="./style.css">
-	<script>
-		function revealSibling(elem) {
-		    let sibling = elem.children[1];
-		    if (sibling) {
-
-				if (sibling.style.display != 'none')
-		      		sibling.style.display = 'none';
-		      	else
-		      		sibling.style.display = 'block';
-		    }
-		}
-	</script>
-	<link rel="icon" href="./icon/star_3.png">
+	<title>E-book</title>
 </head>
+<style type="text/css">
+	:root {
+
+	    --pureBlack  : #000000 ;
+	    --sanguine   : #B00016 ;
+	    --sharkGrey  : #282923 ;
+	}
+
+	* {
+	    margin: 0;
+	    padding: 0;
+	    box-sizing: border-box;
+	}
+
+	html, body {
+	    height: 100%;
+	    font-family: Arial, sans-serif;
+	    background-color: #333;
+	    color: white;
+	}
+
+	.banner {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100vh;
+	    cursor: pointer;
+	    position: relative;
+	}
+
+	.icon-container {
+	    text-align: center;
+	}
+
+	.icon {
+	    filter: invert(100%);
+	}
+
+	.content {
+	    padding: 20px;
+	}
+
+	table {
+	  width: 100%;
+	  border-collapse: collapse;
+	  border: 1px solid white;
+	  border-radius: 10px;
+	  overflow: hidden; /* Nécessaire pour que les coins arrondis apparaissent */
+	}
+
+	th, td {
+	  border: 1px solid black;
+	  padding: 8px;
+	  text-align: left;
+	}
+
+	thead {
+	  background-color: #f1f1f1;
+	}
+
+	.section {
+	    background-color: var(--sanguine);
+	    padding: 2%;
+	    margin: 2%;
+	    border-radius: 20px;
+	}
+
+	.sub-section {
+	    background-color: var(--sharkGrey);
+	    padding: 2%;
+	    margin: 2%;
+	    border-radius: 20px;
+	}
+
+	h3 {
+		margin-bottom: 2%;
+	}
+
+	.Annotations {
+	    background-color: var(--sanguine);
+	    padding: 30px;
+	    margin : 10px;
+	    border-radius: 20px;
+	}
+
+	.Annotations:before {
+	    visibility: visible;
+	    font-size: small;
+	    content: "comment:";
+	    border-radius: 10px;
+	    padding: 10px;
+	    position: relative;
+	    background-color: var(--sanguine);
+	    top: -30px;
+	    left: -30px;
+	}
+
+</style>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', () => {
+	    const banner = document.getElementById('banner');
+	    const content = document.getElementById('content');
+	    
+	    const scrollToContent = () => {
+	        window.scrollTo({
+	            top: content.offsetTop,
+	            behavior: 'smooth'
+	        });
+	    };
+
+	    banner.addEventListener('click', scrollToContent);
+	    banner.addEventListener('wheel', (event) => {
+	        if (event.deltaY > 0) { // Si l'utilisateur scroll vers le bas
+	            scrollToContent();
+	        }
+	    });
+	});
+</script>
 <body>
 
-	<div class="menu-button"
-		onclick='
-			let menu = document.getElementById("menu-panel");
+	<div class="banner" id="banner">
+        <div class="icon-container">
+            <img src="temple.png" alt="Simple temple icon" class="icon">
+        </div>
+    </div>
+	<div class="content" id="content">
+		<div class="section">
+			<h2>Thai language</h2>
 
-			if (menu.style.display != "none")
-				menu.style.display = "none";
-			else
-				menu.style.display = "block";'>
-		
-		<img class="menu-button-img" src="./icon/toothed-wheel.png"/>
-		<div class="menu-button-text">
-			MENU
+			<div class="sub-section">
+				<h3>Basic</h3>
+
+				<table>
+	      		<tr><th>how to say </th><th> meanings </th></tr>
+				
+				<tr><td>sawadee    </td><td> hello/bye      </td></tr>
+				<tr><td>khrap/khan </td><td> polite particle</td></tr>
+				<tr><td>kop khun   </td><td> thanks         </td></tr>
+				<tr><td>may pen rai</td><td> no, its ok     </td></tr>
+				<tr><td>may pet    </td><td> not spicy      </td></tr>
+				</table>
+			</div>
+
+			<div class="sub-section">
+				<h3>Tone</h3>
+				Thai people use tone to change word meaning,
+				for non-asian people it could be very confusing,
+				And its could be hard to understand/be understand
+
+				<table>
+	      		<tr><th> Tone      </th><th> how to say                       </th></tr>
+
+				<tr><td> aa or ̄a   </td><td> flat, like a robot               </td></tr>
+				<tr><td> à         </td><td> descend like you end a sentences </td></tr>
+				<tr><td> á         </td><td> like aaAAH! (but dont scream)    </td></tr>
+				<tr><td> â         </td><td> like a complains                 </td></tr>
+				<tr><td> ǎ         </td><td> like a question exactly as "aa?" </td></tr>
+				</table>
+			</div>
+
+			<div class="sub-section">
+				<h3>The H</h3>
+				when thai word are written in latin, 
+				the 
+
+				| Kh/K   | Th/T   | Rh/R   |
+				| ------ | ------ | ------ |
+				| c -> g | t -> d | r -> l |
+			</div>
+
 		</div>
-	</div>
 
-	<div id="menu-panel" style="display: none;">
+		<div class="section">
+			<h2>To do</h2>
 
-		<div id="menu-profil">
-			<img id="profil-img" src="./blender/sailor-cat.png" />
-			<div id="profil-text">
-				Jules Latapy<br/>
-				<br/>
-				3 rue de la feste 76510<br/>
-				Saint-Aubin-Lès-Pin<br/>
-				jules.latapy.professionnal@gmail.com<br/>
-				https://www.linkedin.com/in/jules-latapy/<br/>
+			<div class="sub-section">
+				<h3>Greeting</h3>
+				When you meet people salute politely. for foreigner is not mandatory to waii at everybody,
+				the waii is a way of greeting and thanks in thailand, 
+				to waii you should: put you palm together, the up of youre index should be at you shin.
+			</div>
 
+			<div class="sub-section">
+				<h3>Politness</h3>
+				Smile if you want to begin a conversation.
+				Use polite particle at the end of you're sentence, its always look nice.
+			</div>
+
+			<div class="sub-section">
+				<h3>Miscelianous</h3>
+				When order a drink, ask for not to much icecube, because they tends to put half the drink of ice.
+				Watch out when you retrieve money, because sometime they will ask you if want to make convertion, say no.
+			</div>
+
+			<h2>Dont do</h2>
+			<div class="sub-section">	
+				critisize the king, thai respect a lot the monarchy
+				touch someone head
+				(for woman) touch monk
+				point at something with finger
+				throw toilet paper inside the toilet, the sewer system is not made for it.
+			</div>
+
+			<h2>To visit</h2>
+
+			<div class="sub-section">
+				<h3>Temple</h3>
+				In thai culture, religion is very important and like church in europe, temple are everywhere.
+					1) buddism
+						1) wat arung
+						2) wat po
+						3) Wat Rong Khun
+					2) Chinese
+						1) Wihan Phra Photisat Kuan Im
+					3) Indian
+			</div>
+
+			<div class="sub-section">
+				<h3>Market</h3>
+				floating market, amulette market is a great spot to buy some souvenirs, but it close early and is not open on sunday.
+			</div>
+
+			<div class="sub-section">
+				<h3>Island</h3>
+				the Gulf of Thailand hide some rare and beautifull landscape, the further from main city, the chiller !
+			</div>
+
+			<div class="sub-section">
+				<h3>Clubs</h3>
+				there is very good clubs in bangkok, the staff is reallly here for you.
+			</div>
+			
+			<h2>Meal</h2>
+
+			<div class="sub-section">
+				<h3>Rice</h3>
+				always, everywhere: rice is like bread in france, is in every meal and there is so many way of prepare it !
+					1) sticky
+					2) fried
+					3) steam
+			</div>
+			<div class="sub-section">
+				<h3>Pasta</h3>
+				there is many kind of pasta in thailand
+				instant
+				glass
+				thick
+				thin
+			</div>
+
+			<h3>Salad</h3>
+			<h3>soup</h3>
+			every soup are good !
+			<h3>skewer</h3>
+			on the roadside you may sometime accounter skewer stand, it's very good you should try it !
+
+			Special mention to the 7/11 ham toast.
+
+		</div>
+
+		<div class="section">
+			<h2>Miscelianous</h2>
+
+			<div class="sub-section">
+				<h3>The spirit house</h3>
+				on the road or at rooftop, sometime, there is little house,
+				its look like little temple with caracter inside,
+			</div>
+
+			<div class="sub-section">
+				<h3>Tree with scarf</h3>
+				Everywhere in thailand you may see big tree with colorfull scarf,
+				Thaii people believe there may be a spirit inside, so they put offering, to success exam, or to win lottery
+			</div>
+
+			<div class="sub-section">
+				<h3>Spice</h3>
+				dont trust youre thai friends when then say its not spicy, (the chilli gonna destroy everything you love in this world, its gonna burn your house and bully youre child)
 			</div>
 		</div>
-
-		<div src="./fond-menu.png" id="inner-menu">
-			<a href="#skills"   class="navigation"><div class="navigation-img-bubble"><img src="./icon/explosion.png" /></div> <div class="navigation-text"> Skills   </div></a>
-			<a href="#projects" class="navigation"><div class="navigation-img-bubble"><img src="./icon/star_down.png" /></div> <div class="navigation-text"> Projects </div></a>
-			<a href="#hobbies"  class="navigation"><div class="navigation-img-bubble"><img src="./icon/atom.png"      /></div> <div class="navigation-text"> Hobbies  </div></a>
-		</div>
-
-		<img class="menu-deco" src="./icon/black-hole.png">
-	</div>
-
-	<img id="banniere" src="./banniere.png"/>
-
-	<div id="presentation">
-		<div class="explanation">
-			Hello there ! I'm Jules Latapy <br/>
-			<br/>
-			I am an IT guy who wants to build applications for people and find solutions to modern problems !
-		</div>
-		<div class="explanation">
-			About this portfolio :<br/>
-			<p>
-			I wanted to create something with more personality than a regular CV, so I choose a design between 
-			<a href="https://www.google.gg/search?q=y2k+flat+design&tbm=isch" target="_blank">Y2K flat design</a> and <a target="_blank" href="https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b5b1180175837.5cd9e64814ee7.jpg">acid poster's</a> design,
-			I was heavily inspired by <a href="https://society6.com/foxrockettstudio" target="_blank">foxRocketStudio</a>.
-			The design is characterized by abstract shape and modern background picture.
-			Rounded sections are everywhere and blur the background to highlight section.
-			I have chosen red because I really like this color.
-			</p>
-		</div>
-	</div>
-
-		<img src="./icon/explosion.png" class="indicateur"/>
-
-	<div id="skills">
-
-		<h2>Language</h2>
-		<br/>
-		<table class="language">
-			<tr>
-			    <td class="doc-widget" onclick='revealSibling(this)'>
-			    	<div class="logo">
-			    		<img  src="./logo/Haskell-Logo.svg"	onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-			    	</div>
-			    	<div class="doc">								
-				    	<h4>Haskell</h4>
-				    	
-				    	<p>
-						What a fascinating language!
-				    	It's closer from mathematical theories,
-				    	And everything in it seems so logical!
-		 				</p>
-		 				<p>
-						It's kinda tricky sometimes,
-				    	Because it's a singular language type with
-				    	singular thinking patterns.
-				    	It's also not used in industry :<
-				    	</p>
-				    </div>
-<pre class="sample">
-<span class="code-keyword">import</span> <span class="code-name">Prelude</span> <span class="code-keyword">hiding</span> (<span class="code-name">even</span>, <span class="code-name">odd</span>)
-
-<span class="code-name">even</span> :: (<span class="code-type">Integral</span> a) <span class="code-keyword">=></span> a <span class="code-keyword">-></span> <span class="code-type">Bool</span>
-<span class="code-name">even</span> <span class="code-keyword">=</span> (<span class="code-const">0</span> <span class="code-keyword">==</span>) <span class="code-keyword">.</span> (`<span class="code-name">rem</span>` <span class="code-const">2</span>)
-
-<span class="code-name">main</span> :: <span class="code-type">IO</span> ()
-<span class="code-name">main</span> = <span class="code-keyword">let</span> n <span class="code-keyword">=</span> <span class="code-const">5</span> <span class="code-keyword">in</span> <span class="code-name">print</span> (<span class="code-name">even</span> n)
-</pre>
-
-			    </td>
-			    <td class="doc-widget" onclick='revealSibling(this)'>
-			    	<div class="logo">
-				    	<img src="./logo/Java-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-				    </div>
-				    <div class="doc">
-				    	<h4>Java</h4>
-				    	
-				    	<p>
-						My first language! 
-				    	Its robust and powerful, 
-				    	There are a lot of features 
-				    	And big community. 
-				    	A lot of companies use it.
-						</p>
-						<p>
-						Because it's my first language, 
-				    	Sometime I am bored of it.
-				    	</p>
-				    </div>
-<pre class="sample">
-<span class="code-keyword">public static</span><span class="code-type"> boolean</span> <span class="code-name">isEven</span>(<span class="code-type">int</span> i){
-    <span class="code-keyword">return</span> (i <span class="code-keyword">&</span> 1) <span class="code-keyword">==</span> <span class="code-const">0</span>;
-}
-
-<span class="code-keyword">public static</span><span class="code-type"> void</span> <span class="code-name">main</span>(<span class="code-type">String[]</span> args) {
-	<span class="code-type">int</span> N <span class="code-keyword">=</span> <span class="code-const">5</span>;
-	<span class="code-type">System</span>.out.<span class="code-name">println</span>(<span class="code-name">isEven</span>(N));
-}
-</pre>
-			    </td>
-			    <td class="doc-widget" onclick='revealSibling(this)'>
-			    	<div class="logo">
-				    	<img src="./logo/Ada-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-				    </div>
-			    	<div class="doc">
-				    	<h4>Ada</h4>
-				    
-				    	<p>
-						Old but gold!
-				    	I wanted to learn it to be stronger,
-				    	but I discovered a great language full featured,
-				    	its robust, readable
-				    	and low use of memory.
-						</p>
-						<p>
-						The small community is a big default.
-				    	Sometimes the compiler driving me nuts
-				    	And the documentation was ugly until recently.
-				    	</p>
-			    	</div>
-<pre class="sample">
-<span class="code-keyword">with</span><span class="code-name"> Ada.text_io</span>; 
-<span class="code-keyword">use</span> <span class="code-name">Ada.text_io</span>;
-
-<span class="code-keyword">procedure</span> <span class="code-name">main</span> <span class="code-keyword">is</span>
-
-	<span class="code-keyword">function</span> <span class="code-name">isEven</span>(i:<span class="code-type">Integer</span>) <span class="code-keyword">return</span> <span class="code-type">Boolean</span> <span class="code-keyword">is</span> (
-		i <span class="code-keyword">rem</span> <span class="code-const">2</span> <span class="code-keyword">=</span> <span class="code-const">0</span>
-	);
-
-	N : <span class="code-type">Integer</span> <span class="code-keyword">:=</span> <span class="code-const">5</span>;
-<span class="code-keyword">begin</span>
-	<span class="code-name">Put_Line</span>(<span class="code-name">isEven</span>(N)'Image);
-<span class="code-keyword">end</span>;
-</pre>
-			    </td>
-			    <td class="doc-widget" onclick='revealSibling(this)'>
-			    	<div class="logo">
-			   	    	<img src="./logo/JavaScript-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-			    	</div>
-			    	<div class="doc">
-			    		<h4>JavaScript</h4>
-			    		
-			    		<p>
-						Fashion and flexible,
-				    	You can do everything in JS like no other language,
-				    	There is a module for everything.
-				    	The script is easy to write.
-				    	</p>
-				    	<p>
-				    	Can be complex with big project.
-				    	There is some non-sense like 1 < 2 < 3; -> true but 3 > 2 > 1; -> false.
-				    	the downloading time for libraries could feels like an eternity.
-				    	</p>
-				    </div>
-<pre class="sample">
-<span class="code-keyword">const</span> <span class="code-name">isEven</span> <span class="code-keyword">=</span> x <span class="code-keyword">=> !</span>(x <span class="code-keyword">%</span> <span class="code-const">2</span>)
-
-<span class="code-keyword">const</span> N <span class="code-keyword">=</span> <span class="code-const">5</span>;
-
-<span class="code-type">console</span>.<span class="code-name">log</span>(<span class="code-name">isEven</span>(N)); 
-</pre>
-			    </td>
-			    <td class="doc-widget" onclick='revealSibling(this)'>
-			    	<div class="logo">
-			    		<img src="./logo/C-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-			    	</div>
-			    	<div class="doc">
-				    	<h4>C</h4>
-				    	<p>
-				    	It's fast and simple.
-				    	C is the fastest programming language.
-						</p>
-						<p>
-				    	So simple that it's realy lack of features and libraries.
-				    	the compiler can be lax and authorize wrong things.
-				    	</p>
-			    	</div>
-<pre class="sample">
-<span class="code-keyword">#include</span> &lt;<span class="code-name">stdio.h</span>&gt;
-
-<span class="code-type">int</span> <span class="code-name">isEven</span>(<span class="code-type">int</span> i){
-	<span class="code-keyword">return !</span>(i <span class="code-keyword">&</span> <span class="code-const">1</span>);
-}
-
-<span class="code-type">int</span> <span class="code-name">main</span>() {
-	<span class="code-keyword">const</span> <span class="code-type">int</span> N<span class="code-keyword"> =</span> 5;
-
-	<span class="code-keyword">if</span>(<span class="code-name">isEven</span>(N)) 
-		<span class="code-name">printf</span>("<span class="code-litteral">true</span>");
-	<span class="code-keyword">else</span>
-		<span class="code-name">printf</span>("<span class="code-litteral">false</span>");
-	<span class="code-keyword">return</span> <span class="code-const">0</span>;
-}
-</pre>
-			    </td>
-			</tr>
-		</table>
-
-			<img src="./icon/explosion.png" class="indicateur"/>
-
-		<h2>Software</h2>
-		<div class="software">
-
-	    	<div class="doc">
-
-	   	    	<img class="deco" src="./logo/Intellij-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-	    		<h4>Intellij</h4>
-	    		
-	    		<p>
-		    	Productivity at is peak !
-		    	It's so pleasant when you just have to click on a button.
-		    	Intellij give me cool advise to guaranteed integrity of my apps.
-		    	<p>
-		    	</p>
-		    	It can be slow to open and indexing project,
-		    	also, it can "panic" when you do thing in your way/ not in order and
-		    	often you need to upgrade it.
-		    	</p>
-		    </div>
-
-	    	<div class="doc">
-	   	    	<img class="deco" src="./logo/Sublime-Text-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-	    		<h4>Sublime-Text</h4>
-	    		
-	    		<p>
-		    	It's simple and customisable,
-		    	you can easily make complex syntax coloring and build system,
-		    	It's very fast to open and the search system could be useful.
-		    	</p>
-		    	<p>
-		    	Can be too simple for big project.
-		    	does'nt replace a true IDE.
-		    	</p>
-		    </div>
-
-	    	<div class="doc">
-	   	    	<img class="deco" src="./logo/Git-Logo.svg" onmouseenter='this.setAttribute("style", "filter: invert(1);");' onmouseleave='this.setAttribute("style", "filter: invert(0);");'/>
-	    		<h4>Git</h4>
-	    		
-	    		<p>
-		    	It's a <i>must</i> to known.
-		    	On my programming journey,
-		    	I have learn some trickshots too do complex versionning operations.
-		    	</p>
-		    	<p>
-		    	The learning curve is very flat, you need a lot of time to understand it.
-		    	You can trap yourself in complex mess.
-		    	</p>
-		    </div>
-		</div>
-	</div>
-
-	<div id="routes">
-
-		<img src="./icon/star_carret.png" class="indicateur"/>
-
-		<h2> Professional Path </h2>
-
-		<div class="step">
-
-			<div class="step-title"> BAC S - IT option (ISN) </div>
-
-			<img class="accompagement" src="./icon/dot.png"/>
-
-		</div>
-		<img class="step-indicateur" src="./icon/arrow-down.png"/>
-		<div class="step">
-
-			<div class="step-title"> Le Havre's IUT </div>
-
-			<img class="accompagement" src="./icon/star_wave.png"/>			
-
-		</div>
-		<img class="step-indicateur" src="./icon/arrow-down.png"/>
-		<div class="step">
-
-			<div class="step-title"> CESI - Application Designer and Developer Bachelor </div>
-
-			<img class="accompagement" src="./icon/moon.png"/>
-
-		</div>
-		<img class="step-indicateur" src="./icon/arrow-down.png"/>
-		<div class="step">
-
-			<div class="step-title"> ESIEA - Software option ? </div>
-
-			<img class="accompagement" src="./icon/sun.png"/>			
-
-		</div>
-	</div>
-
-	<div id="projects">
-
-		<img src="./icon/star_down.png" class="indicateur"/>
-
-		<h2> Projet N°1 </h2>
-
-		<h3> Apave's work-study program </h3>
-
-		<!--<div class="step">
-			
-			<img src = "projet_1.svg" alt="diagram"/>
-
-		</div>-->
-
-
-		<div class="explanation">
-			<p>
-			Apave wanted a guy to write tests, maintain an app and arrange technical debt.
-			</p>
-			<p>
-			The first project is not this one. xD
-			My journey on Apave have lead me to build automatic tests suites which simulate user input and action,
-			the project is to automate the process off testing after each app delivery.
-			</p>
-			<p>
-			I include this project on my portfolio because it's my first real working experience and its quite good at what it is suppose to do.
-			</p>
-		</div>
-
-			<img src="./icon/star_down.png" class="indicateur"/>
-
-		<h2> Projet N°2 </h2>
-
-		<h3> Henix's internship </h3>
-
-		<div class="explanation">
-			<p>
-			Henix needed a tool to calculate the number of tests inside a project
-			I have did it in java with a library
-			</p>
-			<p>
-			I put this project on my portfolio because I am pretty proud of it
-			it helped me find an work-study program because both topic have similarities
-			its complete (fine grained),
-			the documentation is well written. 
-			For those who maintain and use the project it would be very easy
-			because on one part of the application I have made in 2 different languages
-			</p>
-		</div>
-
-			<img src="./icon/star_down.png" class="indicateur"/>
-
-		<h2> Projet N°3 </h2>
-
-		<h3> Esoteric language interpreter 🌙 </h3>
-
-		<div class="explanation">
-			<img class="deco" src="./icon/star_3.png"/>
-			<p>
-			Something about writting code feels like being a wizard, 
-			I push the concept further by making a programming language, that do what other languages do, but in Latin.
-			I put this solo project on my portfolio because I am pretty proud of it.
-			The inside archtecture is very clean and modular, 
-			I have made the unit tests (which can be rare in programmer project), 
-			the document is not done :(, but I feel like there is no need 
-			and I made a coloring extension for an IDE call sublime text.
-			</p>
-			<img class="deco" style="
-				display: block;
-				margin-left: 	auto;
-				margin-right: auto;
-				margin-bottom: 0;" 
-				src="./icon/star_1.png"/>
-		</div>
-<div class="explanation-bis">
-<pre>
-<span class="code-comment">(roman number: 0 I V X L C D M )
-
-(constant)</span>
-<span class="code-keyword">INCOMMUTABILIS</span> <span class="code-type">VERITAS</span>  <span class="code-keyword">NOMINE</span> NAME_V <span class="code-keyword">VALET</span> <span class="code-const">FICTUS</span>.
-<span class="code-comment">(variables)</span>
-		<span class="code-type">ALBUM    </span><span class="code-keyword">NOMINE</span> NAME_A <span class="code-keyword">VALET</span> [<span class="code-const">I</span>;<span class="code-const">II</span>;<span class="code-const">III</span>;<span class="code-const">IX</span>].
-		<span class="code-type">NUMERUS  </span><span class="code-keyword">NOMINE</span> NAME_N <span class="code-keyword">VALET</span> <span class="code-const">I</span>,<span class="code-const">II</span>.
-		<span class="code-type">PHRASIS  </span><span class="code-keyword">NOMINE</span> NAME_P <span class="code-keyword">VALET</span> "<span class="code-litteral">hello</span>".
-		<span class="code-type">SYMBOLUM </span><span class="code-keyword">NOMINE</span> NAME_S <span class="code-keyword">VALET</span> '<span class="code-litteral">r</span>'.
-
-<span class="code-comment">(if-else)</span>
-<span class="code-keyword">SI FICTUS FACERE	</span>
-<span class="code-keyword">ALIUS.			</span>
-<span class="code-keyword">COMPLEVIT			</span>
-
-<span class="code-comment">(switch-case)</span>
-<span class="code-keyword">SECUNDUM</span> NAME_S <span class="code-keyword">FACERE</span>
-    <span class="code-keyword">QUANDO</span> '<span class="code-litteral">e</span>' <span class="code-keyword">FACERE COMPLEVIT</span>.
-    <span class="code-keyword">QUANDO</span> '<span class="code-litteral">f</span>' <span class="code-keyword">FACERE COMPLEVIT</span>.
-    <span class="code-keyword">ALIUS</span>.
-<span class="code-keyword">COMPLEVIT</span>
-
-<span class="code-comment">(while)</span>
-<span class="code-keyword">QUANDIU</span> <span class="code-const">FICTUS</span> <span class="code-keyword">FACERE</span>
-    <span class="code-keyword">RUMPITUR</span>. <span class="code-comment">(break)   </span>
-    <span class="code-keyword">PROGREDI</span>. <span class="code-comment">(continue)</span>
-<span class="code-keyword">COMPLEVIT</span>
-
-<span class="code-comment">(for-each)</span>
-<span class="code-keyword">TRAICERE</span> [<span class="code-const">I</span>;<span class="code-const">II</span>;<span class="code-const">III</span>;<span class="code-const">IX</span>] <span class="code-keyword">NOMINE</span> u <span class="code-keyword">FACERE</span>
-    <span class="code-name">SCRIPTO</span>![u].
-<span class="code-keyword">COMPLEVIT</span>
-
-<span class="code-comment">(function)</span>
-<span class="code-keyword">IUSSUS</span> <span class="code-name">namefct</span>[<span class="code-type">NUMERUS</span> <span class="code-keyword">NOMINE</span> _] <span class="code-keyword">REDIT</span> <span class="code-type">NUMERUS</span> <span class="code-keyword">FACERE</span>
-    <span class="code-name">SCRIPTO</span>!["<span class="code-litteral">hi</span>"].
-    <span class="code-keyword">REDIT</span> <span class="code-const">X</span>.
-<span class="code-keyword">COMPLEVIT</span>
-
-<span class="code-name">namefct</span>![<span class="code-const">I</span>].
-</pre>
-</div>
-		<div class="step"> 
-			<a href="https://github.com/Jules-Latapy/Esoteric-language"> https://github.com/Jules-Latapy/Esoteric-language</a>
-			<img class="accompagement" src="./icon/star_6.png"/>
-		</div>
-
-			<img src="./icon/atom.png" class="indicateur"/>
-
-	</div>
-
-	<div id="hobbies">
-		<h2> Hobbies </h2>
-
-		<div class="explanation">
-
-			My hobbies are to create projects that I never finish <br/>
-			and make stuff in 3D with blender.
-
-		</div>
-
-		<table>
-			<tr>
-			<td><img class="picture-serie" src="./blender/platypus.png"     /></td>
-			<td><img class="picture-serie" src="./blender/sailor-cat.png"   /></td>
-			<td><img class="picture-serie" src="./blender/inuit-otter.png"  /></td>
-			</tr>
-			<tr>
-			<td><img class="picture-serie" src="./blender/eye-figure.png"   /></td>
-			<td><img class="picture-serie" src="./blender/disco-machine.jpg"/></td>
-			<td><img class="picture-serie" src="./blender/phos.png"         /></td>
-			</tr>
-		</table>
-
-		<br/>
-		<p>
-		Here some of my creations.
-		</p>
 	</div>
 </body>
 </html>
